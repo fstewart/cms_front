@@ -1,0 +1,1 @@
+json.partial! "manderson_visitors/manderson_visitor", manderson_visitor: @manderson_visitor

@@ -1,0 +1,86 @@
+<section class="site-content">
+		<div class="container">
+			<div class="row">
+				<p id="notice"><%= notice %></p>				
+				
+				<h1>Listing Profiles</h1>
+
+        <%= render 'searchform' %>
+
+				<table class="table table-bordered table-striped">
+				  <thead>
+				    <tr>
+				      <th><%= sort_link "department_id", "Department" %></th>
+				      <th><%= sort_link "designation", "Type" %></th>
+				      <th><%= sort_link "last_name", "Name" %></th>
+				      <th>Title</th>
+				      <th>Mailing Address</th>
+				      <th>Phone</th>
+				      <th>Email</th>
+				      <th>Photo</th>
+              <th>Elevator</th>
+				      <th>Status</th>
+				      <th colspan="2"></th>
+				    </tr>
+				  </thead>
+				
+				  <tbody>
+				    <% @profiles.each do |profile| %>
+				      <tr>
+				        <td></td>
+				        <td><%= profile.designation %></td>
+				        <td><%= profile.fullname %></td>
+				        <td><%= profile.title %></td>
+				        <td><%= profile.address %></td>
+				        <td><%= number_to_phone(profile.phone, area_code: true) %></td>
+				        <td><%= profile.email %></td>
+				        <td>
+                  <% if profile.profile_photo? %>
+                      <%= image_tag profile.profile_photo.thumb.url %>
+                <% else %>
+                      NA
+                  <% end %>
+                </td>
+                <td>
+                  <% if profile.elevator == false %>
+                      <p style="color:red;">No</p>
+                  <% else %>
+                      <p style="color:green;">Yes</p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if profile.status == false %>
+                      <p style="color:red;">Inactive</p>
+                  <% else %>
+                      <p style="color:green;">Active</p>
+                  <% end %>
+                </td>
+				        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+				        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				      </tr>
+				    <% end %>
+				  </tbody>
+				</table>
+
+        <% if @profiles.present? %>
+            <%= render @profiles %>
+        <% else %>
+            <p>There are no profiles containing the term(s) <%= params[:search] %>.</p>
+        <% end %>
+        <hr>
+				
+				<br><br>
+				<div class="expertises-cloud glassy-bg">
+				  <h4>Expert Areas Cloud</h4>
+				  <% expertise_cloud Expertise.counts, %w{css1 css2 css3 css4} do |expertise, css_class| %>
+				      <%= link_to expertise.name, expertise_path(expertise.name), class: css_class %>
+				  <% end %>
+				</div>	
+
+				<br>
+				
+				<%= link_to 'New Profile', new_profile_path %>
+
+			</div> <!-- .col-md-3 -->
+		</div> <!-- .row -->
+</section> <!-- .container -->

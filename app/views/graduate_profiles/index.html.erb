@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manderson Launch Profiles</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Middle initial</th>
+      <th>Last name</th>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Hometown</th>
+      <th>Candidate Type</th>
+      <th>Class</th>
+      <th>Undergraduate School</th>
+      <th>Graduation Year</th>
+      <th>Work experience</th>
+      <th>Activities honors</th>
+      <th>Internship</th>
+      <th>Skills</th>
+      <th>Photo</th>
+      <th>CV</th>
+      <th>Status</th>
+      <th>Registered</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graduate_profiles.each do |graduate_profile| %>
+      <tr>
+        <td><%= graduate_profile.first_name %></td>
+        <td><%= graduate_profile.middle_initial %></td>
+        <td><%= graduate_profile.last_name %></td>
+        <td><%= graduate_profile.nickname %></td>
+        <td><%= graduate_profile.email %></td>
+        <td><%= graduate_profile.phone %></td>
+        <td><%= graduate_profile.hometown %></td>
+        <td><%= graduate_profile.candidate_type %></td>
+        <td><%= graduate_profile.class %></td>
+        <td><%= graduate_profile.ug_school %></td>
+        <td><%= graduate_profile.ug_year %></td>
+        <td><%= graduate_profile.work_experience %></td>
+        <td><%= graduate_profile.activities_honors %></td>
+        <td><%= graduate_profile.internship %></td>
+        <td><%= graduate_profile.cskills %></td>
+        <td><%= graduate_profile.avatar %></td>
+        <td><%= graduate_profile.cv %></td>
+        <td><%= graduate_profile.status %></td>
+        <td><%= graduate_profile.registered %></td>
+        <td><%= link_to 'Show', graduate_profile %></td>
+        <td><%= link_to 'Edit', edit_graduate_profile_path(graduate_profile) %></td>
+        <td><%= link_to 'Destroy', graduate_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Graduate profile', new_graduate_profile_path %>

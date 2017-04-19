@@ -1,0 +1,93 @@
+<%= simple_form_for(@ces_pregame_rsvp, wrapper_mappings: {
+    check_boxes: :vertical_radio_and_checkboxes,
+    radio_buttons: :vertical_radio_and_checkboxes,
+    file: :vertical_file_input,
+    boolean: :vertical_boolean
+}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Event</th>
+        <th>No. of tickets</th>
+        <th>No. of tickets</th>
+        <th>No. of tickets</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Alabama vs. Western Kentucky, September 24th</td>
+          <td><%= f.input :game1_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game1_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game1_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Kent State, September 24th</td>
+          <td><%= f.input :game2_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game2_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game2_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Kentucky, October 1st HC</td>
+          <td><%= f.input :game3_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game3_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game3_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Texas A&M, October 22nd</td>
+          <td><%= f.input :game4_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game4_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game4_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Mississippi State, November 12th</td>
+          <td><%= f.input :game5_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game5_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game5_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Chattanooga, November 19th</td>
+          <td><%= f.input :game6_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game6_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game6_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr>
+          <td>Alabama vs. Auburn, November 26th</td>
+          <td><%= f.input :game7_comp_tickets, label: 'complimentary' %></td>
+          <td><%= f.input :game7_paid_tickets, label: 'paid adults' %></td>
+          <td><%= f.input :game7_child_tickets, label: 'paid children' %></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>Name:</td>
+          <td colspan="3"><%= f.input :first_name %> <%= f.input :last_name %></td>
+        </tr>
+        <tr>
+          <td>Daytime Phone #:</td>
+          <td colspan="3"><%= f.input :phone %></td>
+        </tr>
+        <tr>
+          <td>Email Address:</td>
+          <td colspan="3"><%= f.input :email %></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Submit your CES PreGame RSVP'  %>
+  </div>
+<% end %>
+
+
+<script>
+  $('.submit-button').on("click", function() {
+  if (confirm('Are you sure ?')) {
+    $(".form-vertical").submit();
+  }
+})</script>

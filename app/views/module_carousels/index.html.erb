@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Module Carousels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Title</th>
+      <th>Desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @module_carousels.each do |module_carousel| %>
+      <tr>
+        <td><%= module_carousel.priority %></td>
+        <td><%= module_carousel.title %></td>
+        <td><%= module_carousel.desc %></td>
+        <td><%= link_to 'Show', module_carousel %></td>
+        <td><%= link_to 'Edit', edit_module_carousel_path(module_carousel) %></td>
+        <td><%= link_to 'Destroy', module_carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Module carousel', new_module_carousel_path %>

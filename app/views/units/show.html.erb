@@ -1,0 +1,49 @@
+<section class="site-section-top">
+		<div class="bg-img" style="background-image: url('/assets/img/presidentsmansion01_1920.jpg');">
+			<div class="container site-content">
+				<div class="site-heading-bg-primary">
+					<h1><%= @unit.name %></h1>
+				</div> <!-- .site-heading-bg -->
+			</div> <!-- .container -->
+		</div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+						<ul class="nav nav-pills nav-stacked">
+							<% uri = URI(unit_path) %>
+							<% anchor = uri.fragment %>	
+							<% if anchor == "#{@unit.name}"  %>						
+								<li class="active"><%= link_to "#{@unit.name}", unit_path(anchor: "item-#{@unit.id}"), id: "#item-1" %></li>
+							<% else %>
+									<li><%= link_to "#{@unit.name}", unit_path(anchor: "item-#{@unit.id}"), id: "#item-1" %></li>
+							<% end %>
+							
+							<% @unit.sections.each do |f| %>
+								<% if anchor == "item-#{f.id}"  %>
+									<li class="active"><%= link_to "#{f.title}", unit_path(anchor: "item-#{f.id}"), id: "#item-#{f.id}" %></li>
+								<% else %>
+									<li><%= link_to "#{f.title}", unit_path(anchor: "item-#{f.id}"), id: "#item-#{f.id}" %></li>
+								<% end %>
+							<% end %>
+						
+						</ul>
+						<!-- <a href="#" class="btn btn-crimson btn-featured-left btn-block font-weight-600 uppercase margin-top-30">Call To Action 1<i class="fa fa-cog"></i></a>
+						<a href="#" class="btn btn-light btn-featured-left btn-block font-weight-600 uppercase margin-top-10">Call To Action 2<i class="fa fa-cog"></i></a> -->
+					</div> <!-- .sidebar -->
+				</div> <!-- .col-md-3 -->
+
+				<div class="col-md-9">
+					<h2 id="item-1" class="page-header"><%= @unit.name %></h2>
+					<p><%= @unit.overview %></p>
+					
+					<% @unit.sections.each do |f| %>
+						<h2 id="item-<%= f.id %>" class="page-header"><%= f.title %></h2>
+						<p><%= f.content %></p>
+					<% end %>
+			</div>           
+		</div>
+</section>

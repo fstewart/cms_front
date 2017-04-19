@@ -1,0 +1,25 @@
+<% section.accordions.each_with_index do |accordion, index| %>
+
+                        <% indexplusone = index + 1  %>
+
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= indexplusone %>" class="<%= 'collapsed' if index != 0 %>">
+                                  <%= accordion.title %>
+                                  <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                  <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                </a>
+                              </h4>
+                            </div> <!-- .panel-heading -->
+
+                            <div id="collapse-<%= indexplusone %>" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                <p><%= raw(accordion.desc) %></p>
+                              </div> <!-- .panel-body -->
+                            </div> <!-- #collapse-1 -->
+                          </div> <!-- .panel -->
+                        </div>
+<% end %>

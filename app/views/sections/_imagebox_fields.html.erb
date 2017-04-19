@@ -1,0 +1,52 @@
+<div class="row">
+<div class="nested-fields well well-compact">
+  <h4 style="text-align:center;">Image Box Details</h4>
+  <div class="col-md-6">
+    <div class="form-inline" style="width: 50%;margin: 0 auto;">
+      <p><%= f.input :priority, :label => 'Order'  %></p>
+      <img id="img_prev" width=263 height=150 src="#" alt="your image" class="img-thumbnail hidden"/> <br/>
+
+      <p><%= f.file_field :image %></p>
+      <p><%= f.hidden_field :image_cache %></p>
+      <p><%= f.input :title, input_html: {class: "input"} %></p>
+      <p><%= f.input :desc, input_html: {id: "desc-id", class: "input"} %></p>
+      <p><%= f.input :url, input_html: {id: "url-id"}, :label => 'URL (Optional)'  %></p>
+      <p><%= f.input :target,
+                     :as => :grouped_select,
+                     :collection => { ['_self', '_blank'] => 'target' },
+                     :group_method => :first,
+                     :group_label_method => :last, input_html: {id: "target-id"} %></p>
+
+      <%= link_to_remove_association f, data: {:confirm => 'do you really want to do this?'}, class: 'btn btn-default btn-xs' do %>
+          <p style="margin-left:auto; margin-right:auto;">Remove Image Box Item</p>
+      <% end %>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+
+    <div style="width: 50%;margin: 0 auto;">
+      <h3>Example:</h3>
+      <div class="content-box box-img bg-light text-center">
+        <%# image_tag f.object.imageboxes.first.image.display.url, :class => "img-responsive" %>
+        <img class="img-responsive" src="/assets/img/bryantdenny01_800.jpg">
+        <div class="box-body">
+          <h3><a href="#"><span class="title-id">Image Box Title</span></a></h3>
+          <p><span class="desc-id">Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet.</span></p>
+          <a href="#" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+        </div> <!-- .box-body -->
+      </div> <!-- .box-img -->
+    </div> <!-- .col-md-3 -->
+
+  </div>
+
+</div>
+</div>
+
+<script>
+  $('.input').keyup(function(){
+    var $this = $(this);
+    $('.'+$this.attr('id')+'').html($this.val());
+  });
+</script>

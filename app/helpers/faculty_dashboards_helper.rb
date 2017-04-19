@@ -1,0 +1,2 @@
+module FacultyDashboardsHelper
+end

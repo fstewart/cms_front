@@ -1,0 +1,2 @@
+module EditorDashboardsHelper
+end

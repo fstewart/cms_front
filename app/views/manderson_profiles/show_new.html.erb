@@ -1,0 +1,121 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <p id="notice"><%= notice %></p>
+
+        <div class="content-box box-img bg-light">
+          <div class="row no-gutter">
+            <div class="col-md-3">
+              <% if @manderson_profile.manderson_profile_photo? %>
+                  <%= image_tag @manderson_profile.manderson_profile_photo.resized, class:'img-responsive', size: '285x285' %>
+              <% else %>
+                  <%= image_tag('ua-square-logo.png', class: 'ua-square-logo pull-left img-responsive', size: '65x65', alt: 'The University of Alabama') %>
+              <% end %>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-9">
+              <div class="box-body">
+                <h3 class="margin-bottom-5">
+                  <%= @manderson_profile.first_name %>  <%= @manderson_profile.last_name %> —
+                  <small>
+                    <%= @manderson_profile.grad_class %> / <%= @manderson_profile.candidate_type %>
+                  </small>
+                </h3>
+
+                <div class="divider-light faded-right"></div>
+
+                <p>
+                  <strong>Undergraduate School:</strong> <%= @manderson_profile.ug_school %>
+                </p>
+                <p>
+                  <strong>Undergraduate Degree:</strong> <%= @manderson_profile.ug_degree %>
+                </p>
+                <p>
+                  <strong>Undergraduate Year:</strong>  <%= @manderson_profile.ug_year %>
+                </p>
+
+                <!-- <ul class="list-inline icon-social icon-social-bg icon-primary rounded no-side-spacing">
+                  <li>
+                    <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Instagram"><i class="fa fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                  </li>
+                </ul> -->
+
+                <a href="tel:<%= @manderson_profile.phone %>" class="btn btn-transparent-v2"><i class="fa fa-phone margin-right-10"></i> Call</a>
+                <a href="mailto:<%= @manderson_profile.email %>" class="btn btn-transparent-v2"><i class="fa fa-envelope margin-right-10"></i> Email</a>
+                <% if @manderson_profile.manderson_profile_cv? %>
+                    <%= link_to @manderson_profile.manderson_profile_cv.file.url, class: "btn btn-transparent-v2" do %>
+                        <i class="fa fa-envelope margin-right-10"></i>Resume
+                    <% end %>
+                <% else %>
+
+                <% end %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>Work Experience</h3>
+                <%= @manderson_profile.work_experience %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>Activities & Honors</h3>
+
+                <%= @manderson_profile.activities_honors %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>Internship Information</h3>
+
+                <%= @manderson_profile.internship %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>Computer Skills</h3>
+
+                <%= @manderson_profile.cskills %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>What is Your Favorite Book?</h3>
+
+                <%= @manderson_profile.favorite_book %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>What is Your Favorite Quote?</h3>
+
+                <%= @manderson_profile.favorite_quote %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>Describe Yourself in 3 words.</h3>
+
+                <%= @manderson_profile.three_word_description %>
+
+                <div class="divider-light faded-right"></div>
+
+                <h3>What is something unique about you?</h3>
+
+                <%= @manderson_profile.something_unique %>
+              </div> <!-- .box-body -->
+            </div> <!-- .col-md-9 -->
+          </div> <!-- .row -->
+        </div> <!-- .content-box -->
+
+      </div>
+    </div>
+  </div>
+</section>

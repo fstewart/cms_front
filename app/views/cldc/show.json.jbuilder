@@ -1,0 +1,1 @@
+json.partial! "cldc_teams/cldc_team", cldc_team: @cldc_team

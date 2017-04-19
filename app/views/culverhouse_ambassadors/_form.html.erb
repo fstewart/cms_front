@@ -1,0 +1,32 @@
+<%= simple_form_for(@ca_application,:method => :post, :url => create_ca_application_path) do |f| %>
+  <%= f.error_notification %>
+          <%= f.input :name, :required => true, :label => 'Name (First, MI & Last)'  %>
+          <%= f.input :preferred_name, :label => 'Preferred Name' %>
+          <%= f.input :home_phone, :label => 'Home Phone' %>
+          <%= f.input :cwid, :label => 'CWID' %>
+          <%= f.input :email, :required => true, :label => 'Email Address' %>
+          <%= f.input :current_address, :label => 'Current Address' %>
+          <%= f.input :permanent_address, :label => 'Permanent Address' %>
+          <%= f.input :photo, :label => 'Photo' %>
+          <%= f.input :ca_cv, :label => 'Resume' %>
+          <%= f.input :classification, :label => '2017-2018 Classification' %>
+          <%= f.input :major, :label => 'Major' %>
+          <%= f.input :minor, :label => 'Minor' %>
+          <%= f.input :gpa, :label => 'GPA' %>
+          <%= f.input :graduation_date, :label => 'Expected Graduation' %>
+          <%= f.input :cell_phone, :label => 'Cell Phone' %>
+          <%= f.input :availability, :label => 'Please discuss your availability during the coming academic year (availability during the evening, weekends, and daytime) specifically including organizations with which you will be most actively involved:' %>
+          <%= f.input :aspirations, :label => 'Discuss your academic aspirations' %>
+          <%= f.input :meeting_availability, as: :radio_buttons, :label => 'Are you available for mandatory Culverhouse Ambassador meetings every Tuesday night from 6:30 – 7:30 p.m.?' %>
+          <%= f.input :strengths, :label => 'What are your strengths?' %>
+          <%= f.input :benefits, :label => 'Why do you want to be a Culverhouse Student Ambassador and what you can add to Culverhouse Ambassadors?' %>
+          <%= f.input :hours, :label => 'How many hours per week are you willing to devote to Ambassador duties?' %>
+          <%= f.input :committment, as: :radio_buttons, :label => 'Please be aware that the Culverhouse Ambassadors must work a minimum of 2 Football pre- game events located in lower level of Alston Hall on every home football game. Are you willing to commit to this?' %>
+          <%= f.input :prior_service, as: :radio_buttons, :label => 'Have you previously applied and/or served as a Culverhouse Ambassador' %>
+          <div>
+            </br>
+            <%= recaptcha_tags %>
+            </br>
+            <%= f.button :submit, 'Submit Application', :class=> "btn-crimson btn-md" %>
+          </div>
+<% end %>

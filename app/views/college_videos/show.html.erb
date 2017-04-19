@@ -1,0 +1,22 @@
+<section class="site-content">
+	<div class="container">
+		<div class="row">
+			
+			<p id="notice"><%= notice %></p>
+			
+			<p>
+			  <strong>Name:</strong>
+			  <%= @college_video.name %>
+			</p>
+			
+			<p>
+			  <strong>Url:</strong>
+			  <%= @college_video.url %>
+			</p>
+			
+			<%= link_to 'Edit', edit_college_video_path(@college_video) %> |
+			<%= link_to 'Back', college_videos_path %>
+
+		</div> <!-- .col-md-3 -->
+	</div> <!-- .row -->
+</section> <!-- .container -->

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @alumni_chapter.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @alumni_chapter.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @alumni_chapter.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @alumni_chapter.longitude %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <%= @alumni_chapter.members %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @alumni_chapter.active %>
+</p>
+
+<p>
+  <strong>Alumni event:</strong>
+  <%= @alumni_chapter.alumni_event_id %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @alumni_chapter.contact %>
+</p>
+
+<%= link_to 'Edit', edit_alumni_chapter_path(@alumni_chapter) %> |
+<%= link_to 'Back', alumni_chapters_path %>

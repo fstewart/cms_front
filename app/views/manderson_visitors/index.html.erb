@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Manderson Visitors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Reason for visit</th>
+      <th>Visitor type</th>
+      <th>Visitor cwid</th>
+      <th>Visitor name</th>
+      <th>Visitor email</th>
+      <th>Visitor grad year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manderson_visitors.each do |manderson_visitor| %>
+      <tr>
+        <td><%= manderson_visitor.user %></td>
+        <td><%= manderson_visitor.reason_for_visit %></td>
+        <td><%= manderson_visitor.visitor_type %></td>
+        <td><%= manderson_visitor.visitor_cwid %></td>
+        <td><%= manderson_visitor.visitor_name %></td>
+        <td><%= manderson_visitor.visitor_email %></td>
+        <td><%= manderson_visitor.visitor_grad_year %></td>
+        <td><%= link_to 'Show', manderson_visitor %></td>
+        <td><%= link_to 'Edit', edit_manderson_visitor_path(manderson_visitor) %></td>
+        <td><%= link_to 'Destroy', manderson_visitor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manderson visitor', new_manderson_visitor_path %>

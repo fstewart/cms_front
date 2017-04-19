@@ -1,0 +1,55 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+
+      <p id="notice"><%= notice %></p>
+
+      <h1>Culverhouse Programs</h1>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Url</th>
+          <th>Pages</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @programs.each do |program| %>
+            <tr>
+              <td></td>
+              <td><%= program.name %></td>
+              <td><%= program.slug %></td>
+              <td><% if program.pages.count > 0 %>
+                    Edit Pages
+                <% else %>
+
+                <% end %>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= link_to 'Edit', edit_program_path(program) %></td>
+              <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+
+        <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Program', new_program_path %>
+
+    </div> <!-- .col-md-3 -->
+
+  </div> <!-- .row -->
+</section> <!-- .container -->

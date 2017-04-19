@@ -1,0 +1,145 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Student Profile</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><%= link_to 'Manderson Student Directory', corporate_partners_directory_path %></li>
+          <li>Profile</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+
+
+        <div class="content-box box-img bg-light">
+          <div class="row no-gutter">
+            <div class="col-md-3">
+              <% if @student.manderson_profile_photo? %>
+                  <%= image_tag @student.manderson_profile_photo.resized, class:'img-responsive thumbnail', size: '285x285' %>
+              <% else %>
+                  <%= image_tag('/assets/no-pic.png', class: 'img-responsive', size: '263x263', alt: 'The University of Alabama') %>
+              <% end %>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-9">
+              <div class="box-body">
+                <h3 class="margin-bottom-5">
+                  <%= @student.first_name %>  <%= @student.last_name %> —
+                  <small>
+                    <%= @student.grad_class %> / <%= @student.candidate_type %>
+                  </small>
+                </h3>
+
+                <div class="divider-light faded-right"></div>
+
+                <p>
+                  <strong>Undergraduate School:</strong> <%= @student.ug_school.html_safe %>
+                </p>
+                <p>
+                  <strong>Undergraduate Degree:</strong> <%= @student.ug_degree.html_safe %>
+                </p>
+                <p>
+                  <strong>Undergraduate Year:</strong>  <%= @student.ug_year.html_safe %>
+                </p>
+
+                <!-- <ul class="list-inline icon-social icon-social-bg icon-primary rounded no-side-spacing">
+                  <li>
+                    <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Instagram"><i class="fa fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+                  </li>
+                </ul> -->
+
+                Phone:  <a href="tel:<%= @student.phone %>"><%= number_to_phone(@student.phone, area_code: true) %></a><br>
+                Email:  <a href="mailto:<%= @student.email %>"><%= @student.email %></a>
+                <% if @student.manderson_profile_cv? %>
+                    <%= link_to @student.manderson_profile_cv.file.url, class: "btn btn-transparent-v2" do %>
+                        <i class="fa fa-envelope margin-right-10"></i>Resume
+                    <% end %>
+                <% else %>
+
+                <% end %>
+
+                <div class="divider-light faded-right"></div>
+
+                <% unless @student.work_experience.blank? %>
+
+                  <h3>Work Experience</h3>
+
+                    <%= @student.work_experience.html_safe %>
+
+                  <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @student.activities_honors.blank? %>
+
+                  <h3>Activities & Honors</h3>
+
+                    <%= @student.activities_honors.html_safe %>
+
+                  <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @student.volunteerism.blank? %>
+
+                    <h3>Volunteerism</h3>
+
+                    <%= @student.volunteerism.html_safe %>
+
+                    <div class="divider-light faded-right"></div>
+
+
+                <% end %>
+
+                <% unless @student.internship.blank? %>
+
+                  <h3>Internship Information</h3>
+
+                    <%= @student.internship.html_safe %>
+
+                  <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @student.cskills.blank? %>
+
+                  <h3>Computer Skills</h3>
+
+                    <%= @student.cskills.html_safe %>
+
+                  <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+              </div> <!-- .box-body -->
+            </div> <!-- .col-md-9 -->
+          </div> <!-- .row -->
+        </div> <!-- .content-box -->
+
+
+      </div>
+    </div>
+  </div>
+</section>

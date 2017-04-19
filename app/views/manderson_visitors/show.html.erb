@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @manderson_visitor.user.fullname %>
+</p>
+
+<p>
+  <strong>Reason for visit:</strong>
+  <%= @manderson_visitor.reason_for_visit %>
+</p>
+
+<p>
+  <strong>Visitor type:</strong>
+  <%= @manderson_visitor.visitor_type %>
+</p>
+
+<p>
+  <strong>Visitor cwid:</strong>
+  <%= @manderson_visitor.visitor_cwid %>
+</p>
+
+<p>
+  <strong>Visitor name:</strong>
+  <%= @manderson_visitor.visitor_name %>
+</p>
+
+<p>
+  <strong>Visitor email:</strong>
+  <%= @manderson_visitor.visitor_email %>
+</p>
+
+<p>
+  <strong>Visitor grad year:</strong>
+  <%= @manderson_visitor.visitor_grad_year %>
+</p>
+
+<%= link_to 'Edit', edit_manderson_visitor_path(@manderson_visitor) %> |
+<%= link_to 'Back', manderson_visitors_path %>

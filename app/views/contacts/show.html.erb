@@ -1,0 +1,57 @@
+<section class="site-content">
+	<div class="container">
+		<div class="row">
+
+			<p id="notice"><%= notice %></p>
+			
+			<p>
+			  <strong>Unit type:</strong>
+			  <%= @contact.unit_type %>
+			</p>
+			
+			<p>
+			  <strong>Name:</strong>
+			  <%= @contact.name %>
+			</p>
+			
+			<p>
+			  <strong>Title:</strong>
+			  <%= @contact.title %>
+			</p>
+			
+			<p>
+			  <strong>Address 1:</strong>
+			  <%= @contact.address_1 %>
+			</p>
+			
+			<p>
+			  <strong>Address2:</strong>
+			  <%= @contact.address2 %>
+			</p>
+			
+			<p>
+			  <strong>Address3:</strong>
+			  <%= @contact.address3 %>
+			</p>
+			
+			<p>
+			  <strong>Phone:</strong>
+			  <%= @contact.phone %>
+			</p>
+			
+			<p>
+			  <strong>Email:</strong>
+			  <%= @contact.email %>
+			</p>
+			
+			<p>
+			  <strong>Status:</strong>
+			  <%= @contact.status %>
+			</p>
+			
+			<%= link_to 'Edit', edit_contact_path(@contact) %> |
+			<%= link_to 'Back', contacts_path %>
+
+		</div> <!-- .col-md-3 -->
+	</div> <!-- .row -->
+</section> <!-- .container -->

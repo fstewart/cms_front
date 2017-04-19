@@ -1,0 +1,57 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.video-loop {
+  position: relative;
+  box-sizing: border-box;
+  z-index:1000;
+
+}
+
+.video-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 600px;
+  max-height: 600px;
+}
+
+.video-time-left {
+  top: 180px;
+  position: absolute;
+  left: 20%;
+  right: 60%;
+  text-align: left;
+  width: 100px;
+}
+
+.video-time-right {
+  top: 180px;
+  position: absolute;
+  left: 60%;
+  right: 20%;
+  text-align: right;
+  width: 100px;
+}
+
+.video-caption-inner {
+  background: rgba(0,0,0,0.55);
+  padding: 18px 22px 20px 22px;
+  margin: 0;
+  width: auto;
+  display: inline-block;
+  border-radius: 4px;
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  text-align: center;
+
+}
+
+.embed-responsive {
+  min-height: 600px !important;
+  max-height: 800px !important;
+}

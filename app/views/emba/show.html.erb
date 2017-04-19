@@ -1,0 +1,87 @@
+<section class="site-section-top">
+
+
+  <% if @emba.header_image? %>
+      <div class="bg-img" style="background-image: url('<%= image_url('@emba.header_image.url') %> ');">
+  <% else %>
+      <div class="bg-img" style="background-image: url('<%= image_url('img/presidentsmansion01_1920.jpg') %> ');">
+  <% end %>
+
+  <div class="container site-content">
+    <div class="site-heading-bg-primary">
+      <h1><%= @emba.name %></h1>
+    </div> <!-- .site-heading-bg -->
+  </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+<section class="site-content">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+
+            <% @emba.pages.each_with_index do |p, index| %>
+                <% indexplusone = index + 1 %>
+                <% if index == 0 %>
+                    <%= link_to_in_li "#{p.title}", "#item-#{indexplusone}" %>
+                <% else %>
+                    <%= link_to_in_li "#{p.title}", "#item-#{indexplusone}" %>
+                <% end %>
+            <% end %>
+          </ul>
+
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+
+
+      <div class="col-md-9">
+        <% @emba.pages.each_with_index do |page, index| %>
+            <% indexplusone = index + 1 %>
+            <% if index == 0 %>
+                <h2 id="item-<%= indexplusone %>" class="page-header"><%= page.title %></h2>
+                <%= page.desc.html_safe %>
+            <% else %>
+                <h2 id="item-<%= indexplusone %>" class="page-header"><%= page.title %></h2>
+                <%= page.desc.html_safe %>
+            <% end %>
+        <% end %>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h2>Contact the Department</h2>
+        <p>
+          <strong>Phone:</strong>
+          <%= @emba.phone %>
+        </p>
+
+        <p>
+          <strong>Fax:</strong>
+          <%= @emba.fax %>
+        </p>
+
+        <p>
+          <strong>Office:</strong>
+          <%= @emba.office %>
+        </p>
+
+        <p>
+          <strong>Building:</strong>
+          <%= @emba.building.name %>
+        </p>
+
+        <p>
+          <strong>Po box:</strong>
+          <%= @emba.po_box %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

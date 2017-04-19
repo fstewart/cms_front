@@ -1,0 +1,52 @@
+<textarea id="ckContent"></textarea>
+<select class="dynamic_fields" onchange="insert_dynamic_field(this)">
+	<option value="" disabled selected>Insert Dynamic Field</option>
+</select>
+<input type="button" value="Save Changes" id="saveChanges" onClick="save()" />
+<input type="button" value="Cancel" id="cancel" onClick="window.close()" />
+
+<script type="text/javascript" src="http://localhost/ckeditor/ckeditor/ckeditor.js"></script>
+<!-- <script type="text/javascript" src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script> -->
+<script type="text/javascript">
+// configure your editor here and pass it to "editor" variable
+var editor = CKEDITOR.replace('ckContent', {height:'75%', toolbar:'Solo'/*, contentsCss:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'*/});
+
+// do not alter codes below
+var param = Array();
+param = queryString();
+document.getElementById('ckContent').innerHTML = window.opener.CKEDITOR.dialog.getCurrent()._.element.$.getElementsByClassName('mjFormBuilder_body')[0].value;
+function save(){
+	window.opener.CKEDITOR.dialog.getCurrent()._.element.$.getElementsByClassName('mjFormBuilder_body')[0].value = editor.getData();
+	window.close();
+};
+
+function queryString(){
+	var qs = (location.search).replace('?', '').split('&');
+	var par = Array();
+	for(var i in qs){
+		var tmp = qs[i].split('=');
+		par[tmp[0]] = tmp[1];
+	}
+	return par;
+};
+
+function insert_dynamic_field(el){
+	editor._.editable.$.lastChild.innerHTML += el.value;
+	el.children[0].selected = true;
+};
+
+var dynamic_fields = window.opener.CKEDITOR.dialog.getCurrent()._.element.$.getElementsByClassName('mjFormBuilder_form_title')[0].parentNode.parentNode.parentNode.parentNode.parentNode.children[0].children;
+var opts = '';
+for(var i = 0; i < dynamic_fields.length; i ++){
+	opts += '<option value="{{' + dynamic_fields[i].getAttribute('data-value') + '}}">' + dynamic_fields[i].innerHTML + '</option>';
+}
+document.getElementsByClassName('dynamic_fields')[0].innerHTML += opts;
+</script>
+<style type="text/css">
+body {text-align:right;}
+input {outline:none; padding:6px 9px; margin:2px; cursor:pointer; font-family:Arial, Helvetica, sans-serif; -webkit-border-radius:3px; border-radius:3px; -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.15); box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.15); background-color:#e0e0e0; color:#666; text-shadow:none; border:1px solid #ababab;}
+#saveChanges {background-color:#63a730; color:#fff; border:1px solid #62a62f; background-image:-webkit-linear-gradient(#7ebe4c,#63a730); background-image:linear-gradient(#7ebe4c,#63a730);}
+#cancel {background-image:-webkit-linear-gradient(#e8e5e5,#e0e0e0); background-image:linear-gradient(#e8e5e5,#e0e0e0);}
+input:active {-webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.2); box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.2)}
+.dynamic_fields {padding:.3em .5em; float:left; margin-top:.3em; cursor:pointer;}
+</style>

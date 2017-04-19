@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lift_location.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @lift_location.address %>
+</p>
+
+<p>
+  <strong>Map url:</strong>
+  <%= @lift_location.map_url %>
+</p>
+
+<%= link_to 'Edit', edit_lift_location_path(@lift_location) %> |
+<%= link_to 'Back', lift_locations_path %>

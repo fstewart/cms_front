@@ -1,0 +1,105 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <p id="notice"><%= notice %></p>
+
+        <h2>Users</h2>
+        
+        <div class="row">
+		
+		Departments: <%= link_to 'All', users_path %> | <%= link_to 'Deans Office', users_path(:departments => 1) %> | <%= link_to 'Accounting', users_path(:departments => 2) %> | <%= link_to 'EFLS', users_path(:departments => 3) %> | <%= link_to 'ISM', users_path(:departments => 5) %> | <%= link_to 'Management', users_path(:departments => 6) %> | <%= link_to 'Marketing', users_path(:departments => 7) %> | <%= link_to 'Tech Group', users_path(:departments => 22) %> | <%= link_to 'Student Services', users_path(:departments => 21) %> | <%= link_to 'Manderson', users_path(:departments => 9) %>
+      
+        </div>
+      
+      <hr>
+	  
+	  <div class="row">
+        <table class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Department(s)</th>
+            <th>Title</th>
+            <!-- <th>Phone</th> -->
+            <th>Email</th>
+            <!-- <th>Address</th> -->
+            <th>Photo</th>
+            <th>Elevator</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th colspan="2"></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @users.each do |profile| %>
+              <tr>
+                <td><%= profile.username %></td>
+                <td><%= profile.fullname %></td>
+                <td>
+	                <ul>
+		                <% profile.departments.each do |d| %>
+	                		<li><%= d.name %></li>
+						<% end %>
+	                </ul>
+                </td>
+                <td><%= profile.abbreviated_title %></td>
+                <!-- <td><%= number_to_phone(profile.phone, area_code: true) %></td> -->
+                <td><%= profile.email %></td>
+                <!-- <td><%= profile.po_box %></td> -->
+                <td>
+                  <% if profile.profile_photo? %>
+                      <%= image_tag profile.profile_photo.thumb.url %>
+                  <% else %>
+                      NA
+                  <% end %>
+                </td>
+                <td>
+                  <% if profile.show_elevator == false %>
+                      <p style="color:red;">No</p>
+                  <% else %>
+                      <p style="color:green;">Yes</p>
+                  <% end %>
+                </td>
+                <td>
+	                <%= profile.employee_type %>
+                </td>
+                <td>
+                  <% if profile.status == false %>
+                      <p style="color:red;">Inactive</p>
+                  <% else %>
+                      <p style="color:green;">Active</p>
+                  <% end %>
+                </td>
+                <td><%= link_to 'Edit', edit_user_path(profile) %></td>
+                <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        
+        <%= will_paginate @users %>
+
+        <hr>
+
+        <br><br>
+        <div class="expertises-cloud glassy-bg">
+          <h4>Expert Areas Cloud</h4>
+          <% expertise_cloud Expertise.counts, %w{css1 css2 css3 css4} do |expertise, css_class| %>
+              <%= link_to expertise.name, expertise_path(expertise.name), class: css_class %>
+          <% end %>
+        </div>
+
+        <br>
+
+        <%= link_to 'New Profile', new_user_path %>
+
+      </div>
+
+      </div> 
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

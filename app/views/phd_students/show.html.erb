@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @phd_student.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @phd_student.bio %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @phd_student.email %>
+</p>
+
+<p>
+  <strong>Descriptor:</strong>
+  <%= @phd_student.descriptor %>
+</p>
+
+<p>
+  <strong>Honors:</strong>
+  <%= @phd_student.honors %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @phd_student.photo %>
+</p>
+
+<p>
+  <strong>Phd:</strong>
+  <%= @phd_student.phd_id %>
+</p>
+
+<p>
+  <strong>Cv:</strong>
+  <%= @phd_student.cv %>
+</p>
+
+<p>
+  <strong>Jmpaper:</strong>
+  <%= @phd_student.jmpaper %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @phd_student.status %>
+</p>
+
+<p>
+  <strong>Pubfile:</strong>
+  <%= @phd_student.pubfile %>
+</p>
+
+<p>
+  <strong>Cvfile:</strong>
+  <%= @phd_student.cvfile %>
+</p>
+
+<%= link_to 'Edit', edit_phd_student_path(@phd_student) %> |
+<%= link_to 'Back', phd_students_path %>

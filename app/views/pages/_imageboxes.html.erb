@@ -1,0 +1,36 @@
+<style>
+.ctr {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<div class="row">
+  <div class="container">
+  <% section.imageboxes.each do |i| %>
+
+      <div class="col-md-3 col-sm-6 col-xs-6 margin-bottom-15">
+        <div class="content-box box-img bg-light no-margin text-center featured-news box-clickable">
+
+         <% if i.image.present? %>
+            <%= image_tag i.image.display.url, :class => "img-responsive thumbnail ctr", :align => "middle" %>
+          <% else %>
+              <img class="img-responsive thumbnail ctr" src="/assets/img/librarystudent01_800.jpg">
+          <% end %>
+          <div class="box-body">
+            <% if i.url.present? %>
+              <h4><%= link_to i.title, "#{i.url}" %></h4>
+            <% else %>
+              <h4><%= i.title %></h4>
+            <% end %>
+            
+            <p><%= i.desc %></p>
+            <%= link_to "Read More", "#{i.url}", :class => "btn btn-default btn-sm" if i.url.present? %>
+            <!-- <a href="<%= i.url %>" target="<%= i.target %>" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a> -->
+          </div> <!-- .box-body -->
+        </div> <!-- .box-img -->
+      </div>
+
+  <% end %>
+    </div>
+</div>

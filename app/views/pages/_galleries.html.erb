@@ -1,0 +1,21 @@
+<div class="row" style="margin-bottom: 30px;">
+	<div class="image-set">
+    <% if section.galleries.count.between?(0, 4) %>
+      <% gallery_class = 'col-sm-6' %>
+    <% elsif section.galleries.count.between?(5, 8) %>
+      <% gallery_class = 'col-sm-4' %>
+    <% elsif section.galleries.count.between?(9, 12) %>
+        <% gallery_class = 'col-sm-3' %>
+    <% else %>
+        <% gallery_class = 'col-sm-2' %>
+    <% end %>
+
+	    <% section.galleries.sorted.each do |g| %>
+	    	<div>
+	        <%= link_to g.image.gallery.url, :class => gallery_class, data: { lightbox: "#{g.id}", title: "#{g.title}" } do %>
+	   				<%= image_tag g.image.gallery.url, :class => "img-responsive img-fluid" %>
+			<% end %>
+	        </div> <!-- .col-md-4 -->
+	    <% end %>
+	</div>
+</div>

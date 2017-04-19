@@ -1,0 +1,44 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Culverhouse News</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to "Culverhouse News", news_path %></li>
+            <li><%= link_to "Culverhouse Events", events_path %></li>
+            <li><%= link_to "UA News", "http://ua.edu/news", target: "_blank" %></li>
+          </ul>
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+      <div class="col-md-9">
+
+        <h1><%= @article.title %></h1>
+        <ul class="list-inline font-weight-600">
+          <li>
+            <i class="fa fa-calendar"></i>
+            <%= @article.news_date.strftime("%B %d, %Y") %>
+          </li>
+        </ul>
+
+        <article class="news">
+          <%= image_tag @article.photo.url, :class => "attachment-ua-theme-md size-ua-theme-md wp-post-image img-responsive", :size => '250x250' if @article.photo.present? %>
+          <%= @article.body.html_safe %>
+        </article>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

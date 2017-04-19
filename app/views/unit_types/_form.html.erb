@@ -1,0 +1,12 @@
+<%= simple_form_for(@unit_type, html: { class: 'form-horizontal' }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :url %>
+      </div>
+
+    <div class="form-actions" style="margin-left:45px;margin-bottom:45px;">
+      <%= f.button :submit %>
+    </div>
+<% end %>

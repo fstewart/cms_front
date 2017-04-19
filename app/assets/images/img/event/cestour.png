@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Culverhouse College of Commerce</title>
+  <meta name="description" content="The Culverhouse College of Commerce">
+  <link rel="stylesheet" media="all" href="/assets/application-b67c0b3212776f7e9b96a4fd750c064445809f23db8507936af5f966592566e1.css" data-turbolinks-track="true" />
+  
+
+  <script src="/assets/application-bf06fd01b9eea0d74f2130b2859e69cca454fcda900f98eaa64a8533aa1f0649.js" data-turbolinks-track="true"></script>
+  
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="A3ZZ16yMWkAVJANZbowJtt6us87tY91/xTKqyXuZRy0pTG7WDHzwJ4ue/MCWEn/tuagM/Dc4SV6rB6yCtKQN3Q==" />
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,300,600,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192" />
+  <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="/assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#990000" />
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#990000" />
+  <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-top header-light hidden-xs hidden-sm">
+			<div class="top-search-container top-tools-container">
+	        	<div class="container">
+		        	<div class="row">
+			        	<nav>
+                  <div class="col-md-6">
+                    <ul class="nav nav-justified"><li link_html="{:target=&gt;&quot;_blank&quot;}" id="mybama"><a href="http://mybama.ua.edu"><i class="fa fa-list"></i>MyBama</a></li><li link_html="{:target=&gt;&quot;_blank&quot;}" id="mail"><a href="http://mail.cba.ua.edu"><i class="fa fa-envelope"></i>Email</a></li></ul>
+                  </div>
+                  <div class="col-md-6" style="margin-top:24px;">
+                    <form action="">
+                      <label class="sr-only" for="search-this-site">
+                        Search This Site
+                      </label>
+
+                      <div class="input-group">
+                        <input id="search-this-site" type="text" class="form-control" autocomplete="off" placeholder="Search This Site" name="q" />
+
+                        <input type="hidden" name="_action" value="submit" />
+
+                        <span class="input-group-btn">
+                          <button class="btn btn-light" type="submit">Go</button>
+                        </span>
+                      </div> <!-- .input-group -->
+                    </form>
+                  </div>
+                </nav>
+		        	</div> <!-- .row -->
+	        	</div> <!-- .container -->
+            </div> <!-- .top-search-container -->
+
+        	<div class="container">
+	        	<div class="row">
+		        	<div class="col-md-8">
+			        	<nav class="navbar-nav">
+                  		
+                  		<ul class="nav navbar-nav dropdown mega-menu">
+	                  		<li><a href="/students">Undergrad</a></li>
+	                  		<li><a href="/graduate-programs">Grad</a></li>
+	                  		<li><a href="/alumni">Alumni</a></li>
+	                  		<!--     <li><a href="/corporate-partners">Corporate Partners</a></li> -->
+		                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Faculty & Staff</a>
+		                    	<ul class="dropdown-menu">
+			                    	<li>
+                              <div>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <ul class="list-unstyled" style="padding-bottom: 15px;padding-top: 15px;">
+                                    <li><a href="/directory" style="font-weight: 400;">Directory</a></li>
+                                    <!-- <li><a href="/faculty-and-staff-resources" style="font-weight: 400;">Resources</a></li> -->
+                                    </ul>
+                                  </div> <!-- .col-md-12 -->
+                                </div> <!-- .row -->
+                              </div> <!-- .mega-menu-content -->
+                            </li>
+		                    	</ul>
+		                    </li>	                  		
+		                  </ul>
+		                </nav>
+				        	</div> <!-- .col-md-6 -->
+
+		        	<div class="col-md-4">
+			        	<nav class="navbar-nav pull-right">
+		                  <ul class="nav navbar-nav pull-right dropdown mega-menu">
+		                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect</a>
+		                    	<ul class="dropdown-menu">
+  		                    		<li>
+								        <div>
+								          <div class="row">
+								            <div class="col-md-12">
+								              <ul class="list-unstyled" style="padding-bottom: 15px;padding-top: 15px;">
+                                <li><a href="/social-media" style="font-weight: 400;">Social Media</a></li>
+                                <!-- <li><a href="/contacts" style="font-weight: 400;">Contacts</a></li> -->
+								              </ul>
+								            </div> <!-- .col-md-12 -->
+								          </div> <!-- .row -->
+								        </div> <!-- .mega-menu-content -->
+								    </li>	
+		                    	</ul>
+		                    </li>	                  		
+		                    <!-- <li><a href="/investing-in-the-college">Invest</a></li> -->
+		                    <!-- <li><a href="/experts">Experts Guide</a></li> -->
+		                    <li><a href="/search"><i class="glyphicon glyphicon-search"></i></a></li>
+		                    <li class="top-search">
+		                      <a href="#" title="Tools">
+		                        <span class="sr-only">Tools</span>
+		                        <i class="fa fa-th fa-lg search-btn"></i>
+		                      </a>
+		                    </li>
+		                  </ul>
+			        	</nav>
+		        	</div> <!-- .col-md-6 -->
+	        	</div> <!-- .row -->
+        	</div> <!-- .container -->
+		</div> <!-- .header-top -->
+
+		<div class="sticky-header-container">
+			<div id="sticky-header" class="header-main header-primary navbar mega-menu" data-spy="affix" data-offset-top="50">
+				<div class="container">
+					<div class="navbar-container">
+						<div class="navbar-header">
+							<a class="navbar-brand" title="The University of Alabama" rel="home" href="/">
+							  <img class="pull-left img-responsive" alt="The University of Alabama" src="/assets/img/home.png" width="270" height="65" />
+                <span class="sr-only">The University of Alabama</span>
+</a>
+							<a href="#" class="btn btn-default nav-toggle visible-xs visible-sm">
+								<span class="sr-only">Toggle navigation</span>
+		                        <i class="fa fa-bars"></i>
+              </a>
+						</div> <!-- .navbar-header -->
+
+						<nav class="navbar-right">
+              <ul class="nav navbar-nav main-nav">
+  <li class="visible-xs visible-sm">
+    <a href="#" class="nav-toggle text-center">
+      <i class="fa fa-times"></i>
+    </a>
+  </li>
+
+  <li class="dropdown mega-menu">
+    <a href="/about/" data-toggle="dropdown" class="dropdown-toggle">
+      About
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+	            <li><a href="/about/mission">Mission & Vision</a></li>
+	            <!-- <li><a href="/about/119">Vision</a></li> -->
+	            <li><a href="/about/strategic-plan">Strategic Plan</a></li>
+                <li><a href="/about/fast-facts">Fast Facts</a></li>
+              <li><a href="about/ethics/">Ethics</a></li>
+              </ul>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="/about/history">History</a></li>
+                <li><a href="/about/campus">Campus</a></li>
+                <li><a href="/about/dean-palan">Dean Palan</a></li>
+                <li><a href="/about/accreditation">Accreditation</a></li>
+                
+                <!-- Recommended by Edith -->
+                
+              </ul>
+            </div>
+
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown mega-menu">
+    <a href="/academics/" data-toggle="dropdown" class="dropdown-toggle">
+      Academics
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-unstyled">
+                <li><b>Departments</b></li>
+
+
+                <li class="dropdown-submenu">
+                  <a tabindex="0" href="/academics/departments/accountancy/">Accountancy</a>
+              <!-- dropdown start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a tabindex="0" href="/academics/departments/accountancy/#item-1">Majors</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/accountancy/#item-2">Specializations</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/accountancy/#item-3">Graduate Programs</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/accountancy/#item-4">Contacts</a>
+                    </li>
+                  </ul>
+                </li>
+              <!-- dropdown end -->
+
+                <li class="dropdown-submenu">
+                  <a href="/academics/departments/economics-finance-legal-studies/">Economics, Finance, & Legal Studies</a>
+                  <!-- dropdown start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a tabindex="0" href="/academics/departments/economics-finance-legal-studies/#item-1">Majors</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/economics-finance-legal-studies/#item-2">Specializations</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/economics-finance-legal-studies/#item-3">Graduate Programs</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/economics-finance-legal-studies/#item-4">Contacts</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- dropdown end -->
+
+                <li class="dropdown-submenu">
+                  <a href="/academics/departments/information-systems-statistics-and-management-science/">Information Systems, Statistics and Management Science</a>
+                  <!-- dropdown start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a tabindex="0" href="/academics/departments/information-systems-statistics-and-management-science/#item-1">Majors</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/information-systems-statistics-and-management-science/#item-2">Specializations</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/information-systems-statistics-and-management-science/#item-3">Graduate Programs</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/information-systems-statistics-and-management-science/#item-4">Contacts</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- dropdown end -->
+
+                <li class="dropdown-submenu">
+                  <a href="/academics/departments/management/">Management</a>
+                  <!-- dropdown start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a tabindex="0" href="/academics/departments/management/#item-1">Majors</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/management/#item-2">Specializations</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/management/#item-3">Graduate Programs</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/management/#item-4">Contacts</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- dropdown end -->
+
+                <li class="dropdown-submenu">
+                  <a href="/academics/departments/marketing/">Marketing</a>
+                  <!-- dropdown start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a tabindex="0" href="/academics/departments/marketing/#item-1">Majors</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/marketing/#item-2">Specializations</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/marketing/#item-3">Graduate Programs</a>
+                    </li>
+                    <li>
+                      <a tabindex="0" href="/academics/departments/marketing/#item-4">Contacts</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- dropdown end -->
+
+              </ul>
+            </div> <!-- .col-md-4 -->
+
+            <!-- <div class="col-md-4">
+              <ul class="list-unstyled">
+                <li><b>Majors</b></li>
+                <li><a href="#">Accountancy</a></li>
+                <li><a href="#">Economics</a></li>
+                <li><a href="#">Finance</a></li>
+                <li><a href="#">Management Information Systems</a></li>
+                <li><a href="#">Operations Management</a></li>
+                <li><a href="#">General Business</a></li>
+                <li><a href="#">Management</a></li>
+                <li><a href="#">Marketing</a></li>
+              </ul>
+            </div> <!-- .col-md-4 -->
+
+            <!-- <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><b>Programs</b></li>
+                <li><a href="#">Ethics Program</a></li>
+                <li><a href="#">Sales</a></li>
+                <li><a href="#">Culverhouse Connections</a></li>
+                <li><a href="#">Faculty Scholars</a></li>
+                <li><a href="#">Global Business & Study Abroad</a></li>
+                <li><a href="#">Business Honors Program</a></li>
+                <li><a href="#">Culverhouse LIFT</a></li>
+              </ul>
+            </div> <!-- .col-md-4 -->
+
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown mega-menu-full">
+    <a href="/graduate-programs/" data-toggle="dropdown" class="dropdown-toggle">
+      Graduate Programs
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+	        <div class="col-md-3">
+              <ul class="list-unstyled">
+	            <li><b>MBA Programs</b></li>
+                <li><a href="/graduate-programs/emba/">EMBA</a></li>
+                <li><a href="/graduate-programs/mba/">MBA</a></li>
+                <li><a href="/graduate-programs/stemmba/">STEM Path to the MBA</a></li>
+                <li><a href="/graduate-programs/createmba/">CREATE Path to the MBA</a></li>
+              </ul>
+            </div> <!-- .col-md-3 -->  
+	          
+            <div class="col-md-3">
+              <ul class="list-unstyled">
+                <li><b>Masters</b></li>
+                <li><a href="/graduate-programs/master-of-science-in-applied-statistics/">Master of Science in Applied Statistics</a></li>
+                <li><a href="/graduate-programs/master-of-tax-accounting/">Master of Tax Accounting</a></li>
+                <li><a href="/graduate-programs/master-of-accountancy/">Master of Accountancy</a></li>
+                <li><a href="/graduate-programs/master-of-arts-in-economics/">Master of Arts in Economics</a></li>
+                <li><a href="/graduate-programs/master-of-science-in-finance/">Master of Science in Finance</a></li>
+                <li><a href="/graduate-programs/master-of-science-in-marketing/">Master of Science in Marketing</a></li>
+                <li><a href="/graduate-programs/master-of-science-in-operations-management/">Master of Science in Operations Management</a></li>
+              </ul>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-3">
+              <ul class="list-unstyled">
+                <li><b>Online Masters</b></li>
+                <li><a href="/graduate-programs/online-master-of-arts-in-management/">Master of Arts in Management</a></li>
+                <li><a href="/graduate-programs/online-masters-of-science-in-operations-management/">Masters of Science in Operations Management</a></li>
+                <li><a href="/graduate-programs/online-master-of-science-in-marketing-with-analytics-specialization/">Master of Science in Marketing with Analytics Specialization</a></li>
+              </ul>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-3">
+              <ul class="list-unstyled">
+                <li><b>PhD</b></li>
+                <li><a href="/graduate-programs/phd-finance/">Finance</a></li>
+                <li><a href="/graduate-programs/phd-economics/">Economics</a></li>
+                <li><a href="/graduate-programs/phd-accounting/">Accounting</a></li>
+                <li><a href="/graduate-programs/phd-applied-statistics/">Applied Statistics</a></li>
+                <li><a href="/graduate-programs/phd-marketing/">Marketing</a></li>
+                <li><a href="/graduate-programs/phd-management/">Management</a></li>
+                <li><a href="/graduate-programs/phd-operations-management/">Operations Management</a></li>
+              </ul>
+            </div> <!-- .col-md-3 -->
+
+            
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown mega-menu">
+    <a aria-expanded="false" href="/news/" data-toggle="dropdown" class="dropdown-toggle">
+      News
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-unstyled">
+                <li><a href="/culverhouse-events/">Events</a></li>
+              </ul>
+            </div> <!-- .col-md-12 -->
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown mega-menu">
+    <a href="/students/" data-toggle="dropdown" class="dropdown-toggle">
+      Students
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="/students/scholarships">Scholarships</a></li>
+                <li><a href="/students#item-1">Career Center</a></li>
+                <li><a href="/students#item-2">Advising</a></li>
+                <li><a href="/students#item-3">Get Involved</a></li>
+              </ul>
+            </div> <!-- .col-md-6 -->
+
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="/students#item-4">Transfers</a></li>
+                <li><a href="/students#item-5">Graduation</a></li>
+                <li><a href="/students#item-6">Education Abroad</a></li>
+                <li><a href="/students/technology">Technology</a></li>
+              </ul>
+            </div> <!-- .col-md-6 -->
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown mega-menu-full">
+    <a href="/research-and-outreach-centers/" data-toggle="dropdown" class="dropdown-toggle">
+      Research & Outreach
+    </a>
+
+    <ul class="dropdown-menu">
+      <li>
+        <div class="mega-menu-content">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="http://acre.cba.ua.edu" target="_blank">Alabama Center for Real Estate</a></li>
+                <li><a href="https://aciir.cba.ua.edu" target="_blank">Alabama Center for Insurance Information and Research</a></li>
+                <li><a href="http://aei.cba.ua.edu" target="_blank">Alabama Entrepreneurship Institute</a></li>
+                <li><a href="http://apc.ua.edu/" target="_blank">Alabama Productivity Center</a></li>
+                <li><a href="http://culverhouse.ua.edu/app/webroot/analyticslab/" target="_blank">Business Analytics Lab</a></li>
+              </ul>
+            </div> <!-- .col-md-6 -->
+
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="http://cber.cba.ua.edu" target="_blank">Center for Business and Economic Research</a></li>
+                <li><a href="http://culverhouse.ua.edu/lift">Culverhouse LIFT</a></li>
+                <!-- <li><a href="">The Edge</a></li> -->
+                <li><a href="http://culverhouse.ua.edu/srcl" target="_blank">Statistics Research and Consulting Laboratory</a></li>
+              </ul>
+            </div> <!-- .col-md-6 -->
+          </div> <!-- .row -->
+        </div> <!-- .mega-menu-content -->
+      </li>
+    </ul>
+  </li>
+</ul>
+						</nav>
+					</div> <!-- .navbar-container -->
+				</div> <!-- .container -->
+			</div> <!-- .header-main -->
+		</div> <!-- .sticky-header-container -->
+		
+<style>
+  @media (min-width: 979px) {
+    ul.nav li.dropdown:hover > ul.dropdown-menu {
+      display: inline;
+    }
+  
+  }
+</style>			
+
+</header>
+
+<div class="touch-overlay"></div>
+
+
+
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">404 Error</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li>404 Error</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->
+
+        <section class="site-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="page-header">Page Not Found</h1>
+                <p class="lead padding-bottom-10">We're sorry, but the page you requested cannot be found. Please search using the below form or use the other navigational resources to help locate your desired destination.</p>
+
+
+                <div id="test"></div>
+
+                <div id='cse-search-form' style='width: 100%;'>Loading</div>
+                <script src='//www.google.com/jsapi' type='text/javascript'></script>
+                <script type='text/javascript'>
+                  google.load('search', '1', {language: 'en', style: google.loader.themes.MINIMALIST});
+                  google.setOnLoadCallback(function() {
+                    var customSearchOptions = {};
+                    var orderByOptions = {};
+                    orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+                    customSearchOptions['enableOrderBy'] = true;
+                    customSearchOptions['orderByOptions'] = orderByOptions;
+                    var customSearchControl =   new google.search.CustomSearchControl('005188995961832419191:d8onxphckuc', customSearchOptions);
+                    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                    var options = new google.search.DrawOptions();
+                    options.enableSearchboxOnly('/search', 'q');
+                    options.setAutoComplete(true);
+                    customSearchControl.draw('cse-search-form', options);
+                  }, true);
+                </script>
+                <style type='text/css'>
+                  input.gsc-input {
+                    border-color: #BBBBBB;
+                  }
+                  input.gsc-search-button {
+                    border-color: #000000;
+                    background-color: #333333;
+                  }
+                  .gsc-input input.gsc-input {
+                    background: none repeat scroll 0% 0% white !important;
+                  }
+                </style>
+                <hr>
+                <div id='cse' style='width: 100%;'>Loading</div>
+                <script src='//www.google.com/jsapi' type='text/javascript'></script>
+                <script type='text/javascript'>
+                  google.load('search', '1', {language: 'en', style: google.loader.themes.MINIMALIST});
+                  google.setOnLoadCallback(function() {
+                    var customSearchOptions = {};
+                    var orderByOptions = {};
+                    orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+                    customSearchOptions['enableOrderBy'] = true;
+                    customSearchOptions['orderByOptions'] = orderByOptions;
+                    var customSearchControl =   new google.search.CustomSearchControl('005188995961832419191:d8onxphckuc', customSearchOptions);
+                    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                    var options = new google.search.DrawOptions();
+                    options.enableSearchResultsOnly();
+                    options.setAutoComplete(true);
+                    customSearchControl.draw('cse', options);
+                    function parseParamsFromUrl() {
+                      var params = {};
+                      var parts = window.location.search.substr(1).split('&');
+                      for (var i = 0; i < parts.length; i++) {
+                        var keyValuePair = parts[i].split('=');
+                        var key = decodeURIComponent(keyValuePair[0]);
+                        params[key] = keyValuePair[1] ?
+                            decodeURIComponent(keyValuePair[1].replace(/\+/g, ' ')) :
+                            keyValuePair[1];
+                      }
+                      return params;
+                    }
+                    var urlParams = parseParamsFromUrl();
+                    var queryParamName = 'q';
+                    if (urlParams[queryParamName]) {
+                      customSearchControl.execute(urlParams[queryParamName]);
+                    }
+                  }, true);
+                </script>
+                <style type='text/css'>
+                  .gsc-control-cse {
+                    font-family: Arial, sans-serif;
+                    border-color: #FFFFFF;
+                    background-color: #FFFFFF;
+                  }
+                  .gsc-control-cse .gsc-table-result {
+                    font-family: Arial, sans-serif;
+                  }
+                  input.gsc-input {
+                    border-color: #BBBBBB;
+                  }
+                  input.gsc-search-button {
+                    border-color: #000000;
+                    background-color: #333333;
+                  }
+                  .gsc-tabHeader.gsc-tabhInactive {
+                    border-color: #333333;
+                    background-color: #333333;
+                  }
+                  .gsc-tabHeader.gsc-tabhActive {
+                    border-color: #777777;
+                    background-color: #777777;
+                  }
+                  .gsc-tabsArea {
+                    border-color: #333333;
+                  }
+                  .gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+                    border-color: #FFFFFF;
+                    background-color: #FFFFFF;
+                  }
+                  .gsc-webResult.gsc-result:hover, .gsc-imageResult:hover {
+                    border-color: #000000;
+                    background-color: #FFFFFF;
+                  }
+                  .gsc-webResult.gsc-result.gsc-promotion:hover {
+                    border-color: #000000;
+                    background-color: #FFFFFF;
+                  }
+                  .gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b  {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult.gs-result a.gs-title:visited, .gs-webResult.gs-result a.gs-title:visited b, .gs-imageResult a.gs-title:visited, .gs-imageResult a.gs-title:visited b {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult.gs-result a.gs-title:hover, .gs-webResult.gs-result a.gs-title:hover b, .gs-imageResult a.gs-title:hover, .gs-imageResult a.gs-title:hover b {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult.gs-result a.gs-title:active, .gs-webResult.gs-result a.gs-title:active b, .gs-imageResult a.gs-title:active, .gs-imageResult a.gs-title:active b {
+                    color: #9E1B32;
+                  }
+                  .gsc-cursor-page {
+                    color: #9E1B32;
+                  }
+                  a.gsc-trailing-more-results:link {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
+                    color: #333333;
+                  }
+                  .gs-webResult div.gs-visibleUrl, .gs-imageResult div.gs-visibleUrl {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult div.gs-visibleUrl-short {
+                    color: #9E1B32;
+                  }
+                  .gs-webResult div.gs-visibleUrl-short  {
+                    display: none;
+                  }
+                  .gs-webResult div.gs-visibleUrl-long {
+                    display: block;
+                  }
+                  .gs-promotion div.gs-visibleUrl-short {
+                    display: none;
+                  }
+                  .gs-promotion div.gs-visibleUrl-long  {
+                    display: block;
+                  }
+                  .gsc-cursor-box {
+                    border-color: #FFFFFF;
+                  }
+                  .gsc-results .gsc-cursor-box .gsc-cursor-page {
+                    border-color: #777777;
+                    background-color: #FFFFFF;
+                    color: #9E1B32;
+                  }
+                  .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+                    border-color: #333333;
+                    background-color: #333333;
+                    color: #9E1B32;
+                  }
+                  .gsc-webResult.gsc-result.gsc-promotion {
+                    border-color: #CCCCCC;
+                    background-color: #E6E6E6;
+                  }
+                  .gsc-completion-title {
+                    color: #9E1B32;
+                  }
+                  .gsc-completion-snippet {
+                    color: #333333;
+                  }
+                  .gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link  {
+                    color: #0000CC;
+                  }
+                  .gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited {
+                    color: #0000CC;
+                  }
+                  .gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover  {
+                    color: #444444;
+                  }
+                  .gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active {
+                    color: #00CC00;
+                  }
+                  .gs-promotion .gs-snippet, .gs-promotion .gs-title .gs-promotion-title-right, .gs-promotion .gs-title .gs-promotion-title-right * {
+                    color: #333333;
+                  }
+                  .gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short  {
+                    color: #00CC00;
+                  }
+                  .gsc-input input.gsc-input {
+                    background: none repeat scroll 0% 0% white !important;
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<footer class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Contact Us</h5>
+        <p>361 Stadium Dr<br>
+          Tuscaloosa, AL 35487<br>
+          Phone: (205) 348-7443<br></p>
+        <hr>
+        <ul class="list-inline icon-social icon-social-color circle">
+          <li class="facebook">
+            <a href="http://facebook.com/UABusiness" title="Facebook"><i class="fa fa-facebook"></i><br>
+              <span class="sr-only">Facebook</span><br>
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="http://twitter.com/culverhouse" title="Twitter"><i class="fa fa-twitter"></i><br>
+              <span class="sr-only">Twitter</span><br>
+            </a>
+          </li>
+          <li class="linkedin">
+            <a href="http://www.linkedin.com/groups?home=&gid=51757&trk=anet_ug_hm" title="LinkedIn"><i class="fa fa-linkedin"></i><br>
+              <span class="sr-only">LinkedIn</span><br>
+            </a>
+          </li>
+        </ul>
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <h5>Academic Departments</h5>
+        <ul class="list-unstyled">
+          <li><a href="/academics/departments/accountancy/">Accounting</a></li>
+          <li><a href="/academics/departments/economics-finance-legal-studies/">Economics, Finance, and Legal Studies</a></li>
+          <li><a href="/academics/departments/information-systems-statistics-and-management-science/">Information Systems, Statistics, and Management Science</a></li>
+          <li><a href="/academics/departments/management/">Management</a></li>
+          <li><a href="/academics/departments/marketing/">Marketing</a></li>
+        </ul>
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <h5>The University of Alabama</h5>
+        <ul class="list-unstyled">
+          <li><a href="http://registrar.ua.edu/academiccalendar/" target="_blank">Academics Calendar</a></li>
+          <li><a href="https://www.ua.edu/admissions/" target="_blank">Admissions</a></li>
+          <li><a href="https://www.ua.edu/academics/catalogs/" target="_blank">Catalogs</a></li>
+          <li><a href="http://graduate.ua.edu/" target="_blank">Graduate School</a></li>
+          <li><a href="http://mybama.ua.edu" target="_blank">myBama</a></li>
+        </ul>
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <h5>Support</h5>
+        <ul class="list-unstyled">
+          <li><a href="students/">Student Services</a></li>
+          <li><a href="news/">College News</a></li>
+          <li><a href="events/">Events Calendar</a></li>
+          <li><a href="investing-in-the-college/">Investing in the College</a></li>
+          <li><a href="store/">Culverhouse Store</a></li>
+        </ul>
+      </div> <!-- .col-md-3 -->
+    </div> <!-- .row -->
+  </div>
+  <div class="footer-copyright bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3 col-sm-3">
+              <a class="ua-logo ua-logo-stacked" href="http://www.ua.edu" target="_blank" title="The University of Alabama" rel="home">
+                <span class="sr-only">The University of Alabama</span>
+              </a>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-9 col-md-9">
+              <div class="pull-right">
+                <ul class="disclaimer-list list-inline text-right">
+                  <li><a href="social-media/">Social Media Links</a></li>
+                  <li><a href="alumni/">Alumni</a></li>
+                  <li><a href="directory/">Faculty &amp; Staff</a></li>
+                  <!-- <li><a href="contact/">Contacts</a></li> -->
+                </ul>
+
+                <p class="copyright-text text-right">
+                  <a href="mailto:fstewart@culverhouse.ua.edu">Website Feedback</a>
+                  | <a href="technology/">Culverhouse Technology Group</a>
+                </p>
+
+
+                <p class="copyright-text text-right">
+                  <a href="https://www.ua.edu/copyright">Copyright &copy; 2016</a>
+                  | <a href="/">The Culverhouse College of Commerce</a>
+                  | <a href="https://www.ua.edu">The University of Alabama</a>
+                  | <a href="https://www.ua.edu/disclaimer">Disclaimer</a>
+                  | <a href="https://www.ua.edu/privacy">Privacy</a>
+                </p>
+              </div> <!-- .pull-right -->
+            </div> <!-- .col-md-9 -->
+          </div> <!-- .row -->
+        </div> <!-- .col-md-12 -->
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </div> <!-- .footer-copyright -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</body>
+</html>

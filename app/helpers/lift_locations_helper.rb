@@ -1,0 +1,2 @@
+module LiftLocationsHelper
+end

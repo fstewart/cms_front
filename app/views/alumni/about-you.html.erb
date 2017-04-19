@@ -1,0 +1,15 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title"><%= content_for?(:title) ? yield(:title) : "Culverhouse Alumni" %></h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><%= link_to 'Alumni Home', alumni_path %></li>
+          <li><%= content_for?(:title) ? yield(:title) : "About You" %></li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->

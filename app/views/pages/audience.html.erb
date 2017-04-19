@@ -1,0 +1,569 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title"><%= @page.pagehead %></h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li><%= @page.pagehead %></li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky scroll-to hidden-xs hidden-sm affix-top">
+          <ul class="nav nav-pills nav-stacked">
+
+            <% if @page.parent_id != 0 %>
+                <li><%= link_to @page.parent.title, { :controller => :pages, :action => :audience, :id => @page.parent.id } %></li>
+
+                <% @page.parent.subpages.published.sorted.each do |s| %>
+                    <li><%= link_to s.title, { :controller => :pages, :action => :audience, :id => s.id } %></li>
+                <% end %>
+
+            <% elsif @page.parent_id == 0 %>
+
+                <li><%= link_to @page.title, { :controller => :pages, :action => :audience, :id => @page.id } %></li>
+
+                <% @page.subpages.published.sorted.each do |s| %>
+                    <li><%= link_to s.title, { :controller => :pages, :action => :audience, :id => s.id } %></li>
+                <% end %>
+
+            <% end %>
+
+          </ul>
+
+          <% unless @page.calltoactions.blank? %>
+
+              <% @page.calltoactions.each do |cta| %>
+
+                  <a href="<%= cta.url %>" target="<%= cta.target %>" class="btn <%= cta.color %> btn-featured-left btn-block font-weight-600 uppercase margin-top-30">
+                    <%= cta.title %><i class="fa fa-cog"></i>
+                  </a>
+
+              <% end %>
+
+          <% end %>
+
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+      <div class="col-md-9">
+
+        <h2 id="<%= "item-0" %>" class="page-header"> <%= @page.title %> </h2>
+
+        <%= raw(@page.desc) %>
+
+        <% @page.sections.each_with_index do |section, index| %>
+
+            <% indexplusone = index + 1 %>
+
+            <% if index == 0 %>
+
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <% unless section.texts.blank? %>
+
+                    <% section.texts.each do |text| %>
+
+                        <%= raw(text.body) %><br><br>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.fullslides.blank? %>
+                    <% section.fullslides.each_with_index do |slide, index| %>
+
+                        <div id="ua-carousel" class="carousel carousel-home slide">
+                          <div class="carousel-inner">
+                            <div class="item <%= 'active' if index == 0 %>">
+                              <div class="bg-img bg-center-center" style="background-image: url( '<%= slide.full_slider_image.full.url %>' );">
+                                <div class="caption">
+                                  <div class="caption-inner">
+
+                                    <% unless slide.video_url.blank? %>
+                                        <%= link_to slide.video_url, :target => '_blank' do %>
+                                            <%= content_tag(:h2, slide.title ) %>
+                                            <%= content_tag(:p, slide.desc ) %>
+                                            <%= button_to( 'Watch Video', class: 'btn btn-transparent uppercase margin-top-10') %>
+                                        <% end %>
+                                    <% else %>
+                                        <%= content_tag(:h2, slide.title ) %>
+                                        <%= content_tag(:p, slide.desc ) %>
+                                    <% end %>
+
+                                  </div> <!-- .caption-inner -->
+                                </div> <!-- .caption -->
+                              </div> <!-- .bg-img -->
+                            </div> <!-- .item -->
+                          </div>
+                        </div>
+
+                    <% end %>
+                <% end %>
+
+                <% unless section.accordions.blank? %>
+
+                    <% section.accordions.each_with_index do |accordion, index| %>
+
+                        <% indexplusone = index + 1  %>
+
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= indexplusone %>" class="<%= 'collapsed' if index != 0 %>">
+                                  <%= accordion.title %>
+                                  <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                  <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                </a>
+                              </h4>
+                            </div> <!-- .panel-heading -->
+
+                            <div id="collapse-<%= indexplusone %>" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                <p><%= raw(accordion.desc) %></p>
+                              </div> <!-- .panel-body -->
+                            </div> <!-- #collapse-1 -->
+                          </div> <!-- .panel -->
+                        </div>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.carousels.blank? %>
+
+                    <div class="row">
+
+                      <!-- <h2 id="owl-caption" class="page-header"><%# section.title %></h2> -->
+
+                      <div id="carousel-owl-2" class="owl-carousel">
+
+                        <% section.carousels.each do |slide| %>
+
+                            <div class="item">
+                              <%= image_tag slide.slide_image.resized.url %>
+                              <div class="carousel-caption">
+                                <h3><%= slide.slide_title %></h3>
+                                <p><%= slide.slide_desc %></p>
+                              </div> <!-- .carousel-caption -->
+                            </div> <!-- .item -->
+
+                        <% end %>
+
+                      </div>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.imageboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.imageboxes.each do |i| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box box-img bg-light text-center">
+                              <%= image_tag i.image.display.url %>
+                              <div class="box-body">
+                                <h3><a href="#"><%= i.title %></a></h3>
+                                <p><%= i.desc %></p>
+                                <a href="<%= i.url %> target="<%= i.target %>" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+                              </div> <!-- .box-body -->
+                            </div> <!-- .box-img -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.iconboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.iconboxes.each do |ib| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box text-center bg-light box-bordered box-clickable">
+                              <i class="fa fa-cog icon-bg icon-primary icon-lg circle"></i>
+                              <h3><a href="#"><%= ib.title %></a></h3>
+                              <p><%= ib.desc %></p>
+                            </div> <!-- .box-bordered -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.listgroups.blank? %>
+
+                    <div class="row">
+
+                      <ul class="list-group">
+
+                        <% section.listgroups.each do |listgroup| %>
+
+                            <li class="list-group-item">
+                              <h4 class="list-group-heading">
+                                <%= listgroup.title %>
+                              </h4>
+                              <%= raw(listgroup.desc) %>
+                            </li>
+
+                        <% end %>
+
+                      </ul>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.videos.blank? %>
+
+                    <div class="row">
+
+                      <% section.videos.each do |v| %>
+
+                          <%= raw v.url %>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %> <!-- end video -->
+
+                <% unless section.galleries.blank? %>
+
+                    <div class="row margin-bottom-30">
+
+                      <% section.galleries.each do |g| %>
+
+                          <div class="col-sm-6">
+                            <%= image_tag  g.image.gallery.url, :class => 'img-responsive' %>
+                          </div> <!-- .col-md-6 -->
+
+                      <% end %>
+
+                    </div>
+
+                <% end %> <!-- end galleries -->
+
+            <% else %>
+
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <% unless section.texts.blank? %>
+
+                    <% section.texts.each do |text| %>
+
+                        <%= raw(text.body) %><br><br>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.fullslides.blank? %>
+                    <% section.fullslides.each_with_index do |slide, index| %>
+
+                        <div id="ua-carousel" class="carousel carousel-home slide">
+                          <div class="carousel-inner">
+                            <div class="item <%= 'active' if index == 0 %>">
+                              <div class="bg-img bg-center-center" style="background-image: url( '<%= slide.full_slider_image.full.url %>' );">
+                                <div class="caption">
+                                  <div class="caption-inner">
+
+                                    <% unless slide.video_url.blank? %>
+                                        <%= link_to slide.video_url, :target => '_blank' do %>
+                                            <%= content_tag(:h2, slide.title ) %>
+                                            <%= content_tag(:p, slide.desc ) %>
+                                            <%= button_to( 'Watch Video', class: 'btn btn-transparent uppercase margin-top-10') %>
+                                        <% end %>
+                                    <% else %>
+                                        <%= content_tag(:h2, slide.title ) %>
+                                        <%= content_tag(:p, slide.desc ) %>
+                                    <% end %>
+
+                                  </div> <!-- .caption-inner -->
+                                </div> <!-- .caption -->
+                              </div> <!-- .bg-img -->
+                            </div> <!-- .item -->
+                          </div>
+                        </div>
+
+                    <% end %>
+                <% end %>
+
+                <% unless section.accordions.blank? %>
+
+                    <% section.accordions.each_with_index do |accordion, index| %>
+
+                        <% indexplusone = index + 1  %>
+
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= indexplusone %>" class="collapsed">
+
+                                  <%= accordion.title %>
+                                  <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                  <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                </a>
+                              </h4>
+                            </div> <!-- .panel-heading -->
+
+                            <div id="collapse-<%= indexplusone %>" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <%= raw(accordion.desc) %>
+                              </div> <!-- .panel-body -->
+                            </div> <!-- #collapse-1 -->
+                          </div> <!-- .panel -->
+                        </div> <!-- .panel-group -->
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.carousels.blank? %>
+
+                    <div class="row">
+
+                      <!-- <h2 id="owl-caption" class="page-header"><%# section.title %></h2> -->
+
+                      <div id="carousel-owl-2" class="owl-carousel">
+
+                        <% section.carousels.each do |slide| %>
+
+                            <div class="item">
+                              <%= image_tag slide.slide_image.resized.url %>
+                              <div class="carousel-caption">
+                                <h3><%= slide.slide_title %></h3>
+                                <p><%= slide.slide_desc %></p>
+                              </div> <!-- .carousel-caption -->
+                            </div> <!-- .item -->
+
+                        <% end %>
+
+                      </div>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.imageboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.imageboxes.each do |i| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box box-img bg-light text-center">
+                              <%= image_tag i.image.display.url %>
+                              <div class="box-body">
+                                <h3><a href="#"><%= i.title %></a></h3>
+                                <p><%= i.desc %></p>
+                                <a href="<%= i.url %>" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+                              </div> <!-- .box-body -->
+                            </div> <!-- .box-img -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.iconboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.iconboxes.each do |ib| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box text-center bg-light box-bordered box-clickable">
+                              <i class="fa fa-cog icon-bg icon-primary icon-lg circle"></i>
+                              <h3><a href="#"><%= ib.title %></a></h3>
+                              <p><%= ib.desc %></p>
+                            </div> <!-- .box-bordered -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.timelines.blank? %>
+
+                    <div class="row">
+
+                      <% section.timelines.each do |i| %>
+
+                          <h2 id="center" class="page-header">Center Timeline</h2>
+                          <p>A timeline is useful to display a series of events, history, or news in a unique way.</p>
+
+                          <ul class="timeline">
+                            <li class="timeline-year">
+                              <span>2014</span>
+                            </li> <!-- .timeline-year -->
+
+                            <li class="timeline-event">
+                              <div class="timeline-event-title">
+                                <h3>First Event</h3>
+                                <time datetime="2014-08-01">Aug 01, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event -->
+
+                            <li class="timeline-event timeline-event-right">
+                              <div class="timeline-event-title">
+                                <h3>Second Event</h3>
+                                <time datetime="2014-08-05">Aug 05, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  <img src="/assets/img/presidentsmansion01_800.jpg" class="img-responsive">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event-right -->
+
+                            <li class="timeline-event">
+                              <div class="timeline-event-title">
+                                <h3>Third Event</h3>
+                                <time datetime="2014-08-07">Aug 07, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  <img src="/assets/img/gorgaslibrary01_800.jpg" class="img-responsive">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event -->
+
+                            <li class="timeline-event timeline-event-right">
+                              <div class="timeline-event-title">
+                                <h3>Fourth Event</h3>
+                                <time datetime="2014-09-10">Sep 10, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  Donec eu sem placerat, porta nulla a, dignissim tellus. Praesent non lorem leo. Mauris quis hendrerit metus, id vehicula leo. Cum sociis natoque penatibus et magnis dis parturient montes.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event-right -->
+
+                            <li class="timeline-event">
+                              <div class="timeline-event-title">
+                                <h3>Fifth Event</h3>
+                                <time datetime="2014-10-14">Oct 14, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  Donec eu sem placerat, porta nulla a, dignissim tellus. Praesent non lorem leo. Mauris quis hendrerit metus, id vehicula leo. Cum sociis natoque penatibus et magnis dis parturient montes.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event -->
+
+                            <li class="timeline-event timeline-event-right">
+                              <div class="timeline-event-title">
+                                <h3>Sixth Event</h3>
+                                <time datetime="2014-11-21">Nov 21, 2014</time>
+                              </div> <!-- .timeline-event-title -->
+
+                              <div class="timeline-event-content">
+                                <p>
+                                  Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                                </p>
+                              </div> <!-- .timeline-event-content -->
+                            </li> <!-- .timeline-event-right -->
+
+                            <li class="timeline-year">
+                              <span>2015</span>
+                            </li> <!-- .timeline-year -->
+                          </ul>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+
+                <% unless section.listgroups.blank? %>
+
+                    <ul class="list-group">
+
+                      <% section.listgroups.each do |listgroup| %>
+
+                          <li class="list-group-item">
+                            <h4 class="list-group-heading">
+                              <%= listgroup.title %>
+                            </h4>
+                            <%= raw(listgroup.desc) %>
+                          </li>
+
+                      <% end %>
+
+                    </ul>
+
+                <% end %> <!-- end listgroups -->
+
+                <% unless section.videos.blank? %>
+
+                    <% section.videos.each do |v| %>
+
+                        <%= raw v.url %>
+
+                    <% end %>
+
+                <% end %> <!-- end video -->
+
+                <% unless section.galleries.blank? %>
+
+                    <div class="row margin-bottom-30">
+
+                      <% section.galleries.each do |g| %>
+
+                          <div class="col-sm-6">
+                            <%= image_tag  g.image.gallery.url, :class => 'img-responsive' %>
+                          </div> <!-- .col-md-6 -->
+
+                      <% end %>
+
+                    </div>
+
+                <% end %> <!-- end galleries -->
+
+
+            <% end %>
+
+        <% end %>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

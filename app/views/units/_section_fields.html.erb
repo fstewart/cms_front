@@ -1,0 +1,10 @@
+<div class="nested-fields well well-compact">
+  <div class="form-inline">
+    <p><%= f.input :title, :label => false, :placeholder => 'Section Title', class: 'form-control' %></p>
+    <p><%= f.input :content,as: :text, :label => false, :placeholder => 'Section Content', class: 'form-control' %></p>
+    <p><%= f.input :status, :as => :boolean %>
+	<%= link_to_remove_association f, data: {:confirm => 'do you really want to do this?'}, class: 'btn btn-default btn-xs' do %>
+      <p><div class="glyphicon glyphicon-remove"></div></p>
+    <% end %>
+  </div>
+</div>

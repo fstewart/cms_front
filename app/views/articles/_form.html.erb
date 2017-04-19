@@ -1,0 +1,75 @@
+<%= simple_form_for(@article, html: { class: 'form-horizontal' },
+                    wrapper: :horizontal_form,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    }) do |f| %>
+  <%= f.error_notification %>
+
+    <div class="col-md-12">
+
+      <div class="panel panel-primary" data-collapsed="0">
+
+        <div class="panel-heading">
+          <div class="panel-title">
+            Section Content
+          </div>
+
+          <div class="panel-options">
+            <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+            <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+            <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+            <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="row">
+                <div class="col-md-12">
+
+                <div class="form-inputs">
+                  <%= f.input :news_category_id ,:collection => @news_categories,:label_method => :name,:value_method => :id,:label => "News Category" ,:include_blank => false %>
+                  <%= f.input :title, label: 'Story Title' %>
+                  <%= f.input :news_date, as: :datetime, label: 'Published Date' %>
+                  <%= f.input :featured, label: 'Is featured?'%>
+                  <%= f.input :quoted, label: 'Is shown as pull quote?'%>
+                  <%= f.input :author, label: 'Author' %>
+                  <%= f.input :story_url, label: 'Story URL (For Links to External Websites)' %>
+                  <%= f.input :story_short_desc, label: 'Short Description' %>
+                  <%= f.input :body, label: 'Full Article', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} } %>
+                  <%= f.input :quote, label: 'Quoted Text (if shown as pull quote is yes)' %>
+                  <%= f.input :quote_author, label: 'Quote Author' %>
+                  <%= f.input :photo, label: 'Article Photos (sized up to 1,140px × 641px)' %>
+                  <%= f.input :home_photo, label: 'Homepage Image (must be larger than 360px × 203px)' %>
+                  <%= f.input :phone, label: 'Phone' %>
+                  <%= f.input :email, label: 'Email' %>
+                  <br><br><p><b>Article Tags</b> - Enter comma separated tags that relate to this article (e.g. statistics, accounting, economics)</p>
+                  <%= f.text_field :all_tags %>
+                  <br><br><br>
+                  <%= f.input :status, label: 'Status' %>
+                </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+
+<% end %>

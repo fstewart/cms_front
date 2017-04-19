@@ -1,0 +1,270 @@
+<style>
+  .ctr {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>  
+
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Faculty & Staff</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><%= link_to 'Home', root_path %></li>
+          <li>Faculty & Staff Directory</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <a name="faculty"></a>
+
+      Filter:
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Academic <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to 'Culverhouse School of Accountancy', directory_path(:departments => 2) %></li>
+          <li><%= link_to "Economics, Finance, & Legal Studies", directory_path(:departments => 3) %></li>
+          <li><%= link_to "Information Systems, Statistics, and Management Science", directory_path(:departments => 5) %></li>
+          <li><%= link_to "International Program", directory_path(:departments => 35) %></li>
+          <li><%= link_to "Management", directory_path(:departments => 6) %></li>
+          <li><%= link_to "Marketing", directory_path(:departments => 7) %></li>
+          <li><%= link_to "Manderson Graduate School of Business", directory_path(:departments => 9) %></li>
+          <li><%= link_to "EMBA/Executive Education", directory_path(:departments => 10) %></li>
+          <li><%= link_to "STEM-MBA Innovative Initiatives", directory_path(:departments => 11) %></li>
+          <li class="divider"></li>
+          <li><%= link_to "All", directory_path %></li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Administrative <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to "Alumni & Corporate Relations", directory_path(:departments => 13) %></li>
+          <li><%= link_to "Angelo Bruno Business Library", directory_path(:departments => 30) %></li>
+          <li><%= link_to "Associate Dean for Assessment and Continuous Improvement", directory_path(:departments => 37) %></li>
+          <li><%= link_to "Associate Dean for Economic Development Outreach", directory_path(:departments => 33) %></li>
+          <li><%= link_to "Associate Dean of Research", directory_path(:departments => 34) %></li>
+          <li><%= link_to "Career Center at Culverhouse", directory_path(:departments => 29) %></li>
+          <li><%= link_to "Dean's Office", directory_path(:departments => 1) %></li>
+          <li><%= link_to "Student Services", directory_path(:departments => 21) %></li>
+          <li><%= link_to "Culverhouse Technology Group", directory_path(:departments => 22) %></li>
+        </ul>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Outreach and Research Centers <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to "Alabama Center for Insurance Information and Research", directory_path(:departments => 28) %></li>
+          <li><%= link_to "Alabama Center for Real Estate", directory_path(:departments => 17) %></li>
+          <li><%= link_to "Alabama Entrepreneurial Research Network", directory_path(:departments => 31) %></li>
+          <li><%= link_to "The Alabama Entrepreneurship Institute", directory_path(:departments => 32) %></li>
+          <li><%= link_to "Center for Business and Economic Research", directory_path(:departments => 18) %></li>
+          <li><%= link_to "Culverhouse Center for Experiential Learning", directory_path(:departments => 24) %></li>
+        </ul>
+      </div>
+      
+      <% if @faculty_profiles.present? && @staff_profiles.present? %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Faculty / Staff <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "Faculty", "#faculty" %></li>
+            <li><%= link_to "Staff", "#staff" %></li>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="col-md-3" style="float:right;margin-top: -20px;">
+
+        <%= form_tag(directory_path, :method => "get", id: "search-directory") do %>
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search], placeholder: "Search Directory", class: "form-control" %>
+              <span class="input-group-btn">
+                <%= submit_tag "Go", :name => nil, class: "btn btn-light" %>
+              </span>
+            </div>
+        <% end %>
+
+      </div>  
+
+      <%if @department.present? %>
+        <h2 style="color: #900;margin-bottom: 5px !important;">
+          <% if @department.url.present? %>
+            <%= link_to @department.name, @department.url %>
+          <% else %>
+            <%= @department.name %>
+          <% end %>
+        </h2>
+        
+        <p style="font-size: 12;">
+          <%= @department.office if @department.office.present? %> 
+          <%= @department.building.name if @department.building.present? %> <%= " / Box #{@department.po_box}" if @department.po_box.present? %> 
+          <% if @department.phone.present? %>
+            / Information: <%= link_to "#{number_to_phone(@department.phone)}", "tel:#{number_to_phone(@department.phone)}" %>
+          <% end %>
+          <% if @department.fax.present? %>
+            / Fax: <%= link_to "#{number_to_phone(@department.fax)}", "tel:#{number_to_phone(@department.fax)}" %>
+          <% end %>
+        </p>
+        <hr>
+      <% end %>
+
+    </div>
+
+    <% if @profiles.present? %>
+    <h3>Search Results:</h2>
+      <% @profiles.each do |u| %>
+      <div class="col-md-9">
+          <div class="content-box box-img bg-light">
+            <div class="row no-gutter">
+              <div class="col-md-3">
+                <% if u.profile_photo? %>
+                  <%= image_tag u.profile_photo.resized, class:'img-responsive profile_pic', size: '255x280', alt: 'u.fullname' %>
+              <% else %>
+                  <%= image_tag('/assets/no-pic.png', class: 'img-responsive profile_pic', size: '263x263', alt: 'The University of Alabama') %>
+              <% end %>
+              </div> <!-- .col-md-3 -->
+
+              <div class="col-md-9">
+                <div class="box-body">
+                  <h3 class="margin-bottom-5"><%= u.fullname %> — 
+                    <% if u.abbreviated_title.present? %>
+                      <small><%= u.abbreviated_title %></small>
+                    <% end %>
+                  </h3>
+                  <p style="font-weight: bold;">
+                    <% u.departments.order('id DESC').each do |d| %>
+                        <%= link_to_if(d.url.present?, d.name, d.url) %> <br>
+                    <% end %>
+                  </p>  
+
+                  <div class="divider-light faded-right"></div>
+
+                <%= mail_to u.email, u.email, class: 'small' if u.email.present? %><br>
+
+                <%= link_to "Phone: #{number_to_phone(u.phone, area_code: true)}", "tel:#{u.phone}", class: 'small' if u.phone.present? %><br>
+
+                <%= link_to 'CV<br>'.html_safe, u.cv.url, target: "_blank", class: 'small' if u.cv.present? %>
+
+                <%= link_to 'Website<br>'.html_safe, "http://#{u.website}", target: "_blank", class: 'small' if u.website.present? %>
+
+                <%= link_to 'Google Scholar<br>'.html_safe, u.google_scholar, target: "_blank", class: 'small' if u.google_scholar.present? %><br>
+
+                <p class="small"> <a href="<%= profile_path(u.slug) %>" class="btn btn-transparent-v2"> View Full Profile</a></p>
+
+                </div> <!-- .box-body -->
+              </div> <!-- .col-md-9 -->
+            </div> <!-- .row -->
+          </div> <!-- .content-box -->
+        </div>
+      <% end %>
+
+    <% elsif @faculty_profiles.blank? && @staff_profiles.blank? %>
+      <h4>There are no listings containing the name <%= params[:search] %>.</h4><%= link_to "View Directory", directory_path %>
+    <% end %>
+
+    
+    <% if @faculty_profiles.present? %>
+      <div class="row">
+        <% if @staff_profiles.present? && params[:departments] != '1' %>
+          <h3 style="margin-top:0px !important;"> Faculty</h3> 
+        <% else %>
+
+        <% end %>
+        <% @allfaculties.uniq.each do |u| %>
+                          
+           <div class="col-md-3">
+              <div class="content-box box-img bg-light text-center" style="min-height: 372px !important;">
+
+                <% if u.profile_photo.present? %>
+                    <%= image_tag u.profile_photo.directory, class:'img-responsive thumbnail ctr', size: '124x136' %>
+                <% else %>
+                    <%= image_tag('/assets/no-pic.png', class: 'img-responsive thumbnail ctr', size: '124x136', alt: 'The University of Alabama') %>
+                <% end %>
+
+                <div class="box-body">
+                  <h3 class="no-bottom-spacing"><%= u.fullname %></h3>
+                  <% if u.abbreviated_title.present? %>
+                   <small><%= u.abbreviated_title %></small>
+                  <% end %>
+
+                  <div class="divider-light faded-both"></div>
+                  <% if u.email.present? %>
+                    <p class="small"><%= mail_to u.email, u.email %></p>
+                  <% end %>
+
+                  <% if u.phone? %>
+                    <p class="small"><%= link_to  number_to_phone(u.phone, area_code: true), "tel:#{u.phone}" %></p>
+                  <% end %>
+
+                  <p class="small"> <a href="<%= profile_path(u.slug) %>" class="btn btn-transparent-v2"> View Profile</a></p>
+                </div> <!-- .box-body -->
+              </div> <!-- .content-box -->
+            </div> <!-- .col-md-3 -->
+
+        <% end %>
+        </div>
+        <hr>
+      <% end %>
+
+      <% if @staff_profiles.present? %>
+    
+        <div class="row">
+          <a name="staff"></a>
+          <% if @faculty_profiles.present? && params[:departments] != '1'%>
+            <h3 style="margin-top:0px !important;"> Staff</h3>
+          <% else %>
+            
+          <% end %>
+        
+          <% @staff_profiles.each do |u| %>
+              <div class="col-md-3">
+                <div class="content-box box-img bg-light text-center" style="min-height: 372px !important;">
+
+                  <% if u.profile_photo.present? %>
+                      <%= image_tag u.profile_photo.directory, class:'img-responsive thumbnail ctr', size: '124x136' %>
+                  <% else %>
+                      <%= image_tag('/assets/no-pic.png', class: 'img-responsive thumbnail ctr', size: '124x136', alt: 'The University of Alabama') %>
+                  <% end %>
+
+                  <div class="box-body">
+                    <h3 class="no-bottom-spacing"><%= u.fullname %></h3>
+                    <% if u.email.present? %>
+                        <small><%= u.abbreviated_title %></small>
+                        <!-- <small><%# u.department_id %></small> -->
+                    <% end %>
+
+                    <div class="divider-light faded-both"></div>
+                    <% if u.email? %>
+                        <p class="small"><%= mail_to u.email, u.email %></p>
+                    <% end %>
+
+                    <% if u.phone? %>
+                        <p class="small"><%= link_to  number_to_phone(u.phone, area_code: true), "tel:#{u.phone}" %></p>
+                    <% end %>
+
+                    <p class="small"> <a href="<%= profile_path(u) %>" class="btn btn-transparent-v2"> View Profile</a></p>
+                  </div> <!-- .box-body -->
+                </div> <!-- .content-box -->
+              </div> <!-- .col-md-3 -->
+          <% end %>
+      <% end %>    
+      </div> <!-- .row -->
+
+  </div> <!-- .container -->
+</section>

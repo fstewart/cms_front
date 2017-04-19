@@ -1,0 +1,38 @@
+<section class="site-content">
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Culverhouse Organizations</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Overview</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @units.each do |unit| %>
+            <tr>
+              <td></td>
+              <td><%= unit.name %></td>
+              <td><%= unit.overview %></td>
+              <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+              <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Unit', new_unit_path %>
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</div> <!-- .container -->
+</section>

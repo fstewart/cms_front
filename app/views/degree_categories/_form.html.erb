@@ -1,0 +1,15 @@
+<%= simple_form_for(@degree_category) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :department %>
+    <%= f.input :name %>
+    <%= f.input :url , label: 'URL to access the degree category page' %>
+    <%= f.input :desc %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

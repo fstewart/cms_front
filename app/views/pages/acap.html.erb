@@ -1,0 +1,24 @@
+<% @page.sections.where.not(title: '').order('position ASC').each_with_index do |section, index| %>
+    <% indexplusone = index + 1 %>
+    <% if index == 0 && section.fullslides.present? %>
+      <section class="site-section-top" >
+        <%= render 'pages/fullslides', :section => section if section.fullslides.present? %>
+      </section>
+
+    <% else %>
+
+      <section class="site-content" >
+        <%= render 'pages/texts', :section => section if section.texts.present? %>
+        <%= render 'pages/fullslides', :section => section if section.fullslides.present? %>
+        <%= render 'pages/accordions', :section => section if section.accordions.present? %>
+        <%= render 'pages/carousels', :section => section if section.carousels.present? %>
+        <%= render 'pages/galleries', :section => section if section.galleries.present? %>
+        <%= render 'pages/iconboxes', :section => section if section.iconboxes.present? %>
+        <%= render 'pages/imageboxes', :section => section if section.imageboxes.present? %>
+        <%= render 'pages/listgroups', :section => section if section.listgroups.present? %>
+        <%= render 'pages/timelines', :section => section if section.timelines.present? %>
+        <%= render 'pages/videos', :section => section if section.videos.present? %>
+        <%= render 'pages/countdowns', :section => section if section.countdowns.present? %>
+      </section>
+    <% end %>
+<% end %>

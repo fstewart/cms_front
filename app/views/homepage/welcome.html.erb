@@ -1,0 +1,273 @@
+<section class="site-section-top">
+
+<% if @homepage_carousels.present? %>
+      <div class="bg-img" style="background-image: url('<%= random_background_photo %>');background-position: 0px 0px;">
+        <div class="container site-content">
+        </div> <!-- .container -->
+      </div> <!-- .site-section-bg -->
+  
+
+<% else %>    
+
+  <div align="center" class="embed-responsive embed-responsive-16by9">
+    <div class="video-loop">
+      <div class="video-inner">
+        <div class="caption">
+          <div class="caption-inner">
+            <h2>Welcome to Culverhouse</h2>
+            
+          </div> <!-- .caption -->
+        </div> <!-- .caption -->
+      </div> <!-- .item -->
+    </div> <!-- .carousel-inner -->
+
+   <!-- <%# if browser.safari? %>
+        <video id="myVideo" width="100%" height="auto" autoplay loop muted>
+          <source src="<%= random_background_videos_safari %>" type="video/mp4">
+        </video>
+    <%# else %> -->
+      <iframe src="<%= @random_backvid.url %>?background=1" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowtransparency background-image="https://culverhouse.ua.edu/assets/img/bidgood_sm.jpg"></iframe>
+    <%# end %>
+
+    </div>
+<% end %>
+
+</section>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="content-box box-img">
+          <%= @main_message.body.html_safe %>
+        </div> <!-- .box-img -->
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6">
+        <br><br>
+        <ul class="nav nav-tabs tabs-v3 nav-justified social-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a aria-expanded="true" href="#twitter" role="tab" data-toggle="tab">
+              <i class="fa fa-fw fa-twitter "></i>
+              <br>
+              <span class="hidden-xs">Twitter</span>
+            </a>
+          </li>
+          <li role="presentation" class="">
+            <a aria-expanded="false" href="#facebook" role="tab" data-toggle="tab">
+              <i class="fa fa-fw fa-facebook"></i>
+              <br>
+              <span class="hidden-xs">Facebook</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content social-tabs">
+          <div class="tab-pane active" id="twitter">
+            <div class="social-tabs-content">
+              <a class="twitter-timeline" data-width="568" data-link-color="#981CEB" href="https://twitter.com/culverhouse">Tweets by culverhouse</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div> <!-- .social-tabs-content -->
+
+            <div class="social-tabs-footer">
+
+              <div class="clearfix"></div>
+            </div> <!-- .social-tabs-footer -->
+          </div> <!-- #twitter -->
+
+          <div class="tab-pane" id="facebook">
+            <div class="social-tabs-content">
+              <div class="fb-page" data-href="https://www.facebook.com/uabusiness/" data-tabs="timeline" data-width="553" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/uabusiness/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/uabusiness/">The University of Alabama-Culverhouse College of Commerce &amp; Business Admin.</a></blockquote></div>
+              <div class="clearfix"></div>
+            </div> <!-- .social-tabs-footer -->
+          </div> <!-- #facebook -->
+
+        </div> <!-- .tab-content -->
+      </div>
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+
+<section class="site-content bg-transparent-light padding-top-40 padding-bottom-25" style="background-image: url( https://www.ua.edu/img/quadaerial01_800.jpg );">
+  <div class="container">
+    <div class="row">
+
+    <% if @points_of_pride.present? %>
+      <% @points_of_pride.sorted.each do |b| %>
+        <div class="col-md-3 margin-bottom-30">
+      <div class="bg-primary box-bordered" style="background-image: url('https://culverhouse.ua.edu/assets/img/banner_bottom.png'), url('https://culverhouse.ua.edu/assets/img/banner.jpg');background-repeat: no-repeat, no-repeat;
+      background-position: bottom center, top center;background-color:#AF0000;width:252.5px;min-height:537px;padding-top:140px;padding-left:5px;padding-right:5px;padding-bottom:93px;text-align:center;box-shadow: 2px 2px 2px #888888;border-top-right-radius: 0.5em;border-top-left-radius: 0.5em;">
+            <%= raw(b.top_section) %>
+            <hr>
+            <div style="text-align:center;"><%= raw(b.bottom_section) %></div>
+          </div> <!-- .content-box -->
+        </div>
+      <% end %> 
+    <% end %>  
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+      <div class="row margin-bottom-10">
+        <div class="col-md-6">
+          <h2 class="page-header latest-news margin-bottom-20 padding-bottom-10">Latest News<small class="more-news"><a href="/news/">MORE<i class="fa fa-caret-right padding-left-5"></i></a></small></h2>
+          <ul class="media-list">
+
+            <% @latest_news_articles.each do |a| %>
+
+	            <li class="media">
+	              <div class="media-body">
+	                <p class="small text-muted no-bottom-spacing"><%= a.news_date.strftime("%B %d, %Y") %></p>
+	                <h3 class="media-heading"><%= link_to a.title, article_path(a) %></h3>
+	              </div> <!-- .media-body -->
+	            </li>
+
+            <% end %>
+
+            <% @nopic_articles.each do |a| %>
+
+            	<li class="media">
+	              <div class="media-body">
+	                <p class="small text-muted no-bottom-spacing"><%= a.news_date.strftime("%B %d, %Y") %></p>
+	                <h3 class="media-heading"><%= link_to a.title, article_path(a) %></h3>
+	              </div> <!-- .media-body -->
+            	</li>
+
+            <% end %>
+
+          </ul>
+        </div> <!-- .col-md-6 -->
+
+        <div class="col-md-6">
+	        <h2 class="page-header latest-news margin-bottom-20 padding-bottom-10">Featured Articles</h2>
+
+          <% @featured_articles.each do |article| %>
+              <div class="col-md-12">
+                <div class="content-box box-img bg-light">
+                  <div class="box-badge hidden-xs">
+                    <small>Featured Article</small>
+                  </div> <!-- .box-badge -->
+
+                  <% if article.home_photo.present? %>
+                      <%= image_tag(article.home_photo.url, :class => 'media-object img-responsive thumbnail', :size => '535x268') %>
+                  <% else %>
+                      <img class="img-responsive thumbnail" src="/assets/img/capstoneA_140.png" width="70" height="70" >
+                  <% end %>
+                  <div class="box-body">
+                    <h3><%= article.title %></h3>
+                    <p class="small margin-bottom-10 text-muted">
+                      <!-- <i class="fa fa-tag"></i><%= article.news_category_id.try(:name) %>
+                      <i class="margin-left-10 fa fa-info-circle"></i> Request Information -->
+                    </p>
+                    <p><%= truncate(article.body, :length => 300, :escape => false) %></p>
+
+                    <%= link_to article_path(article), :class => 'btn btn-default btn-sm' do %>
+                        Read More<i class="fa fa-arrow-right"></i>
+                    <% end %>
+
+                  </div> <!-- .box-body -->
+                </div> <!-- .box-img -->
+              </div> <!-- .col-md-6 -->
+          <% end %>
+
+        </div> <!-- .col-md-6 -->
+      </div>
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+
+<section class="site-content bg-light">
+  <div class="container">
+    <div class="row">
+      <h3 class="page-header upcoming-events no-top-spacing">Events</h3>
+      <div class="col-md-4">
+        <div class="row">
+
+          <% @upcoming_events.each do |e| %>
+	          <div class="col-md-12 col-sm-6">
+	            <div class="media padding-bottom-15">
+	              <div class="media-left">
+
+	                <div class="event-date margin-bottom-5">
+	                  <p><%= e.event_date.strftime("%e") %></p>
+	                  <small class="uppercase"><%= e.event_date.strftime("%b") %></small>
+	                </div> <!-- .event-date -->
+	              </div> <!-- .media-left -->
+	              <div class="media-body event-details">
+	                <h4 class="media-heading">
+	                  <%= link_to e.name, {:controller => 'newsroom', :action => 'event', :id => e.id} %>
+	                </h4>
+	                <p>
+	                  <i class="fa fa-clock-o fa-fw"></i> <strong><%= e.event_date.strftime("%a") %></strong> <%= e.event_date.strftime("%B %d, %Y %I:%M%p") %>
+	                  <br>
+	                  <i class="fa fa-map-marker fa-fw"></i> <span class="letter-spacing"><%= e.location %></span>
+	                </p>
+	              </div> <!-- .media-body -->
+	            </div> <!-- .media -->
+	          </div> <!-- .col-md-12 -->
+	      <% end %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <% @upcoming_events2.each do |e| %>
+              <div class="col-md-12 col-sm-6">
+                <div class="media padding-bottom-15">
+                  <div class="media-left">
+
+                    <div class="event-date margin-bottom-5">
+                      <p><%= e.event_date.strftime("%e") %></p>
+                      <small class="uppercase"><%= e.event_date.strftime("%b") %></small>
+                    </div> <!-- .event-date -->
+                  </div> <!-- .media-left -->
+                  <div class="media-body event-details">
+                    <h4 class="media-heading">
+                      <%= link_to e.name, {:controller => 'newsroom', :action => 'event', :id => e.id} %>
+                    </h4>
+                    <p>
+                      <i class="fa fa-clock-o fa-fw"></i> <strong><%= e.event_date.strftime("%a") %></strong> <%= e.event_date.strftime("%B %d, %Y %I:%M%p") %>
+                      <br>
+                      <i class="fa fa-map-marker fa-fw"></i> <span class="letter-spacing"><%= e.location %></span>
+                    </p>
+                  </div> <!-- .media-body -->
+                </div> <!-- .media -->
+              </div> <!-- .col-md-12 -->
+          <% end %>
+      </div>
+    </div>
+      <div class="col-md-4">
+        <div class="row">
+          <% @upcoming_events3.each do |e| %>
+              <div class="col-md-12 col-sm-6">
+                <div class="media padding-bottom-15">
+                  <div class="media-left">
+
+                    <div class="event-date margin-bottom-5">
+                      <p><%= e.event_date.strftime("%e") %></p>
+                      <small class="uppercase"><%= e.event_date.strftime("%b") %></small>
+                    </div> <!-- .event-date -->
+                  </div> <!-- .media-left -->
+                  <div class="media-body event-details">
+                    <h4 class="media-heading">
+                      <%= link_to e.name, {:controller => 'newsroom', :action => 'event', :id => e.id} %>
+                    </h4>
+                    <p>
+                      <i class="fa fa-clock-o fa-fw"></i> <strong><%= e.event_date.strftime("%a") %></strong> <%= e.event_date.strftime("%B %d, %Y %I:%M%p") %>
+                      <br>
+                      <i class="fa fa-map-marker fa-fw"></i> <span class="letter-spacing"><%= e.location %></span>
+                    </p>
+                  </div> <!-- .media-body -->
+                </div> <!-- .media -->
+              </div> <!-- .col-md-12 -->
+          <% end %>
+
+        </div> <!-- .row -->
+      </div> <!-- .col-md-4 -->
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

@@ -1,0 +1,45 @@
+<% section.profiles.each do |u| %>
+	<div class="col-md-9">
+        <div class="content-box box-img bg-light">
+            <div class="row no-gutter">
+              <div class="col-md-3">
+                <% if u.profile_photo? %>
+                  <%= image_tag u.profile_photo.resized, class:'img-responsive profile_pic', size: '255x280', alt: 'u.fullname' %>
+              <% else %>
+                  <%= image_tag('/assets/no-pic.png', class: 'img-responsive profile_pic', size: '263x263', alt: 'The University of Alabama') %>
+              <% end %>
+              </div> <!-- .col-md-3 -->
+
+              <div class="col-md-9">
+                <div class="box-body">
+                  <h3 class="margin-bottom-5"><%= u.fullname %> — 
+                    <% if u.abbreviated_title.present? %>
+                      <small><%= u.abbreviated_title %></small>
+                    <% end %>
+                  </h3>
+                  <p style="font-weight: bold;">
+                    <% u.departments.order('id DESC').each do |d| %>
+                        <%= link_to_if(d.url.present?, d.name, d.url) %> <br>
+                    <% end %>
+                  </p>  
+
+                  <div class="divider-light faded-right"></div>
+
+                <%= mail_to "Email: #{u.email}", u.email, class: 'small' if u.email.present? %><br>
+
+                <%= link_to "Phone: #{number_to_phone(u.phone, area_code: true)}", "tel:#{u.phone}", class: 'small' if u.phone.present? %><br>
+
+                <%= link_to 'CV<br>'.html_safe, u.cv.url, target: "_blank", class: 'small' if u.cv.present? %>
+
+                <%= link_to 'Website<br>'.html_safe, u.website, target: "_blank", class: 'small' if u.website.present? %>
+
+                <%= link_to 'Google Scholar<br>'.html_safe, u.google_scholar, target: "_blank", class: 'small' if u.google_scholar.present? %><br>
+
+                <p class="small"> <a href="<%= profile_path(u.slug) %>" class="btn btn-transparent-v2"> View Full Profile</a></p>
+
+                </div> <!-- .box-body -->
+              </div> <!-- .col-md-9 -->
+            </div> <!-- .row -->
+    	</div> <!-- .content-box -->
+    </div>
+<% end %>        

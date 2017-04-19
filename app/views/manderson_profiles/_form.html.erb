@@ -1,0 +1,62 @@
+<div class="col-md-12">
+  <div class="panel panel-primary" data-collapsed="0">
+    <div class="panel-heading">
+      <div class="panel-title">
+        Manderson Student Profile
+      </div>
+      <div class="panel-options">
+        <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+        <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a> <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+
+        <%= simple_form_for(@manderson_profile, html: { class: 'form-horizontal' },
+                            wrapper: :horizontal_form,
+                            wrapper_mappings: {
+                                check_boxes: :horizontal_radio_and_checkboxes,
+                                radio_buttons: :horizontal_radio_and_checkboxes,
+                                file: :horizontal_file_input,
+                                boolean: :horizontal_boolean
+                            }) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-group">
+              <%= f.input :first_name %>
+              <%= f.input :middle_initial %>
+              <%= f.input :last_name %>
+              <%= f.input :nickname %>
+              <%= f.input :email %>
+              <%= f.input :phone %>
+              <%= f.input :hometown %>
+              <%= f.input :candidate_type, label:'Type' %>
+              <%= f.input :grad_class, label: 'Graduate Class' %>
+              <%= f.input :ug_school, label: 'UG School' %>
+              <%= f.input :ug_degree, label: 'UG Degree' %>
+              <%= f.input :ug_year, label: 'UG Year' %>
+              <%= f.input :work_experience, label: 'Work Experience', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+              <%= f.input :activities_honors, label: 'Activities & Honors', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+              <%= f.input :volunteerism, label: 'Volunteerism', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+              <%= f.input :internship, label: 'Internship Info', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+              <%= f.input :cskills, label: 'Computer Skills', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+              <%= f.input :manderson_profile_photo, as: :file, wrapper: :vertical_file_input, label: 'Profile Photo' %>
+              <%= f.input :manderson_profile_cv, as: :file, wrapper: :vertical_file_input, label: 'CV' %>
+              <%= f.input :favorite_book, label: 'What is your favorite book?' %>
+              <%= f.input :favorite_quote, label: 'What is your favorite quote?'%>
+              <%= f.input :three_word_description, label: 'Describe yourself in 3 words.' %>
+              <%= f.input :something_unique, label: 'What is something unique about you?', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, :wrapper => :inline_text %>
+
+              <%= f.input :status, label: 'Live or Not Live' %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+require "#{Rails.root}/lib/constraints/role_route_constraint"

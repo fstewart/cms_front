@@ -1,0 +1,15 @@
+<%= simple_form_for @unit do |f| %>
+  <%= f.input :name %>
+  <%= f.input :overview, as: :text, label: 'Organization Overview aka top section of the page' %>
+  <h3>Page Sections</h3>
+  <div id="tasks">
+    <%= f.simple_fields_for :sections do |section| %>
+      <%= render 'section_fields', f: section %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Click here to add / edit page sections', f, :sections %>
+    </div>
+    <br>
+  </div>
+  <%= f.submit 'Create Organization' %>
+<% end %>

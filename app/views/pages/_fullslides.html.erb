@@ -1,0 +1,37 @@
+<div id="ua-carousel" class="carousel carousel-home slide">
+  <div class="carousel-inner">
+
+    <% section.fullslides.each_with_index do |slide, index| %>
+      <div class="item<%= ' active' if index == 0 %>">
+        <div class="bg-img bg-center-center" style="background-image: url( '<%= slide.full_slider_image.present? ? slide.full_slider_image.full.url : "/assets/img/dennychimes01_1920.jpg" %>' );">
+          <div class="caption">
+            <div class="caption-inner">
+
+              <% if slide.video_url.present? %>
+
+                <h2><%= link_to slide.title, slide.video_url, :target => '_blank' %></h2>
+                <p class="lead"><%= raw(slide.desc) if slide.desc.present? %></p>
+                <%= button_to( 'Watch Video', slide.video_url, class: 'btn btn-transparent uppercase margin-top-10') %>
+
+              <% else %>
+
+                <%= content_tag(:h2, slide.title ) %>
+                <%= content_tag(:p, slide.desc ) %>
+
+              <% end %>
+
+          </div> <!-- .caption-inner -->
+         </div> <!-- .caption -->
+        </div> <!-- .bg-img -->
+      </div> <!-- .item -->
+    <% end %>
+
+  </div>
+  <a class="left carousel-control" href="#ua-carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+
+  <a class="right carousel-control" href="#ua-carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

@@ -1,0 +1,142 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Culverhouse Newsroom</h1>
+
+	  <h2>Featured Video</h2>
+	  
+      
+      
+      <h2>News Articles</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+              <td><%= article.title %></td>
+              <td><%= article.story_short_desc %></td>
+              <td><%= link_to 'Show', article %></td>
+              <td><%= link_to 'Edit', edit_article_path(article) %></td>
+              <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      
+      <%= will_paginate @articles %>
+
+      
+      <br><br>
+      <div class="tags-cloud glassy-bg">
+        <h4>Tags Cloud</h4>
+        <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+
+      <br>
+
+      <%= link_to 'New Article', new_article_path %>
+
+      <hr><br><br>
+
+      <h2>Events</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Event category</th>
+          <th>Name</th>
+          <th></th>
+          <th>Event date</th>
+          <th>Image</th>
+          <th></th>
+          <th></th>
+          <th>Status</th>
+          <th></th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @events.each do |event| %>
+            <tr>
+              <td><%= event.event_category %></td>
+              <td><%= event.name %></td>
+              <td></td>
+              <td><%= event.event_date %></td>
+              <td>
+                <% if event.event_photo? %>
+                    <%= image_tag event.event_photo.thumb.url %>
+                <% else %>
+                    NA
+                <% end %>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <% if event.status == false %>
+                    <p style="color:red;">Inactive</p>
+                <% else %>
+                    <p style="color:green;">Active</p>
+                <% end %>
+              </td>
+              <td><%= event.google_event_id %></td>
+              <td><%= link_to 'Show', event %></td>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      
+      <%= will_paginate @events %>
+
+      <br>
+
+      <%= link_to 'New Event', new_event_path %>
+      <hr><br><br>
+
+      <h2>Listing News Image Slider</h2>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Image</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @news_sliders.each do |s| %>
+            <tr>
+              <td><%= s.title %></td>
+              <td><%= s.body %></td>
+              <td><%= s.image %></td>
+              <td><%# link_to 'Show', s %></td>
+              <td><%# link_to 'Edit', edit_homepage_carousel_path(homepage_carousel) %></td>
+              <td><%# link_to 'Destroy', homepage_carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      
+      <%= will_paginate @news_sliders %>
+
+      <br>
+
+      <%# link_to 'Add A News Slider', new_news_slider_path %>
+
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</section> <!-- .container -->

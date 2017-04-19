@@ -1,0 +1,52 @@
+<%= simple_form_for(@user, html: { class: 'form-horizontal' },
+                    wrapper: :horizontal_form,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.association :departments, collection: Department.order('name ASC'), input_html: { multiple: true }, :label => 'Departments' %>
+      <%= f.input :username, :label => 'Username' %>
+      <%= f.input :first_name, :label => 'First Name' %>
+      <%= f.input :middle_name, :label => 'Middle Name' %>
+      <%= f.input :last_name, :label => 'Last Name'  %>
+      <%= f.input :suffix, :label => 'Suffix' %>
+      <%= f.input :nickname, :label => 'Nickname' %>
+      <%# f.association :roles, input_html: { multiple: true }, :label => 'Roles' %>
+      <%= f.input :email, :label => 'Email'  %>
+      <%= f.input :phone, :label => 'Phone' %>
+      <%= f.input :profile_photo, :label => 'Photo' %>
+      <%= f.input :employee_type, :label => 'Type' %>
+      <%= f.input :title, :label => 'Title' %>
+      <%= f.input :abbreviated_title, :label => 'Abbreviated Title' %>
+      <%= f.input :po_box, :label => 'Box' %>
+      <%= f.association :building, :label => 'Building' %>
+      <%= f.input :cv, :label => 'CV' %>
+      <%= f.input :website, :label => 'Website' %>
+      <%= f.input :google_scholar, :label => 'Google Scholar' %>
+      <%= f.input :current_research, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} }, :wrapper => :horizontal_form, :label => 'Current Research' %>
+      <%= f.input :education, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Regular'} }, :wrapper => :horizontal_form, :label => 'Education' %>
+      <%= f.input :achievements, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Regular'} }, :wrapper => :horizontal_form, :label => 'Achievements' %>
+      <%= f.input :selected_publications, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Regular'} }, :wrapper => :horizontal_form, :label => 'Selected Publications' %>
+      <br><br>
+      <p>
+	      <b>Expert Tags</b> - Enter comma separated tags that relate to this article (e.g. statistics, accounting, economics, etc...)
+	  </p>
+      <%= f.text_field :all_expertises %>
+      <br><br><br>
+      <%= f.input :show_elevator, :label => 'Elevator Display' %>
+      <%= f.input :show_title, :label => 'Show Title' %>
+      <%= f.input :show_office, :label => 'Show Office' %>
+      <%= f.input :show_department, :label => 'Show Department' %>
+      <%= f.input :status, :label => 'Status' %>
+      <%= f.input :mark_for_deletion, :label => 'Mark for Deletion' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

@@ -1,0 +1,54 @@
+<section class="site-section-top">
+  <div class="bg-img" style="background-image: url('https://www.ua.edu/news/wp-content/themes/ua-theme-news/img/home-hero/quad04_1920x330.jpg');">
+    <div class="container site-content">
+      <div class="site-heading-bg-primary">
+        <h1> Culverhouse Events </h1>
+      </div> <!-- .site-heading-bg -->
+    </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to "Culverhouse News", "news/" %></li>
+            <li><%= link_to "UA Events", "http://events.ua.edu", target: "_blank" %></li>
+          </ul>
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-9">
+        <% @events.each do |e| %>
+          <article class="news-v2 margin-bottom-30">
+            <div class="row">
+
+              <% if  e.event_photo.present? %>
+                <div class="col-md-3">
+                  <%= image_tag e.event_photo.url, :class => "attachment-ua-theme-md size-ua-theme-md wp-post-image img-responsive", :size => '250x250' %>
+                </div>
+              <% end %>
+
+              <div class="news-body">
+                <h2><%= link_to e.name, { :controller => :newsroom, :action => :event, :id => e.id } %></h2>
+                <ul class="list-inline small">
+                  <li>
+                    <i class="fa fa-calendar"></i> <%= e.event_date.strftime("%B %d, %Y") %>
+                  <li>
+                </ul>
+                <p><%= e.desc.html_safe %></p>
+              </div>
+
+            </div>
+          </article>
+          <hr>
+        <% end %>
+        <%= will_paginate @events %>
+      </div>
+
+    </div>
+  </div>
+</section>

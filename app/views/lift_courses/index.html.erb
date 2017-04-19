@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lift Courses</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Meeting Day</th>
+      <th>Meeting Time</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lift_courses.each do |lift_course| %>
+      <tr>
+        <td><%= lift_course.start_date %></td>
+        <td><%= lift_course.title %></td>
+        <td><%= truncate(lift_course.description, :length => 30) %></td>
+        <td><%= lift_course.lift_location.name %></td>
+        <td><%= lift_course.meeting_day %></td>
+        <td><%= lift_course.meeting_time %></td>
+        <td><%= lift_course.status %></td>
+        <td><%= link_to 'Show', lift_course %></td>
+        <td><%= link_to 'Edit', edit_lift_course_path(lift_course) %></td>
+        <td><%= link_to 'Destroy', lift_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lift course', new_lift_course_path %>

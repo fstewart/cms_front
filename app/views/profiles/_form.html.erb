@@ -1,0 +1,30 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs col-md-12">
+    <div class="col-md-6">
+      <%= f.association :department, label: 'Department / Center / Program' %>
+      <%= f.input :designation, include_blank: false %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :nickname %>
+      <%= f.input :title %>
+      <%= f.input :address, label: 'Mailing Address' %>
+      <%= f.input :phone %>
+      <%= f.input :email %>
+      <%= f.input :profile_photo %>
+      <%= f.input :current_research %>
+      <%= f.input :education %>
+      <%= f.input :achievements %>
+      <%= f.input :selected_publication %>
+      <%= f.input :elevator, label: 'Display on Elevator Directory?' %>
+      <%= f.input :status, label: 'Active / Inactive' %>
+      <%= f.input :all_expertises, label: 'Areas of Expertise - (Example: Economics, Finance, Research...)'%>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

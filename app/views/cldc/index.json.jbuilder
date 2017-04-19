@@ -1,0 +1,1 @@
+json.array! @cldc_teams, partial: 'cldc_teams/cldc_team', as: :cldc_team

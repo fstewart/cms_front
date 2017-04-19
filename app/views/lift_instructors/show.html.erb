@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lift_instructor.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lift_instructor.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lift_instructor.phone %>
+</p>
+
+<p>
+  <strong>Lift course:</strong>
+  <%= @lift_instructor.lift_course_id %>
+</p>
+
+<%= render 'register' %>
+
+<%= link_to 'Edit', edit_lift_instructor_path(@lift_instructor) %> |
+<%= link_to 'Back', lift_instructors_path %>

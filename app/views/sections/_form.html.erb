@@ -1,0 +1,279 @@
+<%= simple_form_for(@section, html: { class: 'form-horizontal' },
+                    wrapper: :horizontal_form,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    }) do |f| %>
+  <%= f.error_notification %>
+
+    <div class="col-md-12">
+
+      <div class="panel panel-primary" data-collapsed="0">
+
+        <div class="panel-heading">
+          <div class="panel-title">
+            Section Details:  _ Components / <%= @section.total_accordions %> Accordion Items / _ Text Items
+          </div>
+
+          <div class="panel-options">
+            <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+            <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+            <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+            <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.association :page, label: 'Page'%>
+                  <%= f.input :position, label: 'Order' %>
+                  <%= f.input :title, label: 'Section Title'%>
+                  <%# f.input :desc, label: false, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }, wrapper: :field12 %>
+                  <%= f.input :status, label: 'Section Status' %>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <p class="row">
+            <p>&nbsp;&nbsp;<div class="panel-title">Section Content Order</div></p>
+            <hr>
+          </p>
+
+          <div class="row">
+
+            <%= f.simple_fields_for :texts do |text| %>
+                <%= render 'text_fields', :f => text %>
+            <% end %>
+
+            <%= f.simple_fields_for :carousels do |carousel| %>
+                <%= render 'carousel_fields', :f => carousel %>
+            <% end %>
+
+            <%= f.simple_fields_for :fullslides do |slide| %>
+                <%= render 'fullslide_fields', :f => slide %>
+            <% end %>
+
+            <%= f.simple_fields_for :accordions, f.object.accordions.order(:priority) do |accordion| %>
+                <%= render 'accordion_fields', :f => accordion %>
+            <% end %>
+
+            <%= f.simple_fields_for :imageboxes do |imagebox| %>
+                <%= render 'imagebox_fields', :f => imagebox %>
+            <% end %>
+
+            <%= f.simple_fields_for :listgroups do |listgroup| %>
+                <%= render 'listgroup_fields', :f => listgroup %>
+            <% end %>
+
+            <%= f.simple_fields_for :timelines do |timeline| %>
+                <%= render 'timeline_fields', :f => timeline %>
+            <% end %>
+
+            <%= f.simple_fields_for :videos do |video| %>
+                <%= render 'video_fields', :f => video %>
+            <% end %>
+
+            <%= f.simple_fields_for :galleries do |gallery| %>
+                <%= render 'gallery_fields', :f => gallery %>
+            <% end %>
+
+          </div>
+
+          <div class="row">
+
+              <div class='links'>
+                <p class="row">
+                <p>&nbsp;&nbsp;<div class="panel-title">Add A Component</div></p>
+                <hr>
+                </p>
+
+                <%= link_to_add_association(f, :texts) do %>
+                  <div class="col-sm-3">
+                    <div class="tile-title tile-red">
+                      <div class="icon">
+                        <i class="glyphicon glyphicon-edit"></i>
+                      </div>
+                      <div class="title">
+                        <h3>Text</h3>
+                        <p>&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%= link_to_add_association(f, :accordions) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-blue">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-align-justify"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Accordion</h3>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+
+                <%# link_to_add_association(f, :carousels) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-gray">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-modal-window"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Content Box</h3>
+                          <p>Coming Soon</p>
+                        </div>
+                      </div>
+                    </div>
+                <%# end %>
+
+                <%= link_to_add_association(f, :listgroups) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-brown">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-list"></i>
+                        </div>
+                        <div class="title">
+                          <h3>List Group</h3>
+                          <p>&nbsp;</p>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+
+                <%= link_to_add_association(f, :carousels) do %>
+                  <div class="col-sm-3">
+                    <div class="tile-title tile-orange">
+                      <div class="icon">
+                        <i class="glyphicon glyphicon-play-circle"></i>
+                      </div>
+                      <div class="title">
+                        <h3>Carousel</h3>
+                        <p>&nbsp; </p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%= link_to_add_association(f, :imageboxes) do %>
+                  <div class="col-sm-3">
+                    <div class="tile-title tile-green">
+                      <div class="icon">
+                        <i class="glyphicon glyphicon-picture"></i>
+                      </div>
+                      <div class="title">
+                        <h3>Image Box</h3>
+                        <p>&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%= link_to_add_association(f, :galleries) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-plum">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-th"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Image Gallery</h3>
+                          <p>&nbsp;</p>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+
+                <%= link_to_add_association(f, :fullslides) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-aqua">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-expand"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Full Slider</h3>
+                          <p>&nbsp; </p>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+
+                <%# link_to_add_association(f, :timelines) do %>
+                  <div class="col-sm-3">
+                    <div class="tile-title tile-primary">
+                      <div class="icon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </div>
+                      <div class="title">
+                        <h3>Timeline</h3>
+                        <p>Coming Soon&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                <%# end %>
+
+                <%= link_to_add_association(f, :videos) do %>
+                  <div class="col-sm-3">
+                    <div class="tile-title tile-purple">
+                      <div class="icon">
+                        <i class="glyphicon glyphicon-film"></i>
+                      </div>
+                      <div class="title">
+                        <h3>Video</h3>
+                        <p>&nbsp;</p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%# link_to_add_association(f, :carousels) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-cyan">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-list-alt"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Form</h3>
+                          <p>Coming Soon</p>
+                        </div>
+                      </div>
+                    </div>
+                <%# end %>
+
+                <%# link_to_add_association(f, :carousels) do %>
+                    <div class="col-sm-3">
+                      <div class="tile-title tile-pink">
+                        <div class="icon">
+                          <i class="glyphicon glyphicon-star"></i>
+                        </div>
+                        <div class="title">
+                          <h3>Icon Box</h3>
+                          <p>Coming Soon</p>
+                        </div>
+                      </div>
+                    </div>
+                <%# end %>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+      <%= f.button :submit, :disable_with => 'Please wait ...'%>
+    </div>
+<% end %>

@@ -1,0 +1,24 @@
+<% section.countdowns.each do |c| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="content-box box-img bg-light no-bottom-spacing">
+        <div class="row no-gutter">
+          <div class="col-md-6 text-right">
+            <div class="box-body margin-top-60">
+              <h3><%= c.title %></h3>
+              <p class="small margin-bottom-10 text-muted">
+                <i class="fa fa-calendar"></i> <%= c.event_date.strftime("%B %d, %Y") %>
+              <p><%= c.description.html_safe %></p>
+            </div> <!-- .box-body -->
+          </div> <!-- .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="box-body margin-top-60 margin-left-15">
+              <h3><%= (c.event_date - Date.today).to_i %> Days Until the Deadline </h3>
+            </div>
+          </div> <!-- .col-md-6 -->
+        </div> <!-- .row -->
+      </div> <!-- .box-img -->
+    </div> <!-- .col-md-12 -->
+  </div>
+<% end %>

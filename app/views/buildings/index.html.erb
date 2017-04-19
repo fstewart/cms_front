@@ -1,0 +1,44 @@
+<section class="site-content">
+		<div class="container">
+			<div class="row">
+			<p id="notice"><%= notice %></p>
+			
+			<h3>Culverhouse Buildings</h3>
+
+      <div class="col-md-12">
+        <table class="table table-bordered table-striped datatable dataTable no-footer">
+			  <thead>
+			    <tr>
+			      <th>Name</th>
+			      <th colspan="2">Actions</th>
+			    </tr>
+			  </thead>
+			
+			  <tbody>
+			    <% @buildings.each do |building| %>
+			      <tr>
+			        <td><%= building.name %></td>
+			        <td>
+                <%= link_to edit_building_path(building), class: "btn btn-default btn-sm btn-icon icon-left" do %>
+                    <i class="entypo-pencil"></i>Edit
+                <% end %>
+
+                <%= link_to building, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm btn-icon icon-left" do %>
+                    <i class="entypo-cancel"></i>Destroy
+                <% end %>
+              </td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+      </div>
+			
+			<br>
+
+        <%= link_to new_building_path, class: "btn btn-success btn-sm btn-icon icon-left" do %>
+            <i class="entypo-plus"></i>New Building
+        <% end %>
+
+      </div> <!-- .col-md-3 -->
+    </div> <!-- .row -->
+</section> <!-- .container -->

@@ -1,0 +1,51 @@
+/*
+	Plugin	: MJ Form Builder
+	Author	: Michael Janea (www.michaeljanea.com)
+	Version	: 1.2
+*/
+
+#mjFormBuilderContainer {}
+	#mjFormBuilderContainer fieldset, #mjFormBuilderContainer legend {border:1px solid #ddd;}
+	#mjFormBuilderContainer legend {padding:.5em; font-weight:bold; text-transform:uppercase;}
+	#mjFormBuilderContainer input[type=button] {font-weight:bold; -webkit-border-radius:3px; border-radius:3px; background:#f3f3f3; padding:.5em .8em; margin:0 1em 1em 0; border:1px solid #ddd; -webkit-box-sizing:border-box; box-sizing:border-box; float:left; text-align:center;}
+	#mjFormBuilderContainer input[type=button]:hover {text-decoration:none;}
+	#mjFormBuilderContainer input[type=button]:nth-child(odd) {margin-right:0;}
+#mjFormBuilder_preview, #mjFormBuilder_tools {-webkit-box-sizing:border-box; box-sizing:border-box; padding:.5em; float:left;}
+	#mjFormBuilder_preview {width:60%; overflow:auto; height:420px; padding:0 .5em 0 0;}
+		#mjFormBuilder_preview input[type=text], #mjFormBuilder_preview input[type=number], #mjFormBuilder_preview textarea, #mjFormBuilder_preview select, #mjFormBuilderTable input[type=text], #mjFormBuilderTable input[type=number], #mjFormBuilderTable textarea, #mjFormBuilderTable select {padding:.3em; border:1px solid #ddd; -webkit-border-radius:3px; border-radius:3px; -webkit-box-shadow:inset 0 2px 2px rgba(0,0,0,0.075); box-shadow:inset 0 2px 2px rgba(0,0,0,0.075); background:rgba(0, 0, 0, .01); width:200px; resize:none; -webkit-box-sizing:border-box; box-sizing:border-box;}
+		#mjFormBuilder_preview .mjFormBuilder_panel {border-color:#ddd; margin-bottom: 20px; background-color:#fff; border:1px solid transparent; border-radius:4px;}
+		#mjFormBuilder_preview .mjFormBuilder_title {background:#f5f5f5; color:#333; border:1px solid #ddd; padding:.5em; border-bottom:1px solid transparent; border-top-left-radius:3px; border-top-right-radius:3px; position:relative;}
+		#mjFormBuilder_preview .mjFormBuilder_body_container {padding:.5em; border-bottom-left-radius:3px; border-bottom-right-radius:3px; border:1px solid #ddd;}
+			.mjFormBuilder_preview table tbody tr td:first-child {width:150px;}
+			.mjFormBuilder_preview table tbody tr td:first-child label {text-align:right; font-weight:bold; white-space:normal;}
+		#mjFormBuilder_preview .mjFormBuilder_options {position:absolute; right:.5em; top:.5em;}
+		#mjFormBuilder_preview table, #mjFormBuilderTable table {width:100%; border-collapse:collapse; margin-top:1em;}
+			#mjFormBuilder_preview tbody, #mjFormBuilderTable tbody {padding-top:.5em;}
+			#mjFormBuilder_preview th, #mjFormBuilder_preview td, #mjFormBuilderTable th, #mjFormBuilderTable td {padding:.5em;}
+			#mjFormBuilder_preview th, #mjFormBuilderTable th {font-weight:bold; border-bottom:1px solid #ddd;}
+			#mjFormBuilder_preview td, #mjFormBuilderTable td {vertical-align:middle;}
+			#mjFormBuilder_preview a {cursor:pointer;}
+			#mjFormBuilder_preview .mjFormBuilder_settings {display:none;}
+			#mjFormBuilder_preview small span {font-size:10px;}
+			#mjFormBuilder_preview .mjFormBuilder_choices {height:100px; width:100%; resize:vertical;}
+			#mjFormBuilder_preview .mjFormBuilder_predefined_choices {font-size:10px; margin-top:.3em !important; margin-bottom:0 !important;}
+			#mjFormBuilder_preview label {display:block; padding-top:.35em;}
+			#mjFormBuilder_preview .mjFormBuilder_division {width:31.9%; float:left; -webkit-box-sizing:border-box; box-sizing:border-box; padding-right:.5em;}
+			#mjFormBuilder_preview .mjFormBuilder_division input {max-width:100%;}
+	#mjFormBuilder_tools {width:40%;}
+		#mjFormBuilder_tools input[type=button] {width:137px; float:left;}
+		#mjFormBuilder_tools input[type=button]:nth-child(7), #mjFormBuilder_tools input[type=button]:nth-child(8) {margin-bottom:0;}
+	#mjFormBuilderTable {}
+		#mjFormBuilderTable textarea {width:400px; height:65px;}
+		#mjFormBuilderTable p {margin-bottom:.5em;}
+		#mjFormBuilder_select_a_field, .mjFormBuilder_select_a_field, .mjFormBuilder_predefined_choices_dropdown {position:absolute; border:1px solid #ddd; -webkit-border-radius:3px; border-radius:3px; list-style:none; width:175px; padding:0; background:#f5f5f5; max-height:175px; overflow:auto; display:none;}
+			#mjFormBuilder_select_a_field li, .mjFormBuilder_select_a_field li, .mjFormBuilder_predefined_choices_dropdown li {cursor:pointer; border-top:1px solid #ddd; padding:.5em;}
+			#mjFormBuilder_select_a_field li:first-child, .mjFormBuilder_select_a_field li:first-child, .mjFormBuilder_predefined_choices_dropdown li:first-child {border-top:none;}
+			#mjFormBuilder_select_a_field li:hover, .mjFormBuilder_select_a_field li:hover, .mjFormBuilder_predefined_choices_dropdown li:hover {background:#e9e9e9;}
+			.mjFormBuilder_select_a_field {left:210px; top:23px; z-index:100;}
+			.mjFormBuilder_predefined_choices_dropdown {top:135px; z-index:100;}
+	#mjFormBuilderContainer a:hover, #mjFormBuilderTable a:hover, #mjFormBuilderContainer a:focus, #mjFormBuilderTable a:focus {text-decoration:none;}
+
+#mjFormBuilderContainer .mjFormBuilder_vAlignTop, #mjFormBuilderTable .mjFormBuilder_vAlignTop {vertical-align:top; padding-top:.9em;}
+#mjFormBuilderContainer .mjFormBuilder_hidden, #mjFormBuilderTable .mjFormBuilder_hidden {display:none;}
+.mjFormBuilder_positionRelative {position:relative;}

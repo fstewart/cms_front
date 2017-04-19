@@ -1,0 +1,65 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+<p id="notice"><%= notice %></p>
+
+<h1>Manderson Profiles</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Candidate Type</th>
+      <th>Class</th>
+      <th>Photo</th>
+      <th>Resume</th>
+      <th>Status</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manderson_profiles.each do |manderson_profile| %>
+      <tr>
+        <td><%= manderson_profile.first_name %></td>
+        <td><%= manderson_profile.last_name %></td>
+        <td><%= manderson_profile.email %></td>
+        <td><%= manderson_profile.candidate_type %></td>
+        <td><%= manderson_profile.grad_class %></td>
+        <td>
+          <% if manderson_profile.manderson_profile_photo? %>
+              <%= image_tag manderson_profile.manderson_profile_photo.thumb.url %>
+          <% else %>
+              N/A
+          <% end %>
+        </td>
+        <td>
+          <% if manderson_profile.manderson_profile_cv? %>
+              <%= link_to manderson_profile.manderson_profile_cv.file.url %>
+          <% else %>
+              N/A
+          <% end %>
+        </td>
+        <td>
+          <% if manderson_profile.status == false %>
+              <p style="color:red;">Inactive</p>
+          <% else %>
+              <p style="color:green;">Active</p>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', manderson_profile %></td>
+        <td><%= link_to 'Edit', edit_manderson_profile_path(manderson_profile) %></td>
+        <td><%= link_to 'Destroy', manderson_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manderson profile', new_manderson_profile_path %>
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</section> <!-- .container -->

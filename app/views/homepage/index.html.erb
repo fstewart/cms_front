@@ -1,0 +1,291 @@
+<p id="notice"><%= notice %></p>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1>Homepage</h1>
+        <p>Manage the components of the homepage in this section of the Content Management System.</p>
+        <br><br>
+        <div class="panel panel-primary" data-collapsed="0">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h2>Homepage Slider</h2>
+            </div>
+            <div class="panel-options">
+              <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg">
+                <i class="entypo-cog"></i>
+              </a>
+              <a href="#" data-rel="collapse">
+                <i class="entypo-down-open"></i>
+              </a>
+              <a href="#" data-rel="reload">
+                <i class="entypo-arrows-ccw"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Order</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Url</th>
+                <th>Video URL</th>
+                <th>Status</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @homepage_carousels.each do |homepage_carousel| %>
+                  <tr>
+                    <td><%= homepage_carousel.priority %></td>
+                    <td><%= homepage_carousel.title %></td>
+                    <td>
+                      <% if homepage_carousel.image? %>
+                          <%= image_tag homepage_carousel.image.thumb.url %>
+                      <% else %>
+                          <%= homepage_carousel.image %>
+                      <% end %>
+                    </td>
+                    <td><%= homepage_carousel.url %></td>
+                    <td><%= homepage_carousel.video %></td>
+                    <td>
+                      <% if homepage_carousel.is_published = false %>
+                          <p style="color:red;">Disabled</p>
+                      <% else %>
+                          <p style="color:green;">Active</p>
+                      <% end %>
+                    </td>
+                    <td></td>
+                    <td><%= link_to 'Edit', edit_homepage_carousel_path(homepage_carousel) %></td>
+                    <td><%= link_to 'Destroy', homepage_carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br><br>
+            <%= will_paginate @homepage_carousels %>
+
+            <%= link_to 'Add A Carousel Slide', new_homepage_carousel_path %>
+
+           </div>
+      </div>
+        <hr>
+        <br><br>
+        <div class="panel panel-primary" data-collapsed="0">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h2>Homepage Sections</h2>
+            </div>
+            <div class="panel-options">
+              <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg">
+                <i class="entypo-cog"></i>
+              </a>
+              <a href="#" data-rel="collapse">
+                <i class="entypo-down-open"></i>
+              </a>
+              <a href="#" data-rel="reload">
+                <i class="entypo-arrows-ccw"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Order</th>
+                <th>Title</th>
+                <th>Background Option</th>
+                <th>Background Image</th>
+                <th>Status</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @homepage_sections.each do |homepage_section_content| %>
+                  <tr>
+                    <td><%= homepage_section_content.priority %></td>
+                    <td><%= homepage_section_content.title if homepage_section_content.display_title = 'true' %></td>
+                    <td><%= homepage_section_content.background_option %></td>
+                    <td>
+                      <% if homepage_section_content.background_image? %>
+                          Yes
+                      <% else %>
+                          NA
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if homepage_section_content.is_published == false %>
+                          <p style="color:red;">Inactive</p>
+                      <% else %>
+                          <p style="color:green;">Active</p>
+                      <% end %>
+                    </td>
+                    <td></td>
+                    <td><%= link_to 'Edit', edit_homepage_section_content_path(homepage_section_content) %></td>
+                    <td><%= link_to 'Destroy', homepage_section_content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+
+            <br>
+
+            <%= link_to 'New Homepage Section', new_homepage_section_content_path %>
+          </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <div class="panel panel-primary" data-collapsed="0">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h2>News</h2>
+            </div>
+            <div class="panel-options">
+              <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg">
+                <i class="entypo-cog"></i>
+              </a>
+              <a href="#" data-rel="collapse">
+                <i class="entypo-down-open"></i>
+              </a>
+              <a href="#" data-rel="reload">
+                <i class="entypo-arrows-ccw"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Featured</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Home Photo</th>
+                <th>Status</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @articles.each do |article| %>
+                  <tr>
+                    <td><% if article.featured = false %>
+
+                      <% else %>
+                          <p style="color:green;">Yes</p>
+                      <% end %></td>
+                    <td>
+                      <%= article.title %>
+                    </td>
+                    <td><%= truncate(article.body,:escape => false) %></td>
+                    <td><% if article.home_photo? %>
+                          <%= image_tag article.home_photo.thumb.url %>
+                      <% else %>
+                          None
+                      <% end %></td>
+                    <td><% if article.status == false %>
+                          <p style="color:red;">Inactive</p>
+                      <% else %>
+                          <p style="color:green;">Active</p>
+                      <% end %></td>
+                    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br>
+            <%= will_paginate @articles %>
+            <br>
+            <div class="tags-cloud glassy-bg">
+              <h4>Tags Cloud</h4>
+              <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+                  <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+              <% end %>
+            </div>
+
+            <br><br>
+
+            <%= link_to 'New Article', new_article_path %>
+          </div>
+        </div>
+        <hr>
+        <br><br>
+        <div class="panel panel-primary" data-collapsed="0">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h2>Events</h2>
+            </div>
+            <div class="panel-options">
+              <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg">
+                <i class="entypo-cog"></i>
+              </a>
+              <a href="#" data-rel="collapse">
+                <i class="entypo-down-open"></i>
+              </a>
+              <a href="#" data-rel="reload">
+                <i class="entypo-arrows-ccw"></i>
+              </a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Event date</th>
+                <th>Event end date</th>
+                <th>Short desc</th>
+                <th>Desc</th>
+                <th>Status</th>
+                <th>Google event</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @events.each do |event| %>
+                  <tr>
+                    <td><%= event.event_category.name %></td>
+                    <td><%= event.name %></td>
+                    <td><%= event.url %></td>
+                    <td><%= event.event_date %></td>
+                    <td><%= event.event_end_date %></td>
+                    <td><%= event.short_desc %></td>
+                    <td><%= truncate(event.desc,:escape => false) %></td>
+                    <td><% if event.status == false %>
+                          <p style="color:red;">Inactive</p>
+                      <% else %>
+                          <p style="color:green;">Active</p>
+                      <% end %></td>
+                    <td><%= event.google_event_id %></td>
+                    <td></td>
+                    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+
+            <br>
+            <%= will_paginate @events %>
+            <br>
+
+            <%= link_to 'New Event', new_event_path %>
+          </div>
+        </div>
+
+        <br><br>
+
+
+      </div>
+    </div>
+  </div>
+</section>

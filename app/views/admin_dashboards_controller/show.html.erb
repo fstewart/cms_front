@@ -1,0 +1,439 @@
+<% content_for :menu do %>
+    <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+    <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+    <!-- <li class="root-level has-subroot-level has-sub"> -->
+    <li class="root-level has-sub">
+      <%= link_to homepage_index_path do %>
+          <i class="entypo-home"></i>
+          <%= content_tag :span, "Homepage", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to homepage_index_path do %>
+              <span id="span">Homepage Components&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to buildings_path do %>
+          <i class="entypo-map"></i>
+          <%= content_tag :span, "Buildings", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to buildings_path do %>
+              <span id="span">View Buildings&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_building_path do %>
+              <span id="span">New Building&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to departments_path do %>
+          <i class="entypo-suitcase"></i>
+          <%= content_tag :span, "Departments", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to unit_types_path do %>
+              <span id="span">View Department Types&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to departments_path do %>
+              <span id="span">View Departments&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_department_path do %>
+              <span id="span">New Department&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to programs_path do %>
+          <i class="entypo-suitcase"></i>
+          <%= content_tag :span, "Programs", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to programs_path do %>
+              <span id="span">View Programs&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_program_path do %>
+              <span id="span">Add A Program&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to programs_path do %>
+          <i class="entypo-suitcase"></i>
+          <%= content_tag :span, "Centers", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to programs_path do %>
+              <span id="span">View Centers&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_program_path do %>
+              <span id="span">Add A Center&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to programs_path do %>
+          <i class="entypo-suitcase"></i>
+          <%= content_tag :span, "Manderson", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to emba_path do %>
+              <span id="span">EMBA&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to programs_path do %>
+              <span id="span">Alumni & Corporate Affairs&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to programs_path do %>
+              <span id="span">Launch&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to programs_path do %>
+              <span id="span">Pages&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-sub">
+      <%= link_to pages_path do %>
+          <i class="entypo-docs"></i>
+          <%= content_tag :span, "Custom Pages", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to pages_path do %>
+              <span id="span">View Pages&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_page_path do %>
+              <span id="span">New Page&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to '/users' do %>
+          <i class="entypo-users"></i>
+          <%= content_tag :span, "Users", :class => "title" %>
+      <% end %>
+
+      <ul>
+        <li>
+          <%= link_to '/users' do %>
+              <span id="span">View Users&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '/users/new' do %>
+              <span id="span">New User&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to profiles_path do %>
+          <i class="entypo-vcard"></i>
+          <span id="span">Faculty & Staff&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to profiles_path do %>
+              <span id="span">View Faculty / Staff&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_profile_path do %>
+              <span id="span">New Faculty / Staff&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to articles_path do %>
+          <i class="entypo-newspaper"></i>
+          <span id="span">News&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to news_categories_path do %>
+              <span id="span">News Categories&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to articles_path do %>
+              <span id="span">View Articles&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_article_path do %>
+              <span id="span">New Article&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to events_path do %>
+          <i class="entypo-calendar"></i>
+          <span id="span">Events&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to event_categories_path do %>
+              <span id="span">Event Categories&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to events_path do %>
+              <span id="span">View Events&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_event_path do %>
+              <span id="span">New Event&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to faqs_path do %>
+          <i class="entypo-lifebuoy"></i>
+          <span id="span">FAQs&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to faqs_path do %>
+              <span id="span">View FAQs&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_faq_path do %>
+              <span id="span">New FAQ&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to contacts_path do %>
+          <i class="entypo-phone"></i>
+          <span id="span">Contacts&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to contacts_path do %>
+              <span id="span">View Contacts&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_contact_path do %>
+              <span id="span">New Contact&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to college_videos_path do %>
+          <i class="entypo-video"></i>
+          <span id="span">Videos&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to college_videos_path do %>
+              <span id="span">View Videos&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_college_video_path do %>
+              <span id="span">New Video&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="root-level has-subroot-level has-sub">
+      <%= link_to degrees_path do %>
+          <i class="entypo-graduation-cap"></i>
+          <span id="span">Degrees&nbsp;</span>
+      <% end %>
+      <ul>
+        <li>
+          <%= link_to degrees_path do %>
+              <span id="span">View Degrees&nbsp;</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_degree_path do %>
+              <span id="span">New Degree&nbsp;</span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+    <hr>
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">Custom Web Forms</span>
+      </a>
+
+    </li>
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">Project LIFT</span>
+      </a>
+
+    </li>
+
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">Manderson Profiles</span>
+      </a>
+
+    </li>
+
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">Dean's Newsletter Editor</span>
+      </a>
+
+    </li>
+
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">Organizations</span>
+      </a>
+
+    </li>
+    <li class="root-level has-sub">
+      <a href="#">
+        <i class="entypo-tools"></i>
+        <span class="title">PhD Students</span>
+      </a>
+
+    </li>
+    <hr>
+<% end %>
+
+<h1>Culverhouse CMS</h1>
+<p>Welcome to the Culverhouse CMS</p>
+<p><%= @ip %></p>
+<div class="row"></div>
+<div class="row">
+  <div class="col-sm-3 col-xs-6">
+
+    <div class="tile-stats tile-red">
+      <div class="icon"><i class="entypo-window"></i></div>
+      <div class="num" data-start="0" data-end="365" data-postfix="" data-duration="1500" data-delay="0">365</div>
+
+      <h3>Total Pages</h3>
+      <p>so far in our blog, and our website.</p>
+    </div>
+
+  </div>
+
+  <div class="col-sm-3 col-xs-6">
+
+    <div class="tile-stats tile-green">
+      <div class="icon"><i class="entypo-users"></i></div>
+      <div class="num" data-start="0" data-end="135" data-postfix="" data-duration="1500" data-delay="600">135</div>
+
+      <h3>Profiles</h3>
+      <p>in the staff directory.</p>
+    </div>
+
+  </div>
+
+  <div class="col-sm-3 col-xs-6">
+
+    <div class="tile-stats tile-aqua">
+      <div class="icon"><i class="entypo-chart-bar"></i></div>
+      <div class="num" data-start="0" data-end="23" data-postfix="" data-duration="1500" data-delay="1200">23</div>
+
+      <h3>Visits</h3>
+      <p>per day.</p>
+    </div>
+
+  </div>
+
+  <div class="col-sm-3 col-xs-6">
+
+    <div class="tile-stats tile-blue">
+      <div class="icon"><i class="entypo-rss"></i></div>
+      <div class="num" data-start="0" data-end="52" data-postfix="" data-duration="1500" data-delay="1800">52</div>
+
+      <h3>News Posts</h3>
+      <p>in our online newsroom.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+  <div class="col-sm-8"> <div class="panel panel-primary" id="charts_env"> <div class="panel-heading"> <div class="panel-title">Site Stats</div> <div class="panel-options"> <ul class="nav nav-tabs"> <li class="active"><a aria-expanded="true" href="#area-chart" data-toggle="tab">Area Chart</a></li> <li class=""><a aria-expanded="false" href="#line-chart" data-toggle="tab">Line Charts</a></li> <li class=""><a aria-expanded="false" href="#pie-chart" data-toggle="tab">Pie Chart</a></li> </ul> </div> </div> <div class="panel-body"> <div class="tab-content"> <div style="" class="tab-pane active" id="area-chart"> <div id="area-chart-demo" class="morrischart" style="height: 300px; position: relative;"><svg style="overflow: hidden; position: relative; left: -0.700012px; top: -0.816681px;" xmlns="http://www.w3.org/2000/svg" width="522" version="1.1" height="300"><desc>Created with Raphaël 2.1.2</desc><defs></defs><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="262.5" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">0</tspan></text><path stroke-width="0.5" d="M46,262.5H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="203.125" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">50</tspan></text><path stroke-width="0.5" d="M46,203.125H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="143.75" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">100</tspan></text><path stroke-width="0.5" d="M46,143.75H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="84.375" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">150</tspan></text><path stroke-width="0.5" d="M46,84.375H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="25" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">200</tspan></text><path stroke-width="0.5" d="M46,25H497" stroke="#aaaaaa" fill="none" style=""></path><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="497" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2012</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="421.8676403468736" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="346.73528069374714" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2010</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="271.6029210406207" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2009</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="196.26471930625286" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2008</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="121.13235965312643" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2007</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="46" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2006</tspan></text><path fill-opacity="1" d="M46,36.875C64.7830899132816,51.71875,102.34926973984483,81.40625,121.13235965312643,96.25C139.91544956640803,111.09375,177.48162939297126,155.625,196.26471930625286,155.625C215.09926973984483,155.625,252.76837060702871,96.25,271.6029210406207,96.25C290.3860109539023,96.25,327.9521907804655,155.625,346.73528069374714,155.625C365.51837060702877,155.625,403.08455043359197,111.09375,421.8676403468736,96.25C440.6507302601552,81.40625,478.21691008671837,51.71875,497,36.875L497,262.5L46,262.5Z" stroke="none" fill="#727c8f" style="fill-opacity: 1;"></path><path stroke-width="3" d="M46,36.875C64.7830899132816,51.71875,102.34926973984483,81.40625,121.13235965312643,96.25C139.91544956640803,111.09375,177.48162939297126,155.625,196.26471930625286,155.625C215.09926973984483,155.625,252.76837060702871,96.25,271.6029210406207,96.25C290.3860109539023,96.25,327.9521907804655,155.625,346.73528069374714,155.625C365.51837060702877,155.625,403.08455043359197,111.09375,421.8676403468736,96.25C440.6507302601552,81.40625,478.21691008671837,51.71875,497,36.875" stroke="#576277" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="7" cy="36.875" cx="46"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="96.25" cx="121.13235965312643"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="155.625" cx="196.26471930625286"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="96.25" cx="271.6029210406207"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="155.625" cx="346.73528069374714"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="96.25" cx="421.8676403468736"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#576277" r="4" cy="36.875" cx="497"></circle><path fill-opacity="1" d="M46,143.75C64.7830899132816,151.171875,102.34926973984483,166.015625,121.13235965312643,173.4375C139.91544956640803,180.859375,177.48162939297126,203.125,196.26471930625286,203.125C215.09926973984483,203.125,252.76837060702871,173.4375,271.6029210406207,173.4375C290.3860109539023,173.4375,327.9521907804655,203.125,346.73528069374714,203.125C365.51837060702877,203.125,403.08455043359197,180.859375,421.8676403468736,173.4375C440.6507302601552,166.015625,478.21691008671837,151.171875,497,143.75L497,262.5L46,262.5Z" stroke="none" fill="#3e444e" style="fill-opacity: 1;"></path><path stroke-width="3" d="M46,143.75C64.7830899132816,151.171875,102.34926973984483,166.015625,121.13235965312643,173.4375C139.91544956640803,180.859375,177.48162939297126,203.125,196.26471930625286,203.125C215.09926973984483,203.125,252.76837060702871,173.4375,271.6029210406207,173.4375C290.3860109539023,173.4375,327.9521907804655,203.125,346.73528069374714,203.125C365.51837060702877,203.125,403.08455043359197,180.859375,421.8676403468736,173.4375C440.6507302601552,166.015625,478.21691008671837,151.171875,497,143.75" stroke="#303641" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="7" cy="143.75" cx="46"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="173.4375" cx="121.13235965312643"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="203.125" cx="196.26471930625286"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="173.4375" cx="271.6029210406207"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="203.125" cx="346.73528069374714"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="173.4375" cx="421.8676403468736"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#303641" r="4" cy="143.75" cx="497"></circle></svg><div style="left: 2px; top: 57px;" class="morris-hover morris-default-style"><div class="morris-hover-row-label">2006</div><div class="morris-hover-point" style="color: #303641">
+    Series A:
+    100
+  </div><div class="morris-hover-point" style="color: #576277">
+    Series B:
+    90
+  </div></div></div> </div> <div style="" class="tab-pane" id="line-chart"> <div id="line-chart-demo" class="morrischart" style="height: 300px; position: relative;"><svg style="overflow: hidden; position: relative; left: -0.700012px; top: -0.816681px;" xmlns="http://www.w3.org/2000/svg" width="522" version="1.1" height="300"><desc>Created with Raphaël 2.1.2</desc><defs></defs><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="262.5" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">0</tspan></text><path stroke-width="0.5" d="M46,262.5H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="203.125" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">25</tspan></text><path stroke-width="0.5" d="M46,203.125H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="143.75" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">50</tspan></text><path stroke-width="0.5" d="M46,143.75H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="84.375" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">75</tspan></text><path stroke-width="0.5" d="M46,84.375H497" stroke="#aaaaaa" fill="none" style=""></path><text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="end" y="25" x="33.5" style="text-anchor: end; font: 12px sans-serif;"><tspan dy="4">100</tspan></text><path stroke-width="0.5" d="M46,25H497" stroke="#aaaaaa" fill="none" style=""></path><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="497" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2012</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="421.8676403468736" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2011</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="346.73528069374714" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2010</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="271.6029210406207" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2009</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="196.26471930625286" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2008</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="121.13235965312643" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2007</tspan></text><text transform="matrix(1,0,0,1,0,6.25)" font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="275" x="46" style="text-anchor: middle; font: 12px sans-serif;"><tspan dy="4">2006</tspan></text><path stroke-width="3" d="M46,48.75C64.7830899132816,63.59375,102.34926973984483,93.28125,121.13235965312643,108.125C139.91544956640803,122.96875,177.48162939297126,167.5,196.26471930625286,167.5C215.09926973984483,167.5,252.76837060702871,108.125,271.6029210406207,108.125C290.3860109539023,108.125,327.9521907804655,167.5,346.73528069374714,167.5C365.51837060702877,167.5,403.08455043359197,122.96875,421.8676403468736,108.125C440.6507302601552,93.28125,478.21691008671837,63.59375,497,48.75" stroke="#7a92a3" fill="none" style=""></path><path stroke-width="3" d="M46,25C64.7830899132816,39.84375,102.34926973984483,69.53125,121.13235965312643,84.375C139.91544956640803,99.21875,177.48162939297126,143.75,196.26471930625286,143.75C215.09926973984483,143.75,252.76837060702871,84.375,271.6029210406207,84.375C290.3860109539023,84.375,327.9521907804655,143.75,346.73528069374714,143.75C365.51837060702877,143.75,403.08455043359197,99.21875,421.8676403468736,84.375C440.6507302601552,69.53125,478.21691008671837,39.84375,497,25" stroke="#0b62a4" fill="none" style=""></path><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="48.75" cx="46"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="108.125" cx="121.13235965312643"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="167.5" cx="196.26471930625286"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="108.125" cx="271.6029210406207"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="167.5" cx="346.73528069374714"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="4" cy="108.125" cx="421.8676403468736"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#7a92a3" r="7" cy="48.75" cx="497"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="25" cx="46"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="84.375" cx="121.13235965312643"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="143.75" cx="196.26471930625286"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="84.375" cx="271.6029210406207"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="143.75" cx="346.73528069374714"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="4" cy="84.375" cx="421.8676403468736"></circle><circle stroke-width="1" style="" stroke="#ffffff" fill="#0b62a4" r="7" cy="25" cx="497"></circle></svg><div style="left: 401px; top: 35px;" class="morris-hover morris-default-style"><div class="morris-hover-row-label">2012</div><div class="morris-hover-point" style="color: #0b62a4">
+    October 2013:
+    100
+  </div><div class="morris-hover-point" style="color: #7A92A3">
+    November 2013:
+    90
+  </div></div></div> </div> <div style="" class="tab-pane" id="pie-chart"> <div id="donut-chart-demo" class="morrischart" style="height: 300px;"><svg style="overflow: hidden; position: relative; left: -0.700012px; top: -0.81665px;" xmlns="http://www.w3.org/2000/svg" width="522" version="1.1" height="300"><desc>Created with Raphaël 2.1.2</desc><defs></defs><path opacity="0" stroke-width="2" d="M261,243.33333333333331A93.33333333333333,93.33333333333333,0,0,0,337.57931587291705,96.64534236313477" stroke="#707f9b" fill="none" style="opacity: 0;"></path><path stroke-width="3" d="M261,246.33333333333331A96.33333333333333,96.33333333333333,0,0,0,340.040793883118,94.93037122480698L371.7665104590408,72.82629877524852A135,135,0,0,1,261,285Z" stroke="#ffffff" fill="#707f9b" style=""></path><path opacity="0" stroke-width="2" d="M337.57931587291705,96.64534236313477A93.33333333333333,93.33333333333333,0,0,0,200.38414344600625,79.0293789985126" stroke="#455064" fill="none" style="opacity: 0;"></path><path stroke-width="3" d="M340.040793883118,94.93037122480698A96.33333333333333,96.33333333333333,0,0,0,198.4357766281993,76.74818046632194L173.32349319868763,47.34606605142001A135,135,0,0,1,371.7665104590408,72.82629877524852Z" stroke="#ffffff" fill="#455064" style=""></path><path opacity="1" stroke-width="2" d="M200.38414344600625,79.0293789985126A93.33333333333333,93.33333333333333,0,0,0,260.9706784690487,243.333328727518" stroke="#242d3c" fill="none" style="opacity: 1;"></path><path stroke-width="3" d="M198.4357766281993,76.74818046632194A96.33333333333333,96.33333333333333,0,0,0,260.9697359912682,246.3333285794739L260.95601770357314,289.999993091277A140,140,0,0,1,170.07621516900937,43.544068497768905Z" stroke="#ffffff" fill="#242d3c" style=""></path><text stroke-width="0.7108134769258045" transform="matrix(1.4068,0,0,1.4068,-106.1849,-60.5173)" font-weight="800" font-size="15px" fill="#000000" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="140" x="261" style="text-anchor: middle; font: 800 15px &quot;Arial&quot;;"><tspan dy="5.25">Mail-Order Sales</tspan></text><text stroke-width="0.5142857142857143" transform="matrix(1.9444,0,0,1.9444,-246.5,-143.5556)" font-size="14px" fill="#000000" stroke="none" font="10px &quot;Arial&quot;" text-anchor="middle" y="160" x="261" style="text-anchor: middle; font: 14px &quot;Arial&quot;;"><tspan dy="5">28</tspan></text></svg></div> </div> </div> </div> <table class="table table-bordered table-responsive"> <thead> <tr> <th class="col-padding-1" width="50%"> <div class="pull-left"> <div class="h4 no-margin">Pageviews</div> <small>54,127</small> </div> <span class="pull-right pageviews"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></span> </th> <th class="col-padding-1" width="50%"> <div class="pull-left"> <div class="h4 no-margin">Unique Visitors</div> <small>25,127</small> </div> <span class="pull-right uniquevisitors"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></span> </th> </tr> </thead> </table> </div> </div> <div class="col-sm-4"> <div class="panel panel-primary"> <div class="panel-heading"> <div class="panel-title"> <h4>
+  Real Time Stats
+  <br> <small>current server uptime</small> </h4> </div> <div class="panel-options"> <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a> <a href="#" data-rel="close"><i class="entypo-cancel"></i></a> </div> </div> <div class="panel-body no-padding"> <div class="rickshaw_graph" id="rickshaw-chart-demo"> <div class="rickshaw_legend" id="rickshaw-legend"><ul><li class="line"><div style="background-color: rgb(224, 242, 255);" class="swatch"></div><span class="label">Download</span></li><li class="line"><div style="background-color: rgb(115, 200, 255);" class="swatch"></div><span class="label">Upload</span></li></ul></div> <svg height="193" width="259"><g><path fill="#e0f2ff" class="area" d="M0,18.914671713868955Q4.5809523809523816,15.741469815563606,5.2857142857142865,16.432469327694832C6.342857142857143,17.468968595891674,9.514285714285716,29.227937053568244,10.571428571428573,29.279664395837358S14.800000000000002,17.622741854235603,15.85714285714286,16.94974275038598S20.08571428571429,22.642763455081173,21.142857142857146,22.549673357341135S25.371428571428574,15.94329308022633,26.42857142857143,16.01884177298558S30.657142857142862,23.139026719683194,31.71428571428572,23.305160284933663S35.94285714285714,16.83963262772337,37,17.680177425490257S41.228571428571435,29.525104331689583,42.28571428571429,31.710608262602534S46.51428571428572,39.4373137714504,47.57142857142858,39.53521673461978S51.800000000000004,34.463299559192016,52.85714285714286,32.68963789429634S57.08571428571429,21.226971337617137,58.142857142857146,21.798600085663026S62.37142857142858,36.55446444180451,63.42857142857144,38.40592537475521S67.65714285714287,38.922557752787625,68.71428571428572,40.313209415170064S72.94285714285715,52.89500013230767,74,52.31244199857963S78.22857142857143,37.10068566508303,79.28571428571429,34.48762807788964S83.51428571428573,27.82560933438467,84.57142857142858,26.181866126645758S88.80000000000001,19.08865915665992,89.85714285714286,18.050196000500534S94.08571428571429,13.246750393782404,95.14285714285715,15.797234565051923S99.3714285714286,43.30642710249014,100.42857142857144,43.55503771319573S104.65714285714287,18.67468257924601,105.71428571428572,18.28334067210784S109.94285714285716,38.16980654071562,111.00000000000001,39.641618641814034S115.22857142857144,34.454315805076405,116.28571428571429,33.001461683092S120.51428571428572,23.31967912475426,121.57142857142858,25.11307742196999S125.80000000000003,51.83222348942819,126.85714285714288,50.93544465524931S131.0857142857143,18.727045983973316,132.14285714285714,16.145289080181215S136.3714285714286,22.835904688966828,137.42857142857144,25.11787561732831S141.65714285714287,37.4019358188244,142.71428571428572,38.96499836379601S146.94285714285715,40.51372855028574,148,40.74850106704443S152.22857142857143,42.303494494604756,153.28571428571428,41.312723531382915S157.51428571428573,30.460419138580924,158.57142857142858,30.840791434826002S162.8,45.807777953601715,163.85714285714286,45.11644649383368S168.08571428571432,26.119692379261007,169.14285714285717,23.927476837145633S173.37142857142857,21.944721061632904,174.42857142857142,23.19429107267993S178.65714285714287,36.01674609833088,179.71428571428572,36.4231769476159S183.94285714285715,26.31292652021415,185,27.258599565530147S189.22857142857146,45.656764478824144,190.2857142857143,45.87990740077589S194.51428571428573,31.214445396573833,195.57142857142858,29.490028785047627S199.80000000000004,27.962836623178166,200.8571428571429,28.63574128551383S205.0857142857143,35.93977935956901,206.14285714285714,36.21907540840428S210.3714285714286,32.7029111292949,211.42857142857144,31.42870177386655S215.65714285714287,24.739403306274728,216.71428571428572,23.476981854120822S220.94285714285718,19.217009357032214,222.00000000000003,18.804487252327505S226.22857142857146,18.563838372211904,227.2857142857143,19.35176080707373S231.51428571428573,28.427798572742255,232.57142857142858,26.68371160094577S236.8,2.208130075284848,237.85714285714286,1.910891089108901S242.08571428571432,21.507342048987585,243.14285714285717,23.711321739186303S247.3714285714286,25.542122296685644,248.42857142857144,23.95068799109609S252.6571428571429,6.1205336517761255,253.71428571428575,7.796978683290746Q254.41904761904766,8.914608704300493,259,40.715138306242295L259,115.04526111412777Q254.41904761904766,96.74651318598657,253.71428571428575,95.57583887488656C252.6571428571429,93.81982740823655,249.4857142857143,96.67553451730065,248.42857142857144,97.48514644762764S244.20000000000002,104.06398452955465,243.14285714285717,103.67195817815654S238.9142857142857,93.03609104820363,237.85714285714286,93.56488293364662S233.62857142857143,108.07880160025891,232.57142857142858,108.95987703258635S228.34285714285716,102.87831381284231,227.2857142857143,102.37563725692092S223.05714285714288,102.8169525620851,222.00000000000003,103.93311147337246S217.77142857142857,113.59996467305469,216.71428571428572,113.53722636979457S212.4857142857143,103.85425407463907,211.42857142857144,103.3057284407712S207.2,106.98577416139715,206.14285714285714,108.05197003111586S201.91428571428574,113.8519511225366,200.8571428571429,113.9676871379584S196.62857142857143,108.93621672218839,195.57142857142858,109.20933018533368S191.34285714285716,116.63789959675948,190.2857142857143,116.69882176941131S186.05714285714285,110.79729691068192,185,109.81855191185196S180.77142857142857,107.54264173144645,179.71428571428572,106.91137178111168S175.48571428571427,103.42060009967469,174.42857142857142,103.50585240850421S170.20000000000002,107.17562757401413,169.14285714285717,107.7638948694069S164.9142857142857,108.52588324992742,163.85714285714286,109.3885253624319S159.62857142857143,115.65951113388002,158.57142857142858,116.3903159944518S154.34285714285713,116.44765858825072,153.28571428571428,116.69657396814976S149.05714285714285,118.9205060355855,148,118.8794697934422S143.77142857142857,117.48149091778625,142.71428571428572,116.28621154671676S138.4857142857143,108.55381607056015,137.42857142857144,106.92667608274725S133.2,98.88103647756255,132.14285714285714,100.01481166858785S127.91428571428573,118.25718146065272,126.85714285714288,118.26442799300033S122.62857142857145,101.25204781232408,121.57142857142858,100.08727699206389S117.34285714285714,105.50267630295488,116.28571428571429,106.61671979039845S112.05714285714286,112.09313066173895,111.00000000000001,111.2277118664996S106.77142857142857,97.46407440398332,105.71428571428572,97.96253183800498S101.4857142857143,116.18261775006333,100.42857142857144,116.21228620671626S96.20000000000002,99.99133331820741,95.14285714285715,98.25921640453429S90.91428571428571,98.25646301012895,89.85714285714286,98.891117069985S85.62857142857143,103.71656378898874,84.57142857142858,104.60575700309472S80.34285714285716,106.30774287126985,79.28571428571429,107.78304921104491S75.05714285714285,118.57961569853803,74,119.35882040084526S69.77142857142857,116.93326247062913,68.71428571428572,115.57509623411713S64.4857142857143,106.90834496156776,63.42857142857144,105.77715803572515S59.2,104.0647264600382,58.142857142857146,104.26322697569104S53.91428571428572,107.50305721618379,52.85714285714286,107.76216319225357S48.62857142857143,106.34117296432869,47.57142857142858,106.85428673638886S43.34285714285715,113.01225424248202,42.28571428571429,112.8933009128553S38.05714285714286,106.29705853056046,37,105.66475344012169S32.77142857142857,107.54092421981157,31.71428571428572,106.57025000846748S27.485714285714288,96.12762000761708,26.42857142857143,95.95801132668079S22.200000000000003,103.862015383518,21.142857142857146,104.87416319910456S16.914285714285718,105.42635849245247,15.85714285714286,106.07948948254642S11.62857142857143,111.57851435103217,10.571428571428573,111.40547310004419S6.342857142857143,105.00226313327356,5.2857142857142865,104.34907697266668Q4.5809523809523816,103.91361953226209,0,104.87361149397535Z"></path></g><g><path fill="#73c8ff" class="area" d="M0,104.87361149397535Q4.5809523809523816,103.91361953226209,5.2857142857142865,104.34907697266668C6.342857142857143,105.00226313327356,9.514285714285716,111.23243184905621,10.571428571428573,111.40547310004419S14.800000000000002,106.73262047264038,15.85714285714286,106.07948948254642S20.08571428571429,105.88631101469112,21.142857142857146,104.87416319910456S25.371428571428574,95.7884026457445,26.42857142857143,95.95801132668079S30.657142857142862,105.59957579712339,31.71428571428572,106.57025000846748S35.94285714285714,105.03244834968291,37,105.66475344012169S41.228571428571435,112.77434758322858,42.28571428571429,112.8933009128553S46.51428571428572,107.36740050844902,47.57142857142858,106.85428673638886S51.800000000000004,108.02126916832334,52.85714285714286,107.76216319225357S57.08571428571429,104.46172749134388,58.142857142857146,104.26322697569104S62.37142857142858,104.64597110988254,63.42857142857144,105.77715803572515S67.65714285714287,114.21692999760512,68.71428571428572,115.57509623411713S72.94285714285715,120.13802510315249,74,119.35882040084526S78.22857142857143,109.25835555081997,79.28571428571429,107.78304921104491S83.51428571428573,105.49495021720071,84.57142857142858,104.60575700309472S88.80000000000001,99.52577112984105,89.85714285714286,98.891117069985S94.08571428571429,96.52709949086116,95.14285714285715,98.25921640453429S99.3714285714286,116.24195466336919,100.42857142857144,116.21228620671626S104.65714285714287,98.46098927202664,105.71428571428572,97.96253183800498S109.94285714285716,110.36229307126025,111.00000000000001,111.2277118664996S115.22857142857144,107.73076327784202,116.28571428571429,106.61671979039845S120.51428571428572,98.9225061718037,121.57142857142858,100.08727699206389S125.80000000000003,118.27167452534793,126.85714285714288,118.26442799300033S131.0857142857143,101.14858685961316,132.14285714285714,100.01481166858785S136.3714285714286,105.29953609493435,137.42857142857144,106.92667608274725S141.65714285714287,115.09093217564727,142.71428571428572,116.28621154671676S146.94285714285715,118.83843355129889,148,118.8794697934422S152.22857142857143,116.94548934804881,153.28571428571428,116.69657396814976S157.51428571428573,117.12112085502358,158.57142857142858,116.3903159944518S162.8,110.2511674749364,163.85714285714286,109.3885253624319S168.08571428571432,108.35216216479967,169.14285714285717,107.7638948694069S173.37142857142857,103.59110471733374,174.42857142857142,103.50585240850421S178.65714285714287,106.28010183077691,179.71428571428572,106.91137178111168S183.94285714285715,108.83980691302199,185,109.81855191185196S189.22857142857146,116.75974394206314,190.2857142857143,116.69882176941131S194.51428571428573,109.48244364847898,195.57142857142858,109.20933018533368S199.80000000000004,114.08342315338018,200.8571428571429,113.9676871379584S205.0857142857143,109.11816590083457,206.14285714285714,108.05197003111586S210.3714285714286,102.75720280690334,211.42857142857144,103.3057284407712S215.65714285714287,113.47448806653445,216.71428571428572,113.53722636979457S220.94285714285718,105.04927038465982,222.00000000000003,103.93311147337246S226.22857142857146,101.87296070099954,227.2857142857143,102.37563725692092S231.51428571428573,109.84095246491378,232.57142857142858,108.95987703258635S236.8,94.0936748190896,237.85714285714286,93.56488293364662S242.08571428571432,103.27993182675844,243.14285714285717,103.67195817815654S247.3714285714286,98.29475837795464,248.42857142857144,97.48514644762764S252.6571428571429,93.81982740823655,253.71428571428575,95.57583887488656Q254.41904761904766,96.74651318598657,259,115.04526111412777L259,193Q254.41904761904766,193,253.71428571428575,193C252.6571428571429,193,249.4857142857143,193,248.42857142857144,193S244.20000000000002,193,243.14285714285717,193S238.9142857142857,193,237.85714285714286,193S233.62857142857143,193,232.57142857142858,193S228.34285714285716,193,227.2857142857143,193S223.05714285714288,193,222.00000000000003,193S217.77142857142857,193,216.71428571428572,193S212.4857142857143,193,211.42857142857144,193S207.2,193,206.14285714285714,193S201.91428571428574,193,200.8571428571429,193S196.62857142857143,193,195.57142857142858,193S191.34285714285716,193,190.2857142857143,193S186.05714285714285,193,185,193S180.77142857142857,193,179.71428571428572,193S175.48571428571427,193,174.42857142857142,193S170.20000000000002,193,169.14285714285717,193S164.9142857142857,193,163.85714285714286,193S159.62857142857143,193,158.57142857142858,193S154.34285714285713,193,153.28571428571428,193S149.05714285714285,193,148,193S143.77142857142857,193,142.71428571428572,193S138.4857142857143,193,137.42857142857144,193S133.2,193,132.14285714285714,193S127.91428571428573,193,126.85714285714288,193S122.62857142857145,193,121.57142857142858,193S117.34285714285714,193,116.28571428571429,193S112.05714285714286,193,111.00000000000001,193S106.77142857142857,193,105.71428571428572,193S101.4857142857143,193,100.42857142857144,193S96.20000000000002,193,95.14285714285715,193S90.91428571428571,193,89.85714285714286,193S85.62857142857143,193,84.57142857142858,193S80.34285714285716,193,79.28571428571429,193S75.05714285714285,193,74,193S69.77142857142857,193,68.71428571428572,193S64.4857142857143,193,63.42857142857144,193S59.2,193,58.142857142857146,193S53.91428571428572,193,52.85714285714286,193S48.62857142857143,193,47.57142857142858,193S43.34285714285715,193,42.28571428571429,193S38.05714285714286,193,37,193S32.77142857142857,193,31.71428571428572,193S27.485714285714288,193,26.42857142857143,193S22.200000000000003,193,21.142857142857146,193S16.914285714285718,193,15.85714285714286,193S11.62857142857143,193,10.571428571428573,193S6.342857142857143,193,5.2857142857142865,193Q4.5809523809523816,193,0,193Z"></path></g></svg><div style="left: 47.5714px;" class="detail inactive"></div></div> </div> </div> </div>

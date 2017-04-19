@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Email Newsletter Subscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_newsletter_subscriptions.each do |email_newsletter_subscription| %>
+      <tr>
+        <td><%= email_newsletter_subscription.first_name %></td>
+        <td><%= email_newsletter_subscription.last_name %></td>
+        <td><%= email_newsletter_subscription.email %></td>
+        <td><%= link_to 'Show', email_newsletter_subscription %></td>
+        <td><%= link_to 'Edit', edit_email_newsletter_subscription_path(email_newsletter_subscription) %></td>
+        <td><%= link_to 'Destroy', email_newsletter_subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email newsletter subscription', new_email_newsletter_subscription_path %>

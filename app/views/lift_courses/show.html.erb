@@ -1,0 +1,83 @@
+<section class="site-section-top">
+		<div class="bg-img" style="background-image: url('/assets/img/presidentsmansion01_1920.jpg');">
+			<div class="container site-content">
+				<div class="site-heading-bg-primary">
+					<h1>Project LIFT</h1>
+				</div> <!-- .site-heading-bg -->
+			</div> <!-- .container -->
+		</div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<h2 id="item-2" class="page-header">Course Details</h2>
+					<p>
+						<div class="eventConteiner">
+							<%= @lift_course.session %>
+							
+							<div class="eventTitle1"> <%= @lift_course.title %>
+								<div>
+									Begins  <%= @lift_course.start_date %>
+								</div>
+							</div>
+							
+							<table style="margin-bottom:10px" border="0" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td valign="top">
+												<div class="eventDescription">
+													<%= @lift_course.description %>
+													<br><br>						
+													<b>Location:  </b> <%= link_to @lift_course.location, @lift_course.location_url %><br>
+												
+						                        </div>
+											</td>
+											<td valign="top">
+												<table class="tableR" border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+															<td colspan="2" class="tdB">
+																<div class="eventTime">
+																	This course meets each <%= @lift_course.meeting_day %><br>
+																
+																	<img src="/assets/imgs/clock.png">
+																	The Event starts at <span> <%= @lift_course.meeting_time %></span>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td width="50%">
+																<div class="eventSpots">
+																	<span class="spot">0</span>
+																	<span class="spot1"><%= @lift_course.seats %><br>left</span>
+																</div>
+															</td>
+															<td align="center">
+																<div class="eventFee">
+																	<span style="color:#0FA1D2"><!--?php echo FREE?--></span>								
+																</div>
+															</td>
+														</tr>
+														<tr>
+														    <td colspan="2" align="center">
+															    <h2><%= @lift_course.status %></h2>
+															</td>
+							                            </tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+					</p>
+					
+					
+					<%= link_to 'Edit', edit_lift_course_path(@lift_course) %> |
+					<%= link_to 'Back', lift_courses_path %>
+			</div>
+		</div>
+	</div>
+</section>

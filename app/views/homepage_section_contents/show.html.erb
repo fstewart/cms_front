@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @homepage_section_content.priority %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @homepage_section_content.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @homepage_section_content.body %>
+</p>
+
+<p>
+  <strong>Is published:</strong>
+  <%= @homepage_section_content.is_published %>
+</p>
+
+<%= link_to 'Edit', edit_homepage_section_content_path(@homepage_section_content) %> |
+<%= link_to 'Back', homepage_section_contents_path %>

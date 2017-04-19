@@ -1,0 +1,24 @@
+/*
+	Author		: Michael Janea
+	Version		: 1.0.1
+	Author URL	: www.michaeljanea.byethost7.com
+*/
+
+.mj_carousel {position:relative;}
+.mj_carousel_controls .mj_carousel_prev, .mj_carousel_controls .mj_carousel_next {position:absolute; top:0; left:0; height:100%; width:15%; text-align:center; cursor:pointer; font-size:24px; opacity:.7;}
+.mj_carousel_controls .mj_carousel_prev:hover, .mj_carousel_controls .mj_carousel_next:hover {opacity:1;}
+.mj_carousel_controls .mj_carousel_prev {background:url(/assets/prev.png) no-repeat center center;}
+.mj_carousel_controls .mj_carousel_next {right:0; left:auto; background:url(/assets/next.png) no-repeat center center;}
+
+.mj_carousel_images {overflow:hidden;}
+.mj_carousel_image {position:relative; display:none; float:left; width:100%;}
+.mj_carousel_image img {max-width:100%; width:100%;}
+.mj_carousel_image.active {display:block;}
+
+.mj_carousel_caption {position:absolute; bottom:1em; width:100%; text-align:center; color:#fff; padding:0 5em 0; -webkit-box-sizing:border-box; box-sizing:border-box; text-shadow:0 1px 2px rgba(0,0,0,.6); font-family:Helvetica, Arial, sans-serif}
+.mj_carousel_title {font-size:24px; font-weight:bold; margin-bottom:.5em;}
+
+.mj_carousel_navigation {position:absolute; bottom:1em; left:0; width:100%; text-align:center; -webkit-box-sizing:border-box; box-sizing:border-box;}
+.mj_carousel_navigation ul {padding:0; margin:0;}
+.mj_carousel_navigation li {display:inline-block; border:1px solid #fff; width:10px; height:10px; -webkit-border-radius:10x; border-radius:10px; cursor:pointer;}
+.mj_carousel_navigation li.active {background:#fff;}

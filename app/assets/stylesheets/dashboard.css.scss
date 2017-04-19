@@ -1,0 +1,161 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ *= require jquery-ui-1.10.3.custom.min
+ *= require entypo
+ *= require bootstrap
+ *= require bootstrap-submenu.min
+
+ * For Dashboard using the Neon Admin Theme
+
+ *= require neon-core
+ *= require neon-theme
+ *= require neon-forms
+ *= require custom
+ *= require animation
+
+ *= require entypo-codes
+ *= require entypo-embedded
+ *= require entypo-ie7
+ *= require entypo-ie7-codes
+ *= require jquery-jvectormap-1.2.2
+
+ *= require rickshaw.min
+ *= require style.min
+
+ * require neon
+
+ * For Owl Image Carousel
+
+ *= require owl.carousel
+ *= require owl.theme
+
+ *= require mjAccordion
+ *= require mjCarousel
+
+ * require bootstrap-datetimepicker
+
+ *= require_self
+ */
+
+.well {
+  min-height: 20px;
+  padding: 0px;
+  margin: 20px;
+  background-color: #f5f5f6;
+  border: 1px solid #e2e2e5;
+  border-radius: 3px;
+  overflow: hidden !important;
+}
+
+/* ----- SimpleForm Styles ----- */
+
+.btn {
+  color: #303641;
+  background-color: darkgray !important;
+  border-color: #333 !important;
+
+}
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+}
+
+div.boolean label, label.collection_radio_buttons {
+  float: none;
+  margin: 0;
+}
+
+label.collection_radio_buttons {
+  margin-right: 10px;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form .error {
+  clear: left;
+  color: black;
+  display: block;
+  margin-left: 120px;
+}
+
+.simple_form .hint {
+  clear: left;
+  margin-left: 120px;
+  color: #555;
+  display: block;
+  font-style: italic;
+}
+
+input.radio {
+  margin-right: 5px;
+  vertical-align: -3px;
+}
+
+input.check_boxes {
+  margin-left: 3px;
+  vertical-align: -3px;
+}
+
+label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+
+.page-container .main-content {
+  background: #ebead9;
+}
+
+.site-content {
+  background: #ebead9;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Noto Sans", sans-serif, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #000000;
+  //color: #949494;
+  background-color: #ffffff;
+}
+
+label {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.page-container .sidebar-menu .logo-env {
+  width: 100%;
+  padding: 20px !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

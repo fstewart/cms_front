@@ -1,0 +1,3 @@
+module LiftCoursesHelper
+	
+end

@@ -1,0 +1,2 @@
+module MandersonProfilesHelper
+end

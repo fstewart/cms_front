@@ -1,0 +1,96 @@
+<section class="site-content">
+<div class="container">
+  <div class="row">
+	  
+	<p id="notice"><%= notice %></p>
+	
+	<h1>Web Pages</h1>
+	<%= render 'searchform' %>
+	<table class="table table-color-primary">
+	  <thead>
+	    <tr style="font-size: 16px;text-align:center;">
+	      <th>Title</th>
+	      <th>Priority</th>
+	      <th>Status</th>
+		  <th>Sections</th>
+	      <th style="text-align:center;" colspan="3">Actions</th>
+	    </tr>
+	  </thead>
+	
+	  <tbody>
+	    <% @pages.each do |page| %>
+	      <tr style="font-weight: bold;font-size: 14px;background-color:#ececec;border-bottom:1px solid #000;border-top:1px solid #000;">
+	        <td><%= page.title %></td>
+	        <td><%# page.position %></td>
+			<td><%# link_to page.title, page_path(page.department.slug) %>
+				<% if page.status == false %>
+                      <p style="color:red;">Inactive</p>
+                <% else %>
+                      <p style="color:green;">Active</p>
+                <% end %> 
+			</td>
+            <td style="text-align:center;">
+              <%= link_to({:controller => 'sections', :action => 'index', :page_id => page.id}) do %>
+                  <span class="badge badge-<%= 'primary' if page.sections.count.nil? || 'secondary'   %>">&nbsp;&nbsp;&nbsp;<%= page.sections.count %>&nbsp;&nbsp;</span>
+              <% end %>
+            </td>
+            <td><%= link_to( 'Add a Section', {:controller => 'sections', :action => 'new', :page_id => page.id} ) %></td>
+	        <td><%= link_to 'Edit Page Details', edit_page_path(page.id)  %>
+            <%# link_to( 'Edit Page Details', {:controller => 'pages', :action => 'edit', :page_id => page.id, @id => @org.id} )  %>
+            </td>
+	        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	      <% if page.subpages.any? %>
+	      	<% page.subpages.sorted.each do |s| %>
+		      <tr style="background-color:#ffffff; padding-left:50px;" >
+			      <td style="padding-left:50px;">
+				    <%= s.title %>  
+			      </td>
+			      <td>
+				    <%= s.position %>  
+			      </td>
+			      <td>
+				    <% if s.status == false %>
+                      <p style="color:red;">Inactive</p>
+                  	<% else %>
+                      <p style="color:green;">Active</p>
+                  	<% end %>  
+			      </td>
+			      <td style="text-align:center;">
+		            <%= link_to({:controller => 'sections', :action => 'index', :page_id => s.id}) do %>
+		                <span class="badge badge-<%= 'primary' if s.sections.count.nil? || 'secondary'   %>">&nbsp;&nbsp;&nbsp;<%= s.sections.count %>&nbsp;&nbsp;</span>
+		            <% end %>
+		          </td>
+			      <td>
+				    <%= link_to( 'Add a Section', {:controller => 'sections', :action => 'new', :page_id => s.id} ) %>
+				  </td>
+				  <td><%= link_to 'Edit Page Details', edit_page_path(s.id)  %>
+				  	<%# link_to( 'Edit Page Details', {:controller => 'pages', :action => 'edit', :page_id => page.id, @id => @org.id} )  %>
+            	  </td>
+				  <td>
+					<%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %>
+				  </td>
+		      </tr>
+		    <% end %>
+		  <% end %>      
+      <% end %>
+	  </tbody>
+	</table>
+
+    <% if @pages.present? %>
+        <%= render @pages %>
+    <% else %>
+        <p>There are no pages containing the term(s) <%= params[:search] %>.</p>
+    <% end %>
+    
+    <%= will_paginate @pages %>
+
+    <hr>
+
+	  <br>
+	
+	<%= link_to('Add A New Page',{:controller => 'pages', :action => 'new'}) %>
+
+  </div>
+</div>
+</section>

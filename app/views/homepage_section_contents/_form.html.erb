@@ -1,0 +1,19 @@
+<%= simple_form_for @homepage_section_content do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+
+    <%= f.input :priority, label: 'Order' %>
+    <%= f.input :title %>
+    <%= f.input :display_title, label: 'Display Title?' %>
+    <%= f.input :body, label: 'Section Content', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Super'} } %>
+
+    <b>Background Option - This applies a style to the background of the section.</b><br>
+    <%= f.select :background_option_id, BackgroundOption.all.map{ |o| [o.option, o.id] }, include_blank: false, prompt: 'Select Background' %>
+    <%= f.input :is_published %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

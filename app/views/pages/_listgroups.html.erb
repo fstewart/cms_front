@@ -1,0 +1,18 @@
+<div class="row">
+
+  <ul class="list-group">
+
+    <% section.listgroups.each do |listgroup| %>
+
+      <li class="list-group-item">
+        <h4 class="list-group-heading">
+          <%= listgroup.title %>
+        </h4>
+        <%= raw(listgroup.desc) %>
+      </li>
+
+    <% end %>
+
+  </ul>
+
+</div>

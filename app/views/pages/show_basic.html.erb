@@ -1,0 +1,350 @@
+<section class="site-section-top">
+  <div class="bg-img" style="background-image: url('/assets/img/presidentsmansion01_1920.jpg');">
+    <div class="container site-content">
+      <div class="site-heading-bg-primary">
+        <h1> <%= @page.title %>  </h1>
+      </div> <!-- .site-heading-bg -->
+    </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+
+            <%= link_to_in_li "#{@page.title}", "#item-0" %>
+
+            <% @page.sections.each_with_index do |section, index| %>
+
+                <% indexplusone = index + 1 %>
+
+                <% if index == 0 %>
+
+                    <%= link_to_in_li "#{section.title}", "#item-#{indexplusone}" %>
+
+                <% else %>
+
+                    <%= link_to_in_li "#{section.title}", "#item-#{indexplusone}" %>
+
+                <% end %>
+
+            <% end %>
+
+          </ul>
+
+          <% unless @page.calltoactions.blank? %>
+
+              <% @page.calltoactions.each do |cta| %>
+
+                  <a href="<%= cta.url %>" target="<%= cta.target %>" class="btn <%= cta.color %> btn-featured-left btn-block font-weight-600 uppercase margin-top-30"><%= cta.title %><i class="fa fa-cog"></i></a>
+
+                  <!--<a href="#" class="btn btn-light btn-featured-left btn-block font-weight-600 uppercase margin-top-10">Call To Action 2<i class="fa fa-cog"></i></a> -->
+
+              <% end %>
+
+          <% end %>
+
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+      <div class="col-md-9">
+
+        <h2 id="<%= "item-0" %>" class="page-header"> <%= @page.title %> </h2>
+
+        <%= raw(@page.desc) %>
+
+        <% @page.sections.each_with_index do |section, index| %>
+
+            <% indexplusone = index + 1 %>
+
+            <% if index == 0 %>
+
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <% unless section.texts.blank? %>
+
+                    <% section.texts.each do |text| %>
+
+                        <%= raw(text.body) %><br><br>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.accordions.blank? %>
+
+                    <% section.accordions.each do |accordion| %>
+
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#<%= accordion.title %>" href="#collapse-1">
+                                  <%= accordion.title %><br>
+                                  <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                  <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                </a>
+                              </h4>
+                            </div> <!-- .panel-heading -->
+                            <div id="collapse-1" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                <%= raw(accordion.desc) %>
+                              </div> <!-- .panel-body -->
+                            </div> <!-- #collapse-1 -->
+                          </div> <!-- .panel -->
+                        </div>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.carousels.blank? %>
+
+                    <% section.carousels.each do |slide| %>
+
+                        <div id="carousel-owl-<%= slide.slide_priority %>" class="owl-carousel owl-theme owl-loaded">
+                          <div class="owl-stage-outer" style="padding-left: 0px; padding-right: 0px;">
+                            <div class="owl-stage" style="width: 2792px; transform: translate3d(0px, 0px, 0px); transition: 0s;">
+                              <div class="owl-item active" style="width: 698px; margin-right: 0px;">
+                                <div class="item">
+                                  <img src="<%= image_tag slide.slide_image.resized %>">
+                                  <div class="carousel-caption">
+                                    <h3><%= slide.slide_title %></h3>
+                                    <p><%= slide.slide_desc %></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-controls">
+                            <div class="owl-nav">
+                              <div class="owl-prev" style="display: none;">prev</div>
+                              <div class="owl-next" style="display: none;">next</div>
+                            </div>
+                            <div class="owl-dots" style="">
+                              <div class="owl-dot active"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.imageboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.imageboxes.each do |i| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box box-img bg-light text-center">
+                              <img class="img-responsive" src="/assets/img/bryantdenny01_800.jpg">
+                              <div class="box-body">
+                                <h3><a href="#">Image Box 1</a></h3>
+                                <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet.</p>
+                                <a href="#" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+                              </div> <!-- .box-body -->
+                            </div> <!-- .box-img -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.iconboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.iconboxes.each do |i| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box text-center bg-light box-bordered box-clickable">
+                              <i class="fa fa-cog icon-bg icon-primary icon-lg circle"></i>
+                              <h3><a href="#">Clickable Icon Box Link 1</a></h3>
+                              <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet.</p>
+                            </div> <!-- .box-bordered -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.listgroups.blank? %>
+
+                    <ul class="list-group">
+
+                      <% section.listgroups.each do |listgroup| %>
+
+                          <li class="list-group-item">
+                            <h4 class="list-group-heading">
+                              <%= listgroup.title %>
+                            </h4>
+                            <%= raw(listgroup.desc) %>
+                          </li>
+
+                      <% end %>
+
+                    </ul>
+
+                <% end %>
+
+            <% else %>
+
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <% unless section.texts.blank? %>
+
+                    <% section.texts.each do |text| %>
+
+                        <%= raw(text.body) %><br><br>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.accordions.blank? %>
+
+                    <% section.accordions.each do |accordion| %>
+
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#<%= accordion.title %>" href="#collapse-1">
+                                  <%= accordion.title %><br>
+                                  <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                  <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                </a>
+                              </h4>
+                            </div> <!-- .panel-heading -->
+
+                            <div id="collapse-1" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                <%= raw(accordion.desc) %>
+                              </div> <!-- .panel-body -->
+                            </div> <!-- #collapse-1 -->
+                          </div> <!-- .panel -->
+                        </div>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.carousels.blank? %>
+
+                    <% section.carousels.each do |slide| %>
+
+                        <div id="carousel-owl-<%= slide.slide_priority %>" class="owl-carousel owl-theme owl-loaded">
+                          <div class="owl-stage-outer" style="padding-left: 0px; padding-right: 0px;">
+                            <div class="owl-stage" style="width: 2792px; transform: translate3d(0px, 0px, 0px); transition: 0s;">
+                              <div class="owl-item active" style="width: 698px; margin-right: 0px;">
+                                <div class="item">
+                                  <%= image_tag slide.slide_image.resized %>
+                                  <div class="carousel-caption">
+                                    <h3><%= slide.slide_title %></h3>
+                                    <p><%= slide.slide_desc %></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-controls">
+                            <div class="owl-nav">
+                              <div class="owl-prev" style="display: none;">prev</div>
+                              <div class="owl-next" style="display: none;">next</div>
+                            </div>
+                            <div class="owl-dots" style="">
+                              <div class="owl-dot active"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+
+                    <% end %>
+
+                <% end %>
+
+                <% unless section.imageboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.imageboxes.each do |i| %>
+
+                          <div class="col-md-4 col-sm-6">
+                            <div class="content-box box-img bg-light text-center">
+                              <img class="img-responsive" src="/assets/img/bryantdenny01_800.jpg">
+                              <div class="box-body">
+                                <h3><a href="#">Image Box 1</a></h3>
+                                <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet.</p>
+                                <a href="#" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+                              </div> <!-- .box-body -->
+                            </div> <!-- .box-img -->
+                          </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+                <% unless section.iconboxes.blank? %>
+
+                    <div class="row">
+
+                      <% section.iconboxes.each do |i| %>
+
+                        <div class="col-md-4 col-sm-6">
+                          <div class="content-box text-center bg-light box-bordered box-clickable">
+                            <i class="fa fa-cog icon-bg icon-primary icon-lg circle"></i>
+                            <h3><a href="#">Clickable Icon Box Link 1</a></h3>
+                            <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet.</p>
+                          </div> <!-- .box-bordered -->
+                        </div>
+
+                      <% end %>
+
+                    </div>
+
+                <% end %>
+
+
+
+                <% unless section.listgroups.blank? %>
+
+                    <ul class="list-group">
+
+                      <% section.listgroups.each do |listgroup| %>
+
+                          <li class="list-group-item">
+                            <h4 class="list-group-heading">
+                              <%= listgroup.title %>
+                            </h4>
+                            <%= raw(listgroup.desc) %>
+                          </li>
+
+                      <% end %>
+
+                    </ul>
+
+                <% end %>
+
+            <% end %>
+
+        <% end %>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

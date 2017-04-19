@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @homepage_carousel.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @homepage_carousel.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= link_to image_tag(@homepage_carousel.image.url(:med)), @homepage_carousel.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_homepage_carousel_path(@homepage_carousel) %> |
+<%= link_to 'Back', homepage_carousels_path %>

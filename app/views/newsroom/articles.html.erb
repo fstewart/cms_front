@@ -1,0 +1,52 @@
+<section class="site-section-top">
+    <div class="bg-img" style="background-image: url('https://www.ua.edu/news/wp-content/themes/ua-theme-news/img/home-hero/quad04_1920x330.jpg');">
+    <div class="container site-content">
+      <div class="site-heading-bg-primary">
+        <h1> Culverhouse News </h1>
+      </div> <!-- .site-heading-bg -->
+    </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content margin-top-20">
+	<div class="container">
+		<div class="row">
+      <div class="col-md-8">
+        <% @articles.each do |a| %>
+            <article class="news-v2 mar gin-bottom-30">
+              <div class="row">
+                <% if  a.photo.present? %>
+                    <div class="col-md-3">
+                      <%= image_tag a.home_photo.url, :class => "attachment-ua-theme-md size-ua-theme-md wp-post-image img-responsive", :size => '250x250' %>
+                    </div>
+                <% end %>
+
+                <div class="news-body">
+                      <h2><%= link_to a.title, article_path(a) %></h2>
+                      <p><%= link_to a.story_url, "#{a.story_url}", :target => "_blank" if a.story_url.present? %></p>
+                  <ul class="list-inline small">
+                    <li>
+                      <i class="fa fa-calendar"></i> <%= a.news_date.strftime("%B %d, %Y") %>
+                    <li>
+                  </ul>
+                  <p><%= a.story_short_desc.html_safe %></p>
+                  <%= link_to article_path(a), :class => 'btn btn-default btn-sm' do %>
+                      Read More<i class="fa fa-arrow-right"></i>
+                  <% end %>
+                </div>
+            </article>
+            <hr>
+        <% end %>
+
+        <%= will_paginate @articles %>
+
+      </div>
+
+      <div class="col-md-4">
+        <aside class="sidebar no-top-spacing margin-bottom-35">
+
+        </aside>
+      </div>
+    </div>
+	</div>
+</section>		

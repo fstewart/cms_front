@@ -1,0 +1,2 @@
+module CesEventsHelper
+end

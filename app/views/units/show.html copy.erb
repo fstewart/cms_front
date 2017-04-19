@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Unit type:</strong>
+  <%= @unit.unit_type.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @unit.name %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @unit.overview %>
+</p>
+<p>
+	<% @unit.sections.each do |f| %>
+		<%= f.title %><br>
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_unit_path(@unit) %> |
+<%= link_to 'Back', units_path %>

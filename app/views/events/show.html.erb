@@ -1,0 +1,33 @@
+<section class="site-content">
+	<div class="container">
+		<div class="row">
+			
+			<p id="notice"><%= notice %></p>
+			
+			<div class="col-md-12">
+				<h1 class="margin-top-15"><%= @event.name %></h1>
+				<ul class="list-inline font-weight-600">
+		            <li>
+		            	<i class="fa fa-calendar"></i> 
+		            	<%= @event.event_date.strftime("%B %d, %Y") %>
+		            </li>
+				</ul>
+			</div> <!-- .col-md-12 -->
+			<div class="col-md-8 col-lg-9">
+				<article class="events">
+					<%= @event.desc.html_safe %>
+				</article>
+				
+				<hr>
+				
+				<p><%= link_to "Culverhouse Events", "/culverhouse-events/" %></p>
+				
+			</div>		
+			
+			
+			
+			
+			
+		</div> 
+	</div> 
+</section> 

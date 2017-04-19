@@ -1,0 +1,2 @@
+json.extract! manderson_visitor, :id, :user_id, :reason_for_visit, :visitor_type, :visitor_cwid, :visitor_name, :visitor_email, :visitor_grad_year, :created_at, :updated_at
+json.url manderson_visitor_url(manderson_visitor, format: :json)

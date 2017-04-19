@@ -1,0 +1,20 @@
+<%= simple_form_for(@building, html: { class: 'form-horizontal form-groups-bordered' },
+                    wrapper: :horizontal_input_group,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    }) do |f| %>
+    <%= f.error_notification %>
+
+    <%= javascript_include_tag :application, 'buildings.coffee' %>
+
+    <%= f.input :name %>
+    <%= f.input :url, :placeholder=>'URL for page',label: 'URL for the building page' %>
+    <%= f.input :body, label: 'Description of building, history, etc.', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} }, :class =>'col-sm-12' %>
+    <%# f.input :body, :class =>'col-sm-12', label: 'Description of building, history, etc.' %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= simple_form_for(@department, html: { class: 'form-horizontal form-groups-bordered' },
+    wrapper: :horizontal_input_group,
+                    wrapper_mappings: {
+                        check_boxes: :horizontal_radio_and_checkboxes,
+                        radio_buttons: :horizontal_radio_and_checkboxes,
+                        file: :horizontal_file_input,
+                        boolean: :horizontal_boolean
+                    }) do |f| %>
+  <%= f.error_notification %>
+
+                  <%= f.association :unit_type, :label => 'Type' %>
+                  <%= f.input :name %>
+                  <%= f.input :phone %>
+                  <%= f.input :fax %>
+                  <%= f.input :office %>
+                  <%= f.association :building %>
+                  <%= f.input :po_box, :label => 'Box' %>
+                  <%= f.input :header_image, :label => 'Top Image' %>
+
+    <div class="form-actions" style="margin-left:45px;margin-bottom:45px;">
+    <%= f.button :submit %>
+    </div>
+<% end %>

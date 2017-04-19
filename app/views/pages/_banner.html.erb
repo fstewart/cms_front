@@ -1,0 +1,10 @@
+<% @points_of_pride.sorted.published.each do |b| %>
+	<div class="col-md-3 margin-bottom-30">
+	    <div class="bg-primary box-bordered" style="background-image: url('/assets/img/banner_bottom.png'), url('/assets/img/banner.jpg');background-repeat: no-repeat, no-repeat;
+	    background-position: bottom center, top center;background-color:#AF0000;width:252.5px;min-height:537px;padding-top:140px;padding-left:5px;padding-right:5px;padding-bottom:93px;text-align:center;box-shadow: 2px 2px 2px #888888;border-top-right-radius: 0.5em;border-top-left-radius: 0.5em;">
+	          <%= raw(@banner.top_section) %>
+	          <hr>
+	          <div style="font-size:24px;text-transform: uppercase;text-align:center;"><%= raw(@banner.bottom_section) %></div>
+	    </div> <!-- .content-box -->
+  </div>
+<% end %>	

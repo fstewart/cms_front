@@ -1,0 +1,17 @@
+<div class="row">
+
+  <% s.imageboxes.each do |i| %>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="content-box box-img bg-light text-center">
+      <%= image_tag i.image.display.url %>
+      <div class="box-body">
+        <h3><a href="#"><%= i.title %></a></h3>
+        <p><%= i.desc %></p>
+        <a href="<%= i.url %>" target="<%= i.target %>" class="btn btn-default btn-sm">Read More <i class="fa fa-arrow-right"></i></a>
+      </div> <!-- .box-body -->
+    </div> <!-- .box-img -->
+  </div>
+
+  <% end %>
+</div>

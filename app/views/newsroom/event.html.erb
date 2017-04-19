@@ -1,0 +1,49 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Culverhouse Events</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to "Culverhouse News", "/news/" %></li>
+            <li><%= link_to "UA News", "http://ua.edu/news", target: "_blank" %></li>
+          </ul>
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+      <div class="col-md-9">
+
+        <h1><%= @event.name %></h1>
+        <ul class="list-inline font-weight-600">
+          <li>
+            <i class="fa fa-calendar"></i>
+            <%= @event.event_date.strftime("%B %d, %Y") %>
+          </li>
+        </ul>
+
+        <article class="news">
+          <%= @event.desc.html_safe %>
+        </article>
+        Share this information online.
+        <hr>
+        <span class='st_facebook_large' displayText='Facebook'></span>
+        <span class='st_twitter_large' displayText='Tweet'></span>
+        <span class='st_linkedin_large' displayText='LinkedIn'></span>
+        <span class='st_email_large' displayText='Email'></span>
+        <span class='st_sharethis_large' displayText='ShareThis'></span>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

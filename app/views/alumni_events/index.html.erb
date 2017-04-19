@@ -1,0 +1,44 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Alumni Events</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Event start</th>
+            <th>Event end</th>
+            <th>Alumni chapter</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @alumni_events.each do |alumni_event| %>
+            <tr>
+              <td><%= alumni_event.title %></td>
+              <td><%= alumni_event.description %></td>
+              <td><%= alumni_event.location %></td>
+              <td><%= alumni_event.event_start %></td>
+              <td><%= alumni_event.event_end %></td>
+              <td><%= alumni_event.alumni_chapter %></td>
+              <td><%= link_to 'Show', alumni_event %></td>
+              <td><%= link_to 'Edit', edit_alumni_event_path(alumni_event) %></td>
+              <td><%= link_to 'Destroy', alumni_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Alumni event', new_alumni_event_path %>
+
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</section> <!-- .container -->

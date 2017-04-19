@@ -1,0 +1,2 @@
+json.extract! custom_page, :id, :parent_id, :unit_id, :title, :page_heading, :parent_id, :url, :external_url, :description, :meta_title, :meta_description, :meta_keyword, :status, :created_at, :updated_at
+json.url custom_page_url(custom_page, format: :json)

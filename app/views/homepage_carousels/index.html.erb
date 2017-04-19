@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Homepage Carousels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homepage_carousels.each do |homepage_carousel| %>
+      <tr>
+        <td><%= homepage_carousel.title %></td>
+        <td><%= homepage_carousel.body %></td>
+        <td><%= homepage_carousel.image %></td>
+        <td><%= link_to 'Show', homepage_carousel %></td>
+        <td><%= link_to 'Edit', edit_homepage_carousel_path(homepage_carousel) %></td>
+        <td><%= link_to 'Destroy', homepage_carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homepage carousel', new_homepage_carousel_path %>

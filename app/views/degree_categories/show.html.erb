@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @degree_category.department.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @degree_category.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @degree_category.desc %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @degree_category.status %>
+</p>
+
+<%= link_to 'Edit', edit_degree_category_path(@degree_category) %> |
+<%= link_to 'Back', degree_categories_path %>

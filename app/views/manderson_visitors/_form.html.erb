@@ -1,0 +1,17 @@
+<%= simple_form_for(@manderson_visitor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user, :label_method => :fullname, collection: User.all  %>
+    <%= f.input :reason_for_visit %>
+    <%= f.input :visitor_type %>
+    <%= f.input :visitor_cwid %>
+    <%= f.input :visitor_name %>
+    <%= f.input :visitor_email %>
+    <%= f.input :visitor_grad_year %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

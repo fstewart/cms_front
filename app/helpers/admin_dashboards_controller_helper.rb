@@ -1,0 +1,2 @@
+module AdminDashboardsControllerHelper
+end

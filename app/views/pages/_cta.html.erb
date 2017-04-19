@@ -1,0 +1,5 @@
+<% @page.calltoactions.each do |cta| %>
+	<a href="<%= cta.url %>" target="<%= cta.target %>" class="btn <%= cta.color %> btn-featured-left btn-block font-weight-600 uppercase margin-top-30">
+	    <%= cta.title %><i class="fa fa-cog"></i>
+	</a>
+<% end %>

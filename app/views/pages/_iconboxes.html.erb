@@ -1,0 +1,15 @@
+<div class="row">
+
+  <% section.iconboxes.each do |ib| %>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="content-box text-center bg-light box-bordered box-clickable">
+      <i class="fa fa-cog icon-bg icon-primary icon-lg circle"></i>
+      <h3><a href="#"><%= ib.title %></a></h3>
+      <p><%= ib.desc %></p>
+    </div> <!-- .box-bordered -->
+  </div>
+
+  <% end %>
+
+</div>

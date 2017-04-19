@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<table class="table table-bordered table-striped datatable dataTable no-footer">
+  <thead>
+    <tr>
+      <th>Parent</th>
+      <th>Page Name</th>
+      <th>Published Date</th>
+      <th>Status</th>
+      <th colspan="3">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_pages.each do |custom_page| %>
+      <tr>
+        <td><%= custom_page.parent_id %></td>
+        <td><%= custom_page.title %></td>
+        <td><%= custom_page.created_at %></td>
+        <td><%= custom_page.status %></td>
+        <td><%= link_to 'Show', custom_page %></td>
+        <td><%= link_to 'Edit', edit_custom_page_path(custom_page) %></td>
+        <td><%= link_to 'Destroy', custom_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page', new_custom_page_path %>

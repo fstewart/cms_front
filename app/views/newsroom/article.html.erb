@@ -1,0 +1,166 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Newsroom</h1>
+      </div> <!-- .col-md-6 --></h4>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "Newsroom", newsroom_path %></li>
+          <li>Article</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 sub-breadcrumbs">
+        <h4 style="text-align:center;word-spacing: 8px;"><%= link_to "Experts Guide", experts_path %>  |  <%= link_to "Press Releases", press_releases_path %>  |  <%= link_to "Media Resources", media_resources_path %>  |  <%= link_to "Academic Officials", academic_officials_path %> </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <article class="news">
+          <img src="/assets/img/bryantdenny01_800.jpg" class="img-responsive" />
+
+          <div class="news-body">
+            <h2>Standard post with featured image</h2>
+
+            <ul class="list-inline">
+              <li>
+                <i class="fa fa-calendar"></i> August 08, 2015
+              </li>
+              <li>
+                <i class="fa fa-user"></i> by <a href="#" class="blog-entry-meta-author">Matthew Muro</a>
+              </li>
+              <li>
+                <i class="fa fa-tag"></i>
+                in
+                <a href="#">Announcement</a>
+              </li>
+              <li>
+                <i class="fa fa-comments"></i>
+                <a href="#">3 Comments</a>
+              </li>
+            </ul>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+          </div> <!-- .news-body -->
+        </article> <!-- .news -->
+
+        <ul class="pagination">
+          <li><a href="#">&laquo;</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+      </div> <!-- .col-md-8 -->
+
+      <div class="col-md-4 col-lg-3 col-lg-offset-1">
+        <aside class="sidebar">
+          <div class="sidebar-block">
+            <h4><strong>Sidebar</strong> Menu</h4>
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#">Home</a></li>
+              <li class="active"><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <form role="search">
+              <div class="input-group">
+                <input type="text" id="search-term" name="q" class="form-control" placeholder="Search..">
+                <input type="hidden" name="type" value="article">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-crimson"><i class="fa fa-search"></i></button>
+                </div> <!-- .input-group-btn -->
+              </div> <!-- .input-group -->
+            </form>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <h4><strong>Latest</strong> Posts</h4>
+            <ul class="list-unstyled blog-posts-list">
+              <li>
+                <h3><a href="#">Standard post with featured image</a></h3>
+                <small><i class="fa fa-calendar"></i> Aug 08, 2015</small>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio leo.</p>
+              </li>
+              <li>
+                <h3><a href="#">Video post</a></h3>
+                <small><i class="fa fa-calendar"></i> Aug 07, 2015</small>
+                <p>Pellentesque efficitur blandit dui, porta cursus velit imperdiet sit amet.</p>
+              </li>
+              <li>
+                <h3><a href="#">Audio post</a></h3>
+                <small><i class="fa fa-calendar"></i> Aug 06, 2015</small>
+                <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci, vitae dictum elit egestas a. Nunc nec auctor mauris, semper scelerisque nibh.</p>
+              </li>
+              <li>
+                <h3><a href="#">Text post</a></h3>
+                <small><i class="fa fa-calendar"></i> Aug 05, 2015</small>
+                <p>Phasellus ullamcorper pellentesque ex. Cras venenatis elit orci, vitae dictum elit egestas a. Nunc nec auctor mauris, semper scelerisque nibh.</p>
+              </li>
+              <li>
+                <h3><a href="#">Gallery post</a></h3>
+                <small><i class="fa fa-calendar"></i> Aug 04, 2015</small>
+                <p>Integer vehicula sed justo ac dapibus. In sodales nunc non varius accumsan.</p>
+              </li>
+            </ul>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <h4><strong>Popular</strong> Tags</h4>
+            <ul class="list-inline blog-tags-list">
+              <li>
+                <a href="#">Announcements</a>
+              </li>
+              <li>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <a href="#">Research</a>
+              </li>
+              <li>
+                <a href="#">Students</a>
+              </li>
+              <li>
+                <a href="#">Athletics</a>
+              </li>
+              <li>
+                <a href="#">Books</a>
+              </li>
+              <li>
+                <a href="#">Technology</a>
+              </li>
+              <li>
+                <a href="#">Dance</a>
+              </li>
+              <li>
+                <a href="#">Engineering</a>
+              </li>
+              <li>
+                <a href="#">Film</a>
+              </li>
+            </ul>
+          </div> <!-- .sidebar-block -->
+        </aside> <!-- .sidebar -->
+      </div> <!-- .col-md-4 -->
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

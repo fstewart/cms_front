@@ -1,0 +1,24 @@
+<%= simple_form_for(@alumni_achievement), alumni_achievements_path do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-group">
+      <%= f.input :title %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :suffix %>
+      <%= f.input :grad_class %>
+      <%= f.input :email %>
+      <%= f.input :major %>
+      <%= f.input :current_job_title %>
+      <%= f.input :current_employer %>
+      <%= f.input :current_city %>
+      <%= f.input :favorite_professor_or_class %>
+      <%= f.input :job_history %>
+      <%= f.input :achievements %>
+      <%= f.input :media %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

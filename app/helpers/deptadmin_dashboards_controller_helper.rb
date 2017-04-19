@@ -1,0 +1,2 @@
+module DeptadminDashboardsControllerHelper
+end

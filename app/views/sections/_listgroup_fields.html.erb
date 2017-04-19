@@ -1,0 +1,15 @@
+<div class="nested-fields well well-compact col-md-12">
+  <h4 style="text-align:center;">List Group Details</h4>
+  <div class="col-md-12">
+    <div class="form-inline" style="width: 75%;margin: 0 auto;">
+    <p><%# f.input :priority, :label => 'Order'  %></p>
+    <p><%= f.input :title  %></p>
+    <p><%= f.input :desc, :label => 'Description', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Pure'} }  %></p>
+    <p><%= f.input :status, :label => 'Status'  %></p>
+    <%= link_to_remove_association f, data: {:confirm => 'do you really want to do this?'}, class: 'btn btn-default btn-xs' do %>
+        <p>Remove List Group Item</p>
+    <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<%= simple_form_for(@phd_student) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :email %>
+    <%= f.input :descriptor %>
+    <%= f.input :honors %>
+    <%= f.input :photo %>
+    <%= f.input :phd_id %>
+    <%= f.input :cv %>
+    <%= f.input :jmpaper %>
+    <%= f.input :status %>
+    <%= f.input :pubfile %>
+    <%= f.input :cvfile %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

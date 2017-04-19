@@ -1,0 +1,36 @@
+<div class="row" style="margin-bottom: 40px !important;display: table;margin: 0 auto;">
+  <div id="carousel-example-generic" class="carousel slide col-md-9" data-ride="carousel">
+    <ol class="carousel-indicators">
+      
+    <% section.carousels.each_with_index do |c, index| %>
+      <% if index == 0 %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="active"></li>
+      <% else %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%= index %>"></li>
+      <% end %>
+    <% end %>
+    </ol> <!-- .carousel-indicators -->
+
+    <div class="carousel-inner">
+      <% section.carousels.each_with_index do |c, index| %>
+        <div class="item <%= 'active' if index == 0 %>">
+          <%= image_tag c.slide_image.resized.url,:alt => c.slide_title %>
+          
+          <div class="carousel-caption">
+            <h3><%= c.slide_title %></h3>
+            <p><%= c.slide_desc %></p>
+          </div> <!-- .carousel-caption -->
+        </div> <!-- .item.active -->
+      <% end %>  
+
+    </div> <!-- .carousel-inner -->
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div> <!-- #carousel-example-generic -->
+</div>

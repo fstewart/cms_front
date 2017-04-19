@@ -1,0 +1,15 @@
+<%= simple_form_for(@newsletter) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :layout %>
+    <%= f.input :desc %>
+    <%= f.input :approved %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

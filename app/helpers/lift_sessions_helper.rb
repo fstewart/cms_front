@@ -1,0 +1,2 @@
+module LiftSessionsHelper
+end

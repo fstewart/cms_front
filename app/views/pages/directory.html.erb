@@ -1,0 +1,42 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Directory</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li>Directory</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+      <% @users.each do |u| %>
+
+        <div class="col-md-3">
+          <div class="content-box box-img bg-light text-center">
+            <img class="img-responsive" src="<%= u.profile_photo %>" />
+            <div class="box-body">
+              <h3 class="no-bottom-spacing"><%= u.first_name %> <%= u.last_name %></h3>
+              <small><%= u.title %></small>
+              <small><a href="tel:<%= @manderson_profile.phone %>" class="btn btn-transparent-v2"><i class="fa fa-phone margin-right-10"></i> Call</a>
+                <a href="mailto:<%= @manderson_profile.email %>" class="btn btn-transparent-v2"><i class="fa fa-envelope margin-right-10"></i> Email</a></small>
+
+              <div class="divider-light faded-both"></div>
+
+              <p class="small"><%= link_to 'View Full Profile', user_profile_path(u) %></p>
+            </div> <!-- .box-body -->
+          </div> <!-- .content-box -->
+        </div> <!-- .col-md-3 -->
+
+      <% end %>
+
+     </div>
+  </div>
+</section>

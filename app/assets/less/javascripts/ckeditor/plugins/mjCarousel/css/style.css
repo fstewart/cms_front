@@ -1,0 +1,28 @@
+/*
+	Plugin	: MJ Carousel
+	Author	: Michael Janea (www.michaeljanea.com)
+	Version	: 1.6
+*/
+
+#mjCarousel {}
+	#mjCarousel_Container {height:350px; overflow:auto; margin-bottom:1em;}
+	#mjCarousel table {width:100%; border-collapse:collapse;}
+	#mjCarousel th, #mjCarousel td {padding:.5em;}
+	#mjCarousel th {font-weight:bold;}
+	#mjCarousel td {vertical-align:top; position:relative;}
+	#mjCarousel td:nth-child(1) {width:40px;}
+	#mjCarousel td:nth-child(2), #mjCarousel td:nth-child(3) {width:260px;}
+	#mjCarousel td:nth-child(4) {width:280px;}
+	#mjCarousel input[type=text], #mjCarousel textarea {padding:.3em; border:1px solid #ddd; -webkit-border-radius:3px; border-radius:3px; -webkit-box-shadow:inset 0 2px 2px rgba(0,0,0,0.075); box-shadow:inset 0 2px 2px rgba(0,0,0,0.075); background:rgba(0, 0, 0, .01); outline:none;}
+	#mjCarousel input[type=text]:focus, #mjCarousel textarea:focus {border:1px solid #139ff7;}
+	#mjCarousel input[type=text] {width:150px;}
+	#mjCarousel textarea {resize:none; width:95%; height:100px; white-space:pre-wrap;}
+	#mjCarousel .mjCarousel_remove, #mjCarousel .mjCarousel_addNew, #mjCarousel .mjCarousel_up, #mjCarousel .mjCarousel_down, #mjCarousel .mjCarousel_browse {font-weight:bold; -webkit-border-radius:3px; border-radius:3px; cursor:pointer;}
+	#mjCarousel .mjCarousel_remove {background:#A94442; padding:.3em .5em; color:#fff;}
+	#mjCarousel .mjCarousel_remove:hover {text-decoration:none;}
+	#mjCarousel .mjCarousel_addNew, #mjCarousel .mjCarousel_up, #mjCarousel .mjCarousel_down, #mjCarousel .mjCarousel_browse {float:right; padding:.5em; background:#f3f3f3; border:1px solid #ddd;}
+	#mjCarousel .mjCarousel_browse {padding:.27em .5em; position:absolute; top:.5em; right:.5em;}
+	#mjCarousel .mjCarousel_addNew:hover {text-decoration:underline;}
+	#mjCarousel .mjCarousel_up, #mjCarousel .mjCarousel_down {float:none; padding:.13em .4em;}
+	#mjCarousel .mjCarousel_hidden {display:none;}
+	#mjCarousel img {max-height:100px; max-width:250px;}

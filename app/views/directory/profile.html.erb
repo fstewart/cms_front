@@ -1,0 +1,117 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">
+          <%= @profile.employee_type %> Profile
+        </h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><%= link_to 'Faculty & Staff Directory', directory_path %></li>
+          <li>
+            <%= @profile.employee_type %> Profile
+          </li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="content-box box-img bg-light">
+          <div class="row no-gutter">
+            <div class="col-md-3">
+              <% if @profile.profile_photo? %>
+                  <%= image_tag @profile.profile_photo.resized, class:'img-responsive profile_pic', size: '255x280', alt: '@profile.fullname' %>
+              <% else %>
+                  <%= image_tag('/assets/no-pic.png', class: 'img-responsive profile_pic', size: '263x263', alt: 'The University of Alabama') %>
+              <% end %>
+            </div> <!-- .col-md-3 -->
+
+            <div class="col-md-9">
+              <div class="box-body">
+                <h2 class="margin-bottom-5">
+                  <%= @profile.first_name %>  <%= @profile.last_name %>
+                </h2>
+                <h4>
+                  <%= @profile.title if @profile.title? %>
+                </h4>
+                
+                  <p style="font-weight: bold;">
+                    <% @profile.departments.order('id DESC').each do |d| %>
+                        <%= link_to_if(d.url.present?, d.name, d.url) %> <br>
+                    <% end %>
+                  </p>  
+                
+
+                <div class="divider-light faded-right"></div>
+
+                <!--<a href="tel:<%= @profile.phone %>" class="btn btn-transparent-v2"><i class="fa fa-phone margin-right-10"></i></a>-->
+                Phone:  <a href="tel:<%= @profile.phone %>"><%= @profile.phone %> </a>
+                <br>
+                <!-- <a href="mailto:<%= @profile.email %>" class="btn btn-transparent-v2"><i class="fa fa-envelope margin-right-10"></i></a>-->
+                Email: <a href="mailto:<%= @profile.email %>"><%= @profile.email %></a>
+                <br>
+
+                <%= link_to 'CV<br>'.html_safe, @profile.cv.url, target: "_blank" if @profile.cv? %>
+
+                <%= link_to 'Website<br>'.html_safe, "http://#{@profile.website}", target: "_blank" if @profile.website? %>
+
+                <%= link_to 'Google Scholar<br>'.html_safe, @profile.google_scholar, target: "_blank" if @profile.google_scholar? %>
+
+                <div class="divider-light faded-right"></div>
+
+                <% unless @profile.current_research.blank? %>
+
+                    <h3>Focus and Current Research</h3>
+
+                    <%= @profile.current_research.html_safe %>
+
+                    <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @profile.education.blank? %>
+
+                    <h3>Education</h3>
+
+                    <%= @profile.education.html_safe %>
+
+                    <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @profile.achievements.blank? %>
+
+                    <h3>Honors Achievements & Affiliations</h3>
+
+                    <%= @profile.achievements.html_safe %>
+
+                    <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+                <% unless @profile.selected_publications.blank? %>
+
+                    <h3>Selected Publications</h3>
+
+                    <%= @profile.selected_publications.html_safe %>
+
+                    <div class="divider-light faded-right"></div>
+
+                <% end %>
+
+              </div> <!-- .box-body -->
+            </div> <!-- .col-md-9 -->
+          </div> <!-- .row -->
+        </div> <!-- .content-box -->
+
+      </div>
+    </div>
+  </div>
+</section>

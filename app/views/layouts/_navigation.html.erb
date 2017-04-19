@@ -1,0 +1,117 @@
+<div class="header-top header-light hidden-xs hidden-sm">
+			<div class="top-search-container top-tools-container">
+	        	<div class="container">
+		        	<div class="row">
+			        	<nav>
+                  <div class="col-md-6">
+                    <%= render_navigation(:context => :tools, :expand_all => false) %>
+                  </div>
+                  <div class="col-md-6" style="margin-top:24px;">
+                    <form action="">
+                      <label class="sr-only" for="search-this-site">
+                        Search This Site
+                      </label>
+
+                      <div class="input-group">
+                        <input id="search-this-site" type="text" class="form-control" autocomplete="off" placeholder="Search This Site" name="q" />
+
+                        <input type="hidden" name="_action" value="submit" />
+
+                        <span class="input-group-btn">
+                          <button class="btn btn-light" type="submit">Go</button>
+                        </span>
+                      </div> <!-- .input-group -->
+                    </form>
+                  </div>
+                </nav>
+		        	</div> <!-- .row -->
+	        	</div> <!-- .container -->
+            </div> <!-- .top-search-container -->
+
+        	<div class="container">
+	        	<div class="row">
+		        	<div class="col-md-8">
+			        	<nav class="navbar-nav">
+                  		<ul class="nav navbar-nav dropdown mega-menu">
+	                  		<li><a href="/students">Undergrad</a></li>
+	                  		<li><a href="/graduate-programs">Grad</a></li>
+	                  		<li><a href="/alumni">Alumni</a></li>
+	                  		<!--     <li><a href="/corporate-partners">Corporate Partners</a></li> -->
+		                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Faculty & Staff</a>
+		                    	<ul class="dropdown-menu">
+			                    	<li>
+                              <div>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <ul class="list-unstyled" style="padding-bottom: 15px;padding-top: 15px;">
+                                    <li><a href="/directory" style="font-weight: 400;">Directory</a></li>
+                                    <!-- <li><a href="/faculty-and-staff-resources" style="font-weight: 400;">Resources</a></li> -->
+                                    </ul>
+                                  </div> <!-- .col-md-12 -->
+                                </div> <!-- .row -->
+                              </div> <!-- .mega-menu-content -->
+                            </li>
+		                    	</ul>
+		                    </li>	                  		
+		                  </ul>
+		                </nav>
+				        	</div> <!-- .col-md-6 -->
+
+		        	<div class="col-md-4">
+			        	<nav class="navbar-nav pull-right">
+							    <ul class="nav navbar-nav pull-right dropdown mega-menu">
+		                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Connect</a>
+		                    	<ul class="dropdown-menu">
+  		                    		<li>
+								        <div>
+								          <div class="row">
+								            <div class="col-md-12">
+								              <ul class="list-unstyled" style="padding-bottom: 15px;padding-top: 15px;">
+                                <li><a href="/social-media" style="font-weight: 400;">Social Media</a></li>
+                                <!-- <li><a href="/contacts" style="font-weight: 400;">Contacts</a></li> -->
+								              </ul>
+								            </div> <!-- .col-md-12 -->
+								          </div> <!-- .row -->
+								        </div> <!-- .mega-menu-content -->
+								    </li>	
+		                    	</ul>
+		                    </li>	                  		
+		                    <!-- <li><a href="/investing-in-the-college">Invest</a></li> -->
+		                    <!-- <li><a href="/experts">Experts Guide</a></li> -->
+		                    <li><a href="/search"><i class="glyphicon glyphicon-search"></i></a></li>
+		                    <li class="top-search">
+		                      <a href="#" title="Tools">
+		                        <span class="sr-only">Tools</span>
+		                        <i class="fa fa-th fa-lg search-btn"></i>
+		                      </a>
+		                    </li>
+		                  </ul>
+			        	</nav>
+		        	</div> <!-- .col-md-6 -->
+	        	</div> <!-- .row -->
+        	</div> <!-- .container -->
+		</div> <!-- .header-top -->
+
+		<div class="sticky-header-container">
+			<div id="sticky-header" class="header-main header-primary navbar mega-menu" data-spy="affix" data-offset-top="50">
+				<div class="container">
+					<div class="navbar-container">
+						<div class="navbar-header">
+							<%= link_to root_path, class: 'navbar-brand', title: 'The University of Alabama', rel: 'home' do %>
+							  <%= image_tag('/assets/img/home.png', class: 'pull-left img-responsive', size: '270x65', alt: 'The University of Alabama') %>
+                <span class="sr-only">The University of Alabama</span>
+							<% end %>
+
+							<a href="#" class="btn btn-default nav-toggle visible-xs visible-sm">
+								<span class="sr-only">Toggle navigation</span>
+		                        <i class="fa fa-bars"></i>
+              </a>
+						</div> <!-- .navbar-header -->
+
+						<nav class="navbar-right">
+              <%= render 'layouts/originalnavlinks' %>
+						</nav>
+					</div> <!-- .navbar-container -->
+				</div> <!-- .container -->
+			</div> <!-- .header-main -->
+		</div> <!-- .sticky-header-container -->

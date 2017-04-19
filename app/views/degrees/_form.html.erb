@@ -1,0 +1,17 @@
+<%= simple_form_for(@degree) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :unit_type %>
+    <%= f.association :degree_category %>
+    <%= f.input :name %>
+    <%= f.input :short_desc %>
+    <%= f.input :desc %>
+    <%= f.input :course_assigned %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@layer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :page %>
+    <%= f.input :title %>
+    <%= f.input :position %>
+    <%= f.input :desc %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.extract! @profile, :id, :department_id, :type, :name, :title, :address, :phone, :email, :photo, :current_research, :education, :achievements, :selected_publication, :status, :created_at, :updated_at

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @module_carousel.priority %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @module_carousel.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @module_carousel.desc %>
+</p>
+
+<%= link_to 'Edit', edit_module_carousel_path(@module_carousel) %> |
+<%= link_to 'Back', module_carousels_path %>

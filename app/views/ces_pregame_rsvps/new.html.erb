@@ -1,0 +1,16 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+
+      <h1>CES 2016 Pre-game Picnic RSVP</h1>
+      <div style="text-align:center;">
+      <%= image_tag('football-invitation_cropped', size: "500x848", alt: "CES Pregame RSVP Invitation", :align=> "center") %>
+      </div>
+      <%= render 'form' %>
+
+      <%= link_to 'Back', ces_pregame_rsvps_path %>
+
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</section> <!-- .container -->

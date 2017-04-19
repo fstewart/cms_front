@@ -1,0 +1,22 @@
+<%= simple_form_for(@custom_page) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :parent_id, :collection => @custom_pages.parents,:label_method => :name,:value_method => :id,:label => "Parent" ,:include_blank => false %> %>
+    <%= f.input :unit_id %>
+    <%= f.input :title %>
+    <%= f.input :page_heading %>
+    <%= f.input :parent_id %>
+    <%= f.input :url %>
+    <%= f.input :external_url %>
+    <%= f.input :description %>
+    <%= f.input :meta_title %>
+    <%= f.input :meta_description %>
+    <%= f.input :meta_keyword %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

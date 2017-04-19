@@ -1,0 +1,207 @@
+<section class="site-section-top">
+
+
+      <div class="bg-img" style="background-image: url('<%= image_url('img/presidentsmansion01_1920.jpg') %> ');">
+
+
+    <div class="container site-content">
+      <div class="site-heading-bg-primary">
+        <h1><%= @department.name %></h1>
+      </div> <!-- .site-heading-bg -->
+    </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+<section class="site-content">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+
+            <% @pages.each_with_index do |p, index| %>
+                <% indexplusone = index + 1 %>
+                <% if index == 0 %>
+                    <%= link_to_in_li "#{p.title}", "#item-#{indexplusone}" %>
+
+                <% else %>
+
+                    <%= link_to_in_li "#{p.title}", "#item-#{indexplusone}" %>
+
+                <% end %>
+
+                <% p.sections.each do |section| %>
+                    <%= link_to_in_li "#{section.title}", "#item-#{indexplusone}" %>
+                <% end %>
+
+            <% end %>
+
+          </ul>
+
+          <% @pages.each do |p| %>
+              <% p.calltoactions.each do |cta| %>
+                <a href="<%= cta.url %>" target="<%= cta.target %>" class="btn btn-crimson btn-featured-left btn-block font-weight-600 uppercase margin-top-30"><%= cta.title %><i class="fa fa-cog"></i></a>
+              <% end %>
+          <% end %>
+
+
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+
+
+      <div class="col-md-9">
+        <% @department.pages.each_with_index do |page, index| %>
+            <% indexplusone = index + 1 %>
+            <% if index == 0 %>
+              <h1 id="item-<%= indexplusone %>" class="page-header"><%= page.title %></h1>
+              <%= page.desc.html_safe %>
+
+                <% page.sections.each do |section| %>
+                    <h3 class="page-header"><%= section.title %></h3>
+
+                    <% unless section.texts.blank? %>
+                       <% section.texts.each do |text| %>
+                          <%= text.body.html_safe %><br><br>
+                       <% end %>
+                    <% end %>
+
+                    <% unless section.accordions.blank? %>
+                        <% section.accordions.each do |accordion| %>
+                            <div class="panel-group" id="accordion">
+                              <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <h4 class="panel-title">
+
+                                    <a data-toggle="collapse" data-parent="#<%= accordion.title %>" href="#collapse-1">
+                                      <%= accordion.title %><br>
+                                      <i class="fa fa-lg fa-angle-down pull-right"></i>
+                                      <i class="fa fa-lg fa-angle-up pull-right"></i>
+                                    </a>
+                                  </h4>
+                                </div> <!-- .panel-heading -->
+
+                                <div id="collapse-1" class="panel-collapse collapse in">
+                                  <div class="panel-body">
+                                    <%= accordion.desc.html_safe %>
+                                  </div> <!-- .panel-body -->
+                                </div> <!-- #collapse-1 -->
+                              </div> <!-- .panel -->
+                            </div>
+
+                        <% end %>
+                    <% end %>
+
+                    <% unless section.carousels.blank? %>
+                        <% section.carousels.each do |slide| %>
+
+                             <div id="carousel-owl-2" class="owl-carousel owl-theme owl-loaded">
+                              <div class="owl-stage-outer" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="owl-stage" style="width: 2792px; transform: translate3d(0px, 0px, 0px); transition: 0s;">
+                                  <div class="owl-item active" style="width: 698px; margin-right: 0px;">
+                                    <div class="item">
+                                      <img src="<%= image_tag slide.slide_image.resized %>">
+                                      <div class="carousel-caption">
+                                        <h3><%= slide.title %></h3>
+                                        <p><%= slide.desc %></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-controls">
+                                <div class="owl-nav">
+                                  <div class="owl-prev" style="display: none;">prev</div>
+                                  <div class="owl-next" style="display: none;">next</div>
+                                </div>
+                                <div class="owl-dots" style="">
+                                  <div class="owl-dot active"><span></span></div>
+                                  <div class="owl-dot"><span></span></div>
+                                  <div class="owl-dot"><span></span></div>
+                                  <div class="owl-dot"><span></span></div>
+                                </div>
+                              </div>
+                            </div>
+
+                        <% end %>
+                    <% end %>
+
+                    <% unless section.imageboxes.blank? %>
+
+                            <div class="content-box box-img box-bordered text-center">
+                              <% section.imageboxes.each do |imagebox| %>
+                              <img class="<%= imagebox.image.resized %>">
+                              <div class="box-body">
+                                <h3><%= imagebox.title %></h3>
+                                <%= imagebox.desc.html_safe %>
+                                <% unless imagebox.url.blank? %>
+                                    <a href="<%= imagebox.url %>" target="<%= imagebox.target %>" class="btn btn-default btn-sm">
+                                      Read More
+                                      <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                <% end %>
+                              </div> <!-- .box-body -->
+                              <% end %>
+                            </div>
+
+                    <% end %>
+
+                    <% unless section.listgroups.blank? %>
+                        <ul class="list-group">
+
+                            <% section.listgroups.each do |listgroup| %>
+                        <li class="list-group-item">
+                            <h4 class="list-group-heading">
+                              <%= listgroup.title %>
+                            </h4>
+                            <%= listgroup.desc.html_safe %>
+                        </li>
+                          <% end %>
+                        </ul>
+                    <% end %>
+
+                <% end %>
+             <% else %>
+
+              <h2 id="item-<%= indexplusone %>" class="page-header"><%= page.title %></h2>
+              <%= page.desc.html_safe %>
+            <% end %>
+
+        <% end %>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h3>Contact the Department</h3>
+        <p>
+          <strong>Phone:</strong>
+          <%= number_to_phone(@department.phone) %>
+        </p>
+
+        <p>
+          <strong>Fax:</strong>
+          <%= number_to_phone(@department.fax) %>
+        </p>
+
+        <p>
+          <strong>Office:</strong>
+          <%= @department.office %>
+        </p>
+
+        <p>
+          <strong>Building:</strong>
+          <%= @department.building.name %>
+        </p>
+
+        <p>
+          <strong>Po box:</strong>
+          <%= @department.po_box %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

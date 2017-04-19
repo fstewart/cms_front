@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lift Sessions</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lift_sessions.each do |lift_session| %>
+      <tr>
+        <td><%= lift_session.name %></td>
+        <td><%= link_to 'Show', lift_session %></td>
+        <td><%= link_to 'Edit', edit_lift_session_path(lift_session) %></td>
+        <td><%= link_to 'Destroy', lift_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lift session', new_lift_session_path %>

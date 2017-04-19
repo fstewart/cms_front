@@ -1,0 +1,2 @@
+module AlumniDashboardsControllerHelper
+end

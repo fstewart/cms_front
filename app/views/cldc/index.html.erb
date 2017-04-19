@@ -1,0 +1,84 @@
+<section class="site-section-top">
+  <% unless @page.header_image.blank? %>
+      <div class="bg-img" style="background-image: url('<%= @page.header_image.fullsize.url %>');">
+  <% else %>
+      <div class="bg-img" style="background-image: url('<%= random_background_photo %>');background-position: 0px 0px;">
+  <% end %>
+  <div class="container site-content">
+    <div class="site-heading-bg-primary">
+      <h1> <%= @page.title %>  </h1>
+    </div> <!-- .site-heading-bg -->
+  </div> <!-- .container -->
+  </div> <!-- .site-section-bg -->
+</section>
+
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar sidebar-sticky affix-top scroll-to hidden-xs hidden-sm">
+          <ul class="nav nav-pills nav-stacked">
+
+            <!-- Link to the current page. -->
+            <li><%= link_to @page.title, { :controller => :cldc, :action => :index } %></li>
+
+            <!-- Links to the sections of the current page. -->
+            <% @page.sections.where.not(title: '').order('position ASC').each_with_index do |section, index| %>
+                <% indexplusone = index + 1 %>
+                <% if index == 0 %>
+                    <%= link_to_in_li "#{section.title}", { :controller => :cldc, :action => :index, :anchor => "item-#{indexplusone}" } %>
+                <% else %>
+                    <%= link_to_in_li "#{section.title}", { :controller => :cldc, :action => :index, :anchor => "item-#{indexplusone}" } %>
+                <% end %>
+            <% end %>
+
+          </ul>
+
+          <!-- Display a Call To Action Button if one has been added to the page. -->
+          <%= render 'pages/cta' if @page.calltoactions.present? %>
+
+        </div> <!-- .sidebar -->
+      </div> <!-- .col-md-3 -->
+      <div class="col-md-9">
+        <h2 id="<%= "item-0" %>" class="page-header"> <%= @page.pagehead %> </h2>
+
+        <!--  Content from the main page form.  Leave this blank if a section feature needs to be displayed first. -->
+        <%= raw(@page.desc) %>
+
+        <% @page.sections.each_with_index do |section, index| %>
+            <% indexplusone = index + 1 %>
+            <% if index == 0 %>
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <%= render 'pages/texts', :section => section if section.texts.present? %>
+                <%= render 'pages/fullslides', :section => section if section.fullslides.present? %>
+                <%= render 'pages/accordions', :section => section if section.accordions.present? %>
+                <%= render 'pages/carousels', :section => section if section.carousels.present? %>
+                <%= render 'pages/galleries', :section => section if section.galleries.present? %>
+                <%= render 'pages/iconboxes', :section => section if section.iconboxes.present? %>
+                <%= render 'pages/imageboxes', :section => section if section.imageboxes.present? %>
+                <%= render 'pages/listgroups', :section => section if section.listgroups.present? %>
+                <%= render 'pages/timelines', :section => section if section.timelines.present? %>
+                <%= render 'pages/videos', :section => section if section.videos.present? %>
+
+            <% else %>
+                <h2 id="<%= "item-#{indexplusone}" %>" class="page-header"> <%= section.title %> </h2>
+
+                <%= render 'pages/texts', :section => section if section.texts.present? %>
+                <%= render 'pages/fullslides', :section => section if section.fullslides.present? %>
+                <%= render 'pages/accordions', :section => section if section.accordions.present? %>
+                <%= render 'pages/carousels', :section => section if section.carousels.present? %>
+                <%= render 'pages/galleries', :section => section if section.galleries.present? %>
+                <%= render 'pages/iconboxes', :section => section if section.iconboxes.present? %>
+                <%= render 'pages/imageboxes', :section => section if section.imageboxes.present? %>
+                <%= render 'pages/listgroups', :section => section if section.listgroups.present? %>
+                <%= render 'pages/timelines', :section => section if section.timelines.present? %>
+                <%= render 'pages/videos', :section => section if section.videos.present? %>
+
+            <% end %>
+        <% end %>
+
+      </div> <!-- .col-md-9 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>

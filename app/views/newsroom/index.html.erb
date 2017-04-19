@@ -1,0 +1,213 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Newsroom</h1>
+      </div> <!-- .col-md-6 --></h4>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- .breadcrumb-wrapper -->
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 sub-breadcrumbs">
+        <h4 style="text-align:center;word-spacing: 8px;"><%= link_to "Experts Guide", experts_path %>  |  <%= link_to "Press Releases", press_releases_path %>  |  <%= link_to "Media Resources", media_resources_path %>  |  <%= link_to "Academic Officials", academic_officials_path %> </h4>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 col-lg-3 col-lg-offset-1">
+        <aside class="sidebar">
+          <!-- <div class="sidebar-block">
+            <h4><strong>Culverhouse</strong> Experts</h4>
+            <p>Message</p>
+          </div> --><!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <h4><strong>Contact</strong> Information</h4>
+            <p>Phone: <a href="tel:2053488318">(205) 348-8318</a> </p>
+            <p>Email: <a href="eparten@culverhouse.ua.edu">news@culverhouse.ua.edu</a> </p>
+            <p>Mailing Address:  <br>Box 870223<br>Tuscaloosa, AL 35487-0223</p>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <h4><strong>Media</strong> Kit</h4>
+            <p>Link to Media Kit (.pdf)</p>
+            <p>Link to Culverhouse Images</p>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+	        <h4><strong>Search</strong> Articles</h4>
+            <form role="search" id="searchform" action="/search">
+              <div class="input-group">
+	            <input type="hidden" name="cx" value="005188995961832419191:d8onxphckuc">
+	            <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" value="" name="q" id="q" autocomplete="off" class="form-control" placeholder="Search.." />
+              <div class="input-group-btn">
+                  <button type="submit" class="btn btn-crimson"><i class="fa fa-search"></i></button>
+                </div> <!-- .input-group-btn -->
+              </div> <!-- .input-group -->
+            </form>
+          </div> <!-- .sidebar-block -->
+          
+          
+          
+          <div class="sidebar-block">
+            <h4><strong>Latest</strong> Tweets</h4>
+            <a class="twitter-timeline" data-width="568" data-height="800" data-link-color="#981CEB" href="https://twitter.com/culverhouse">Tweets by culverhouse</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div> <!-- .sidebar-block -->
+
+          <div class="sidebar-block">
+            <h4><strong>Featured</strong> Video</h4>
+            <p>Most recent Shared Video</p>
+          </div> <!-- .sidebar-block -->
+        </aside> <!-- .sidebar -->
+      </div> <!-- .col-md-4 -->
+
+      <div class="col-md-8">
+
+        <div class="col-md-12" style="margin-bottom:70px;">
+        
+        </div>
+
+
+        <article class="news-v2">
+	        
+	        <h2>Featured Article</h2>
+
+          <div class="row">
+	          
+            <div class="col-md-6">
+	          
+	          <% if @top_featured_article.home_photo.present? %>
+	            <%= image_tag @top_featured_article.home_photo.url, :class => 'img-responsive thumbnail' %>
+	          <% else %>
+	          	<img src="/assets/img/presidentsmansion01_800.jpg" class="img-responsive thumbnail" />
+	          <% end %>          
+	                        
+            </div> <!-- .col-md-6 -->
+            <div class="col-md-6">
+              <div class="news-body">
+                <h2><%= link_to @top_featured_article.title, article_path(@top_featured_article) %></h2>
+                <ul class="list-inline small">
+                  <li>
+                    <i class="fa fa-calendar"></i> <%= @top_featured_article.news_date.strftime("%B %d, %Y") %>
+                  </li>
+                  <li>
+                    <i class="fa fa-user"></i> by  
+                    <% unless @top_featured_article.name.blank? %>
+	                    <%= @top_featured_article.name %>
+		            <% else %>
+		            	<a href="kfondren@culverhouse.ua.edu" class="blog-entry-meta-author"> Culverhouse Communications</a> 
+		            <% end %>
+                  </li>
+ 				</ul>
+                <p><%= @top_featured_article.story_short_desc.html_safe %></p>
+              </div> <!-- .news-body -->
+            </div> <!-- .col-md-6 -->        
+          </div> <!-- .row -->
+       
+        </article> <!-- .news -->
+        
+        <h2>Other Featured Articles</h2>
+
+		<div class="row masonry-grid">
+
+          <% @featured_articles.each do |a| %>
+          <div class="col-md-6 masonry-grid-item">
+            <article class="content-box box-img bg-light">	  
+
+              <% if a.home_photo.present? %>
+	          
+	            <%= image_tag(a.home_photo, :class => 'img-responsive thumbnail', :alt => '#{a.title}') %>
+	          
+	          <% else %>
+	          	<img src="/assets/img/presidentsmansion01_800.jpg" class="img-responsive thumbnail" />
+	          <% end %>
+
+              <div class="box-body">
+                <h2><%= link_to a.title, article_path(a) %></h2>
+
+                <ul class="list-inline small">
+                  <li>
+                    <i class="fa fa-calendar"></i> <%= a.news_date.strftime("%B %d, %Y") %>
+                  </li>
+                  <li>
+                    <i class="fa fa-user"></i> by  
+                    <% unless a.name.blank? %>
+	                    <%= a.name %>
+		            <% else %>
+		            	<a href="mailto:kfondren@culverhouse.ua.edu" class="blog-entry-meta-author"> Culverhouse Communications</a> 
+		            <% end %>
+                  </li>
+                </ul>
+
+                <p><%= a.story_short_desc.html_safe %></p>
+              </div> <!-- .box-body -->
+            
+            </article> <!-- .content-box -->                   
+          </div> <!-- .masonry-grid-item -->
+          <% end %>
+		</div>  
+          
+		<h2>Other Articles</h2>
+
+
+        <div class="row masonry-grid">
+
+          <% @articles.each do |a| %>
+          <div class="col-md-6 masonry-grid-item">
+            <article class="content-box box-img bg-light">	  
+
+              <% if a.home_photo.present? %>
+	          
+	            <%= image_tag(a.home_photo, :class => 'img-responsive thumbnail', :alt => '#{a.title}') %>
+	          
+	          <% else %>
+	          	<img src="/assets/img/presidentsmansion01_800.jpg" class="img-responsive thumbnail" />
+	          <% end %>
+
+              <div class="box-body">
+                <h2><%= link_to a.title, article_path(a) %></h2>
+
+                <ul class="list-inline small">
+                  <li>
+                    <i class="fa fa-calendar"></i> <%= a.news_date.strftime("%B %d, %Y") %>
+                  </li>
+                  <li>
+                    <i class="fa fa-user"></i> by  
+                    <% unless a.name.blank? %>
+	                    <%= a.name %>
+		            <% else %>
+		            	<a href="mailto:kfondren@culverhouse.ua.edu" class="blog-entry-meta-author"> Culverhouse Communications</a> 
+		            <% end %>
+                  </li>
+                </ul>
+
+                <p><%= a.story_short_desc.html_safe %></p>
+              </div> <!-- .box-body -->
+            
+            
+            </article> <!-- .content-box -->            
+          </div> <!-- .masonry-grid-item -->
+          <% end %>
+
+          
+         </div>
+         
+         <%= will_paginate @articles %>      
+         
+       </div> <!-- .col-md-8 -->
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+
+

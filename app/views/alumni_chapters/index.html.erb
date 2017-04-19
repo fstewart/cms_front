@@ -1,0 +1,47 @@
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Alumni Chapters</h1>
+
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Address</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Members</th>
+          <th>Active</th>
+          <th>Alumni event</th>
+          <th>Contact</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @alumni_chapters.each do |alumni_chapter| %>
+          <tr>
+            <td><%= alumni_chapter.title %></td>
+            <td><%= alumni_chapter.address %></td>
+            <td><%= alumni_chapter.latitude %></td>
+            <td><%= alumni_chapter.longitude %></td>
+            <td><%= alumni_chapter.members %></td>
+            <td><%= alumni_chapter.active %></td>
+            <td><%= alumni_chapter.alumni_event_id %></td>
+            <td><%= alumni_chapter.contact %></td>
+            <td><%= link_to 'Show', alumni_chapter %></td>
+            <td><%= link_to 'Edit', edit_alumni_chapter_path(alumni_chapter) %></td>
+            <td><%= link_to 'Destroy', alumni_chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Alumni chapter', new_alumni_chapter_path %>
+    </div> <!-- .col-md-3 -->
+  </div> <!-- .row -->
+</section> <!-- .container -->

@@ -1,0 +1,36 @@
+<ul class="nav navbar-nav main-nav">
+  <li class="visible-xs visible-sm">
+    <a href="#" class="nav-toggle text-center">
+      <i class="fa fa-times"></i>
+    </a>
+  </li>
+
+  <% if @page.parent.present? %>
+      <li class="dropdown mega-menu-full"> <%= link_to @page.parent.title, "#{request.base_url}/#{@page.parent.slug}" %></li>
+
+      <!--  Link to any subpages assigned to this page. -->
+      <% @page.parent.subpages.published.sorted.each do |s| %>
+          <% if s.external_url.present? %>
+              <%= link_to_in_li "#{s.title}", "#{s.external_url}", target: "_blank", :class =>"dropdown mega-menu-full" %>
+          <% elsif s.id == @page.id %>
+              <%= link_to_in_li "#{s.title}", { :controller => :pages, :action => :show2, :parent_id => s.parent.slug, :id => s.slug }, :class =>"dropdown mega-menu-full"  %>
+          <% else %>
+              <%= link_to_in_li "#{s.title}", { :controller => :pages, :action => :show2, :parent_id => s.parent.slug, :id => s.slug }, :class =>"dropdown mega-menu-full" %>
+          <% end %>
+      <% end %>
+
+  <% else %>
+
+      <li class="dropdown mega-menu-full"> <%= link_to @page.title, @page.slug %></li>
+
+      <% @page.subpages.published.sorted.each do |s| %>
+          <% if s.external_url.present? %>
+              <%= link_to_in_li "#{s.title}", "#{s.external_url}", target: "_blank", :class =>"dropdown mega-menu-full" %>
+          <% else %>
+              <%= link_to_in_li "#{s.title}", { :controller => :pages, :action => :show2, :parent_id => s.parent.slug, :id => s.slug }, :class =>"dropdown mega-menu-full" %>
+          <% end %>
+      <% end %>
+
+  <% end %>
+
+</ul>

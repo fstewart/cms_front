@@ -1,0 +1,26 @@
+<%= simple_form_for(@cldc_team) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :team_name, label: 'Team Name' %>
+    <%= f.input :team_captain, label: 'Team Captain (first name last name)' %>
+    <%= f.input :team_captain_email, label: 'Team Captain Email' %>
+    <%= f.input :team_captain_phone, label: 'Team Captain Phone' %>
+    <%= f.input :second_member_name, label: 'Second Member Name' %>
+    <%= f.input :second_member_email, label: 'Second Member Email' %>
+    <%= f.input :third_member_name, label: 'Third Member Name' %>
+    <%= f.input :third_member_email, label: 'Third Member Email' %>
+    <%= f.input :advisor_title, label: 'Advisor Title' %>
+    <%= f.input :advisor_name, label: 'Advisor Name' %>
+    <%= f.input :advisor_phone, label: 'Advisor Phone' %>
+    <%= f.input :advisor_email, label: 'Advisor Email' %>
+    <%= f.input :advisor_affiliation, label: 'Advisor Affiliation' %>
+    <%= f.input :resume1, label: 'Team Captain Resume' %>
+    <%= f.input :resume2, label: 'Second Team Member Resume' %>
+    <%= f.input :resume3, label: 'Third Team Member Resume' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Submit Team Registration', class: 'btn btn-crimson' %>
+  </div>
+<% end %>

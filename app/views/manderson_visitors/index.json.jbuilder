@@ -1,0 +1,1 @@
+json.array! @manderson_visitors, partial: 'manderson_visitors/manderson_visitor', as: :manderson_visitor

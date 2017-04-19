@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @footer_layout.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @footer_layout.desc %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @footer_layout.status %>
+</p>
+
+<%= link_to 'Edit', edit_footer_layout_path(@footer_layout) %> |
+<%= link_to 'Back', footer_layouts_path %>

@@ -1,0 +1,313 @@
+<div class="breadcrumb-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 class="breadcrumb-page-title">Faculty & Staff</h1>
+      </div> <!-- .col-md-6 -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <ol class="breadcrumb">
+          <li><%= link_to 'Home', root_path %></li>
+          <li>Faculty & Staff</li>
+        </ol>
+      </div> <!-- .col-md-6 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+
+    Sort By:
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Department <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "Accountancy", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Economics, Finance, & Legal Studies", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "General Business", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Information Systems, Statistics, and Management Science", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Management", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Manderson Graduate School of Business", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Marketing", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li class="divider"></li>
+        <li><%= link_to "All", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Program <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "Ethics Program", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Sales", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Culverhouse Connections", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Faculty Scholars", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Culverhouse Connections", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Global Business & Study Abroad", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Business Honors Program", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "Culverhouse LIFT", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+       Last Name <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "All", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "A-F", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "G-L", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "M-R", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "S-Z", "#",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+      </ul>
+    </div>
+
+
+    <hr>
+    </div>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty01.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Jane Doe</h3>
+            <small>Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty02.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Lisa Mariton</h3>
+            <small>Assistant Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty03.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">John Doe</h3>
+            <small>Manager</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty04.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Ella Longer</h3>
+            <small>Marketing</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty01.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Jane Doe</h3>
+            <small>Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty02.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Lisa Mariton</h3>
+            <small>Assistant Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty03.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">John Doe</h3>
+            <small>Manager</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty04.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Ella Longer</h3>
+            <small>Marketing</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty01.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Jane Doe</h3>
+            <small>Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty02.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Lisa Mariton</h3>
+            <small>Assistant Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty03.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">John Doe</h3>
+            <small>Manager</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty04.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Ella Longer</h3>
+            <small>Marketing</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
+<section class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty01.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Jane Doe</h3>
+            <small>Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty02.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Lisa Mariton</h3>
+            <small>Assistant Director</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty03.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">John Doe</h3>
+            <small>Manager</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+      <div class="col-md-3">
+        <div class="content-box box-img bg-light text-center">
+          <img class="img-responsive" src="/assets/img/staff/faculty04.jpg">
+          <div class="box-body">
+            <h3 class="no-bottom-spacing">Ella Longer</h3>
+            <small>Marketing</small>
+
+            <div class="divider-light faded-both"></div>
+
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div> <!-- .box-body -->
+        </div> <!-- .content-box -->
+      </div> <!-- .col-md-3 -->
+
+
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</section>
